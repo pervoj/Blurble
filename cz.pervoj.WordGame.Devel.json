@@ -1,0 +1,40 @@
+{
+    "app-id" : "cz.pervoj.WordGame.Devel",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "master",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "wordgame",
+    "finish-args" : [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--device=dri",
+        "--socket=wayland"
+    ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "/share/vala",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+        {
+            "name" : "wordgame",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "config-opts" : [ "-Dprofile=development" ],
+            "sources" : [
+                {
+                    "type" : "dir",
+                    "url" : "."
+                }
+            ]
+        }
+    ]
+}

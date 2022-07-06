@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Word Game
+Comment=No description
+Exec=wordgame
+Icon=@APP_ID@
+Terminal=false
+Type=Application
+Categories=GTK;Game;
+StartupNotify=true

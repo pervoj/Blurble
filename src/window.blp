@@ -1,0 +1,11 @@
+using Gtk 4.0;
+
+template WGWindow : ApplicationWindow {
+  default-width: 600;
+  default-height: 300;
+  title: _("Hello, Blueprint!");
+
+  Label label {
+    label: _("Hello, World!");
+  }
+}
