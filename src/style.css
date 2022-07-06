@@ -1,0 +1,50 @@
+.cell {
+  min-width: 2.6rem;
+  min-height: 2.6rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 1px solid @card_shade_color;
+  border-radius: 5px;
+  background-color: @card_bg_color;
+  color: @card_fg_color;
+  transition: all 0.2s ease;
+}
+
+.cell.correct {
+  background-color: @success_bg_color;
+  color: @success_fg_color;
+  border-color: @success_color;
+}
+
+.cell.position {
+  background-color: @warning_bg_color;
+  color: @warning_fg_color;
+  border-color: @warning_color;
+}
+
+.cell.wrong {
+  background-color: @window_fg_color;
+  color: @window_bg_color;
+  border-color: @card_shade_color;
+  opacity: 0.4;
+}
+
+.cell.unknown {
+  animation: unknown 0.4s ease 2 alternate;
+}
+
+.cell.active {
+  animation: active 1.2s ease infinite alternate;
+}
+
+@keyframes unknown {
+  to {
+    background-color: @error_bg_color;
+    color: @error_fg_color;
+    border-color: @error_color;
+  }
+}
+
+@keyframes active {
+  to { box-shadow: inset 0 0 0.6rem @card_shade_color; }
+}

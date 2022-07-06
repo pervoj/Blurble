@@ -4,8 +4,24 @@ template WGWindow : ApplicationWindow {
   default-width: 600;
   default-height: 300;
   title: _("Hello, Blueprint!");
-
-  Label label {
-    label: _("Hello, World!");
+  
+  [titlebar]
+  Gtk.HeaderBar {
+    styles ["flat"]
+  }
+  
+  Gtk.WindowHandle {
+    Gtk.Grid grid {
+      column-homogeneous: true;
+      row-homogeneous: true;
+      column-spacing: 6;
+      row-spacing: 6;
+      margin-top: 10;
+      margin-bottom: 10;
+      margin-start: 10;
+      margin-end: 10;
+      valign: center;
+      halign: center;
+    }
   }
 }
