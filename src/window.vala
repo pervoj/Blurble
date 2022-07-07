@@ -27,6 +27,7 @@ public class WG.Window : Gtk.ApplicationWindow {
         Object (application: app);
 
         content.append (gc.grid);
+        content.append (new Keyboard ());
 
         gc.game_over.connect (game_over);
 

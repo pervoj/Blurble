@@ -3,6 +3,7 @@ sources = [
   'window.vala',
   'grid.vala',
   'game-controller.vala',
+  'keyboard.vala',
 ]
 
 
