@@ -133,6 +133,8 @@ public class WG.Grid : Gtk.Grid {
         margin_start = 10;
         margin_end = 10;
         halign = Gtk.Align.CENTER;
+        hexpand = true;
         valign = Gtk.Align.CENTER;
+        vexpand = true;
     }
 }
