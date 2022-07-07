@@ -26,5 +26,12 @@ public class WG.Window : Gtk.ApplicationWindow {
         
         Grid grid = new Grid ();
         content.append (grid);
+        grid.insert ("T");
+        grid.insert ("E");
+        grid.insert ("S");
+        grid.insert ("T");
+        grid.insert ("I");
+        grid.insert ("N");
+        grid.insert ("G");
     }
 }

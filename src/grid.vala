@@ -25,6 +25,24 @@ public class WG.Grid : Gtk.Grid {
         fill ();
     }
     
+    public void active_dimensions (out int x, out int y) {
+        int width;
+        int height;
+        query_child (cells[active], out x, out y, out width, out height);
+    }
+    
+    public void backspace (int count = 1) {
+        if (active == 0) return;
+        active--;
+        cells[active].label = "";
+    }
+    
+    public void insert (string text) {
+        if (active == 5*6 + 1) return;
+        cells[active].label = text;
+        active++;
+    }
+    
     private void fill () {
         for (int i = 0; i < 5*6; i++) {
             int x = i % 5;
