@@ -19,17 +19,12 @@
 [GtkTemplate (ui = "/cz/pervoj/WordGame/window.ui")]
 public class WG.Window : Gtk.ApplicationWindow {
     [GtkChild]
-    private unowned Gtk.Grid grid;
+    private unowned Gtk.Box content;
 
     public Window (Gtk.Application app) {
         Object (application: app);
         
-        for (int x = 0; x < 5; x++) {
-            for (int y = 0; y < 6; y++) {
-                Gtk.Label cell = new Gtk.Label ("");
-                cell.add_css_class ("cell");
-                grid.attach (cell, x, y);
-            }
-        }
+        Grid grid = new Grid ();
+        content.append (grid);
     }
 }

@@ -1,6 +1,7 @@
 sources = [
-  'window.vala',
   'application.vala',
+  'window.vala',
+  'grid.vala',
 ]
 
 
