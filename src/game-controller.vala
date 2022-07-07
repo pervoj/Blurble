@@ -1,4 +1,4 @@
-/* window.vala
+/* game-controller.vala
  *
  * Copyright 2022 Vojtěch Perník
  *
@@ -87,34 +87,44 @@ public class WG.GameController : Object {
 
     private bool key_pressed (uint val, uint code, Gdk.ModifierType state) {
         if (val == 65288 || val == 65535) {
-            grid.reset_row_state ();
-            grid.backspace ();
+            backspace ();
             return true;
         }
 
         if (val == 65293) {
-            if (!grid.row_filled ()) return true;
-
-            if (check_word ()) {
-                game_over (true);
-                return true;
-            }
-
-            if (word_exist ()) {
-                if (grid.active_row () < 5) {
-                    grid.next_row ();
-                } else {
-                    game_over (false);
-                }
-            }
-
+            enter ();
             return true;
         }
 
-        string key = ((char) val).to_string ();
-        if (!(key.down () in "abcdefghijklmnopqrstuvwxyz")) return false;
-        grid.reset_row_state ();
-        grid.insert (key.up ());
+        insert (((unichar) val).to_string ());
         return true;
+    }
+
+    public void insert (string cell) {
+        if (!(cell.down () in "abcdefghijklmnopqrstuvwxyz")) return;
+        grid.reset_row_state ();
+        grid.insert (cell.up ());
+    }
+
+    public void backspace () {
+        grid.reset_row_state ();
+        grid.backspace ();
+    }
+
+    public void enter () {
+        if (!grid.row_filled ()) return;
+
+        if (check_word ()) {
+            game_over (true);
+            return;
+        }
+
+        if (word_exist ()) {
+            if (grid.active_row () < 5) {
+                grid.next_row ();
+            } else {
+                game_over (false);
+            }
+        }
     }
 }
