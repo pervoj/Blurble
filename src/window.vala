@@ -45,18 +45,5 @@ public class WG.Window : Gtk.ApplicationWindow {
             return true;
         });
         ((Gtk.Widget) this).add_controller (event);
-
-        // grid.insert ("T");
-        // grid.insert ("E");
-        // grid.insert ("S");
-        // grid.insert ("T");
-        // grid.insert ("I");
-        // grid.insert ("N");
-        // grid.insert ("G");
-
-        // grid.set_cell_state (0, 0, CellState.CORRECT);
-        // grid.set_cell_state (1, 0, CellState.WRONG);
-        // grid.set_cell_state (2, 0, CellState.WRONG_POSITION);
-        // grid.set_cell_state (3, 0, CellState.UNKNOWN);
     }
 }
