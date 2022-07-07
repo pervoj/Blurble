@@ -3,8 +3,9 @@
   min-height: 2.6rem;
   font-size: 1.5rem;
   font-weight: 600;
-  border: 1px solid @card_shade_color;
+  border: 2px solid @card_shade_color;
   border-radius: 5px;
+  box-shadow: 0 0.125rem 0.25rem @card_shade_color;
   background-color: @card_bg_color;
   color: @card_fg_color;
   transition: all 0.2s ease;
@@ -33,18 +34,10 @@
   animation: unknown 0.4s ease 2 alternate;
 }
 
-.cell.active {
-  animation: active 1.2s ease infinite alternate;
-}
-
 @keyframes unknown {
   to {
     background-color: @error_bg_color;
     color: @error_fg_color;
     border-color: @error_color;
   }
-}
-
-@keyframes active {
-  to { box-shadow: inset 0 0 0.6rem @card_shade_color; }
 }
