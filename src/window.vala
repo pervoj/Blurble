@@ -27,17 +27,36 @@ public class WG.Window : Gtk.ApplicationWindow {
         Grid grid = new Grid ();
         content.append (grid);
 
-        grid.insert ("T");
-        grid.insert ("E");
-        grid.insert ("S");
-        grid.insert ("T");
-        grid.insert ("I");
-        grid.insert ("N");
-        grid.insert ("G");
+        var event = new Gtk.EventControllerKey ();
+        event.key_pressed.connect ((val, code, state) => {
+            if (val == 65288 || val == 65535) {
+                grid.backspace ();
+                return true;
+            }
 
-        grid.set_cell_state (0, 0, CellState.CORRECT);
-        grid.set_cell_state (1, 0, CellState.WRONG);
-        grid.set_cell_state (2, 0, CellState.WRONG_POSITION);
-        grid.set_cell_state (3, 0, CellState.UNKNOWN);
+            if (val == 65293) {
+                print ("enter\n");
+                return true;
+            }
+
+            string key = ((char) val).to_string ();
+            if (!(key in "abcdefghijklmnopqrstuvwxyz")) return false;
+            grid.insert (key.up ());
+            return true;
+        });
+        ((Gtk.Widget) this).add_controller (event);
+
+        // grid.insert ("T");
+        // grid.insert ("E");
+        // grid.insert ("S");
+        // grid.insert ("T");
+        // grid.insert ("I");
+        // grid.insert ("N");
+        // grid.insert ("G");
+
+        // grid.set_cell_state (0, 0, CellState.CORRECT);
+        // grid.set_cell_state (1, 0, CellState.WRONG);
+        // grid.set_cell_state (2, 0, CellState.WRONG_POSITION);
+        // grid.set_cell_state (3, 0, CellState.UNKNOWN);
     }
 }
