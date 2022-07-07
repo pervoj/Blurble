@@ -2,6 +2,7 @@ sources = [
   'application.vala',
   'window.vala',
   'grid.vala',
+  'game-controller.vala',
 ]
 
 

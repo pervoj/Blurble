@@ -54,12 +54,25 @@ public class WG.Grid : Gtk.Grid {
         return cell (active_x, active_y);
     }
 
-    public string get_row () {
-        string row = "";
+    public string[] get_row () {
+        string[] row = {};
         for (int x = 0; x < 5; x++) {
-            row += cell (x, active_y).label;
+            row += cell (x, active_y).label.down ();
         }
-        return row.down ();
+        return row;
+    }
+
+    public bool row_filled () {
+        foreach (string cell in get_row ()) {
+            if (cell.length == 0) return false;
+        }
+        return true;
+    }
+
+    public void reset_row_state () {
+        for (int x = 0; x < 5; x++) {
+            set_cell_state (x, active_y, CellState.NONE);
+        }
     }
 
     public void set_cell_state (int x, int y, CellState state) {
