@@ -101,7 +101,7 @@ public class WG.Grid : Gtk.Grid {
     }
     
     public void insert (string text) {
-        if (active == 5*6 + 1) return;
+        if (active == 5*6) return;
         cells[active].label = text;
         active++;
     }
