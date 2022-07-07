@@ -59,7 +59,7 @@ public class WG.Grid : Gtk.Grid {
         for (int x = 0; x < 5; x++) {
             row += cell (x, active_y).label;
         }
-        return row;
+        return row.down ();
     }
 
     public void set_cell_state (int x, int y, CellState state) {
