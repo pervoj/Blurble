@@ -16,6 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+public enum WG.CellState {
+    CORRECT,
+    WRONG,
+    WRONG_POSITION,
+    UNKNOWN,
+    NONE
+}
+
 public class WG.Grid : Gtk.Grid {
     private Gtk.Label[] cells = new Gtk.Label[5*6];
     private int active = 0;
@@ -31,6 +39,61 @@ public class WG.Grid : Gtk.Grid {
         query_child (cells[active], out x, out y, out width, out height);
     }
     
+    public int active_row () {
+        int x;
+        int y;
+        active_dimensions (out x, out y);
+        return y;
+    }
+
+    public int active_column () {
+        int x;
+        int y;
+        active_dimensions (out x, out y);
+        return x;
+    }
+
+    public Gtk.Label cell (int x, int y) {
+        return (Gtk.Label) get_child_at (x, y);
+    }
+
+    public Gtk.Label active_cell () {
+        return cells[active];
+    }
+
+    public void set_cell_state (int x, int y, CellState state) {
+        Gtk.Label cell = this.cell (x, y);
+        cell.remove_css_class ("correct");
+        cell.remove_css_class ("wrong");
+        cell.remove_css_class ("position");
+        cell.remove_css_class ("unknown");
+        switch (state) {
+            case CellState.CORRECT:
+                cell.add_css_class ("correct");
+                break;
+            case CellState.WRONG:
+                cell.add_css_class ("wrong");
+                break;
+            case CellState.WRONG_POSITION:
+                cell.add_css_class ("position");
+                break;
+            case CellState.UNKNOWN:
+                cell.add_css_class ("unknown");
+                break;
+            case CellState.NONE:
+                break;
+        }
+    }
+
+    public CellState get_cell_state (int x, int y) {
+        Gtk.Label cell = this.cell (x, y);
+        if (cell.has_css_class ("correct")) return CellState.CORRECT;
+        else if (cell.has_css_class ("wrong")) return CellState.WRONG;
+        else if (cell.has_css_class ("position")) return CellState.WRONG_POSITION;
+        else if (cell.has_css_class ("unknown")) return CellState.UNKNOWN;
+        return CellState.NONE;
+    }
+
     public void backspace (int count = 1) {
         if (active == 0) return;
         active--;
