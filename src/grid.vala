@@ -25,8 +25,8 @@ public enum WG.CellState {
 }
 
 public class WG.Grid : Gtk.Grid {
-    private Gtk.Label[] cells = new Gtk.Label[5*6];
-    private int active = 0;
+    private int active_x = 0;
+    private int active_y = 0;
 
     public Grid () {
         style ();
@@ -34,23 +34,16 @@ public class WG.Grid : Gtk.Grid {
     }
     
     public void active_dimensions (out int x, out int y) {
-        int width;
-        int height;
-        query_child (cells[active], out x, out y, out width, out height);
+        x = active_x;
+        y = active_y;
     }
     
     public int active_row () {
-        int x;
-        int y;
-        active_dimensions (out x, out y);
-        return y;
+        return active_y;
     }
 
     public int active_column () {
-        int x;
-        int y;
-        active_dimensions (out x, out y);
-        return x;
+        return active_x;
     }
 
     public Gtk.Label cell (int x, int y) {
@@ -58,7 +51,15 @@ public class WG.Grid : Gtk.Grid {
     }
 
     public Gtk.Label active_cell () {
-        return cells[active];
+        return cell (active_x, active_y);
+    }
+
+    public string get_row () {
+        string row = "";
+        for (int x = 0; x < 5; x++) {
+            row += cell (x, active_y).label;
+        }
+        return row;
     }
 
     public void set_cell_state (int x, int y, CellState state) {
@@ -94,26 +95,31 @@ public class WG.Grid : Gtk.Grid {
         return CellState.NONE;
     }
 
-    public void backspace (int count = 1) {
-        if (active == 0) return;
-        active--;
-        cells[active].label = "";
+    public void backspace () {
+        if (active_x == 0) return;
+        active_x--;
+        active_cell ().label = "";
     }
     
     public void insert (string text) {
-        if (active == 5*6) return;
-        cells[active].label = text;
-        active++;
+        if (active_x == 5) return;
+        active_cell ().label = text;
+        active_x++;
+    }
+
+    public void next_row () {
+        if (active_y == 5) return;
+        active_x = 0;
+        active_y++;
     }
     
     private void fill () {
-        for (int i = 0; i < 5*6; i++) {
-            int x = i % 5;
-            int y = i / 5;
-            Gtk.Label cell = new Gtk.Label ("");
-            cells[i] = cell;
-            attach (cell, x, y);
-            cell.add_css_class ("cell");
+        for (int y = 0; y < 6; y++) {
+            for (int x = 0; x < 5; x++) {
+                Gtk.Label cell = new Gtk.Label ("");
+                attach (cell, x, y);
+                cell.add_css_class ("cell");
+            }
         }
     }
 
