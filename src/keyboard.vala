@@ -23,14 +23,27 @@ public class WG.Keyboard : Gtk.Box {
 {enter}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
     ";
 
+    public signal void insert (string cell);
+    public signal void backspace ();
+    public signal void enter ();
+
     public Keyboard () {
         Object (
             orientation: Gtk.Orientation.VERTICAL,
-            spacing: 5
+            spacing: 6
         );
 
+        halign = Gtk.Align.CENTER;
+        hexpand = true;
+        valign = Gtk.Align.CENTER;
+        vexpand = true;
+        margin_top = 10;
+        margin_bottom = 10;
+        margin_start = 10;
+        margin_end = 10;
+
         foreach (string line in keys.strip ().split (";")) {
-            Gtk.Box box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
+            Gtk.Box box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
             append (box);
             box.halign = Gtk.Align.CENTER;
             box.hexpand = true;
@@ -41,13 +54,18 @@ public class WG.Keyboard : Gtk.Box {
                 Gtk.Button btn;
 
                 if (key_temp == "enter") {
-                    btn = new Gtk.Button.with_label ("Enter");
+                    btn = new Gtk.Button.from_icon_name ("keyboard-enter-symbolic");
+                    btn.clicked.connect (() => { enter (); });
                 } else if (key_temp == "backspace") {
-                    btn = new Gtk.Button.with_label ("Backspace");
+                    btn = new Gtk.Button.from_icon_name ("entry-clear-symbolic");
+                    btn.clicked.connect (() => { backspace (); });
                 } else {
                     string[] key_parts = key_temp.split ("/");
                     btn = new Gtk.Button.with_label (@"$(key_parts[0].up ())");
+                    btn.clicked.connect (() => { insert (key_parts[1]); });
                 }
+
+                btn.can_focus = false;
 
                 box.append (btn);
             }

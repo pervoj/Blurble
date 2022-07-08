@@ -22,14 +22,19 @@ public class WG.Window : Gtk.ApplicationWindow {
     private unowned Gtk.Box content;
 
     private GameController gc = new GameController ();
+    private Keyboard k = new Keyboard ();
 
     public Window (Gtk.Application app) {
         Object (application: app);
 
         content.append (gc.grid);
-        content.append (new Keyboard ());
+        content.append (k);
 
         gc.game_over.connect (game_over);
+
+        k.insert.connect (gc.insert);
+        k.enter.connect (gc.enter);
+        k.backspace.connect (gc.backspace);
 
         ((Gtk.Widget) this).add_controller (gc.event);
     }
