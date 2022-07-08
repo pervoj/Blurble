@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wordgame\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-08 15:34+0200\n"
-"PO-Revision-Date: 2022-07-08 19:38+0200\n"
+"POT-Creation-Date: 2022-07-08 19:47+0200\n"
+"PO-Revision-Date: 2022-07-08 19:48+0200\n"
 "Last-Translator: Vojtěch Perník <translations@pervoj.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -30,6 +30,11 @@ msgstr "Vyhrál jsi!"
 #: src/window.vala:52
 msgid "You lost!"
 msgstr "Prohrál jsi!"
+
+#: src/game-controller.vala:37
+#, c-format
+msgid "Current word: %s\n"
+msgstr "Aktuální slovo: %s\n"
 
 #.
 #. * A key is represented by braces, which contain displayed string, slash
