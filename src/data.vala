@@ -58,11 +58,27 @@ namespace WG.Data {
         return replacements;
     }
 
+    public string get_available_letters () {
+        /*
+         * Letters to be read from the keyboard.
+         *
+         * a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+         */
+        string letters = C_("Available letters", "data-letters");
+        if (letters == "data-letters") letters = "a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z";
+        return letters;
+    }
+
     public string get_dictionary () {
         /*
          * All words have to be 5 letters long. Each word on its own line.
          * Individual characters please divide with slash. The reason for this
          * is that some letters are in unicode made of two characters.
+         *
+         * a/a/h/e/d
+         * a/a/l/i/i
+         * a/a/r/g/h
+         * …
          */
         string dictionary = C_("List of available words", "data-dictionary");
         if (dictionary == "data-dictionary") dictionary = DICTIONARY;

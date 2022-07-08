@@ -98,7 +98,7 @@ public class WG.GameController : Object {
     }
 
     public void insert (string cell) {
-        if (!(cell.down () in "abcdefghijklmnopqrstuvwxyz")) return;
+        if (!(cell.down () in Data.get_available_letters ().split ("/"))) return;
         grid.reset_row_state ();
         grid.insert (cell.up ());
     }
