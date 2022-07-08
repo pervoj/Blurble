@@ -26,6 +26,7 @@ public class WG.Keyboard : Gtk.Box {
     public signal void insert (string cell);
     public signal void backspace ();
     public signal void enter ();
+    public bool game_over = false;
 
     public Keyboard () {
         Object (
@@ -55,14 +56,20 @@ public class WG.Keyboard : Gtk.Box {
 
                 if (key_temp == "enter") {
                     btn = new Gtk.Button.from_icon_name ("keyboard-enter-symbolic");
-                    btn.clicked.connect (() => { enter (); });
+                    btn.clicked.connect (() => {
+                        if (!game_over) enter ();
+                    });
                 } else if (key_temp == "backspace") {
                     btn = new Gtk.Button.from_icon_name ("entry-clear-symbolic");
-                    btn.clicked.connect (() => { backspace (); });
+                    btn.clicked.connect (() => {
+                        if (!game_over) backspace ();
+                    });
                 } else {
                     string[] key_parts = key_temp.split ("/");
                     btn = new Gtk.Button.with_label (@"$(key_parts[0].strip ().up ())");
-                    btn.clicked.connect (() => { insert (key_parts[1].strip ()); });
+                    btn.clicked.connect (() => {
+                        if (!game_over) insert (key_parts[1].strip ());
+                    });
                 }
 
                 btn.can_focus = false;
