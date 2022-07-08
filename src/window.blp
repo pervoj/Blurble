@@ -1,8 +1,6 @@
 using Gtk 4.0;
 
 template WGWindow : ApplicationWindow {
-  default-width: 600;
-  default-height: 300;
   title: _("Word Game");
   
   [titlebar]
@@ -13,7 +11,7 @@ template WGWindow : ApplicationWindow {
   Gtk.WindowHandle {
     Gtk.Box content {
       orientation: vertical;
-      spacing: 25;
+      spacing: 30;
       halign: center;
       hexpand: true;
       valign: center;

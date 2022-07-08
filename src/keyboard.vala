@@ -30,20 +30,20 @@ public class WG.Keyboard : Gtk.Box {
     public Keyboard () {
         Object (
             orientation: Gtk.Orientation.VERTICAL,
-            spacing: 6
+            spacing: 4
         );
 
         halign = Gtk.Align.CENTER;
         hexpand = true;
         valign = Gtk.Align.CENTER;
         vexpand = true;
-        margin_top = 10;
-        margin_bottom = 10;
-        margin_start = 10;
-        margin_end = 10;
+        margin_top = 6;
+        margin_bottom = 6;
+        margin_start = 6;
+        margin_end = 6;
 
         foreach (string line in keys.strip ().split (";")) {
-            Gtk.Box box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+            Gtk.Box box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 4);
             append (box);
             box.halign = Gtk.Align.CENTER;
             box.hexpand = true;
@@ -61,11 +61,12 @@ public class WG.Keyboard : Gtk.Box {
                     btn.clicked.connect (() => { backspace (); });
                 } else {
                     string[] key_parts = key_temp.split ("/");
-                    btn = new Gtk.Button.with_label (@"$(key_parts[0].up ())");
-                    btn.clicked.connect (() => { insert (key_parts[1]); });
+                    btn = new Gtk.Button.with_label (@"$(key_parts[0].strip ().up ())");
+                    btn.clicked.connect (() => { insert (key_parts[1].strip ()); });
                 }
 
                 btn.can_focus = false;
+                btn.add_css_class ("key");
 
                 box.append (btn);
             }

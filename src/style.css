@@ -41,3 +41,9 @@
     border-color: @error_color;
   }
 }
+
+.key {
+  padding: 0;
+  min-width: 2em;
+  min-height: 2em;
+}
