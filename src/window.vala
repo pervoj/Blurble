@@ -35,12 +35,25 @@ public class WG.Window : Gtk.ApplicationWindow {
         k.insert.connect (gc.insert);
         k.enter.connect (gc.enter);
         k.backspace.connect (gc.backspace);
+        k.game_over = false;
 
         ((Gtk.Widget) this).add_controller (gc.event);
     }
 
     private void game_over (bool win) {
         ((Gtk.Widget) this).remove_controller (gc.event);
-        print (@"Game Over! $(win)\n");
+        k.game_over = true;
+
+        var dialog = new Gtk.MessageDialog (
+            this,
+            Gtk.DialogFlags.MODAL,
+            Gtk.MessageType.INFO,
+            Gtk.ButtonsType.OK,
+            win ? _("You won!") : _("You lost!")
+        );
+
+        dialog.response.connect (close);
+
+        dialog.show ();
     }
 }
