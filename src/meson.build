@@ -4,6 +4,8 @@ sources = [
   'grid.vala',
   'game-controller.vala',
   'keyboard.vala',
+  'data.vala',
+  'data-parser.vala',
 ]
 
 

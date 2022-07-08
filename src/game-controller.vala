@@ -17,14 +17,8 @@
  */
 
 public class WG.GameController : Object {
-    public string[] correct_word = {"p", "o", "n", "o", "r"};
-    public string[,] dictionary = {
-        {"p", "o", "n", "o", "r"},
-        {"s", "l", "a", "m", "a"},
-        {"r", "a", "d", "l", "o"},
-        {"f", "a", "k", "i", "r"},
-        {"a", "m", "a", "n", "t"}
-    };
+    public string[] correct_word;
+    public List<string> dictionary = DataParser.dictionary ();
 
     public Grid grid { get; construct; }
     public Gtk.EventControllerKey event { get; construct; }
@@ -36,19 +30,22 @@ public class WG.GameController : Object {
             grid: new Grid (),
             event: new Gtk.EventControllerKey ()
         );
+
+        int32 word = Random.int_range (0, (int32) dictionary.length ());
+        correct_word = DataParser.replace (dictionary.nth_data ((uint) word)).split ("/");
+        print (dictionary.nth_data ((uint) word) + "\n");
+
         event.key_pressed.connect (key_pressed);
     }
 
     private bool word_exist () {
-        string[] word = grid.get_row ();
-        for (int y = 0; y < dictionary.length[0]; y++) {
-            bool equal = true;
-            for (int x = 0; x < dictionary.length[1]; x++) {
-                if (dictionary[y, x] != word[x]) equal = false;
-            }
-            if (equal) return true;
-        }
-        return false;
+        string word = string.joinv ("/", grid.get_row ());
+        bool found = false;
+        dictionary.foreach ((current_word) => {
+            if (found) return;
+            if (word == DataParser.replace (current_word)) found = true;
+        });
+        return found;
     }
 
     private bool check_word () {

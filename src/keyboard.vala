@@ -17,12 +17,6 @@
  */
 
 public class WG.Keyboard : Gtk.Box {
-    private string keys = @"
-{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {z/z}, {u/u}, {i/i}, {o/o}, {p/p};
-{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
-{enter}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
-    ";
-
     public signal void insert (string cell);
     public signal void backspace ();
     public signal void enter ();
@@ -43,12 +37,12 @@ public class WG.Keyboard : Gtk.Box {
         margin_start = 6;
         margin_end = 6;
 
-        foreach (string line in keys.strip ().split (";")) {
+        foreach (string line in Data.get_keyboard ().split (";")) {
             Gtk.Box box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 4);
             append (box);
             box.halign = Gtk.Align.CENTER;
             box.hexpand = true;
-            foreach (string key in line.strip ().split (",")) {
+            foreach (string key in line.split (",")) {
                 string key_temp = key.strip ();
                 key_temp = key_temp.replace ("{", "").replace ("}", "");
 
