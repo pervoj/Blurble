@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wordgame\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-08 19:47+0200\n"
-"PO-Revision-Date: 2022-07-08 19:48+0200\n"
+"POT-Creation-Date: 2022-07-13 16:55+0200\n"
+"PO-Revision-Date: 2022-07-13 16:55+0200\n"
 "Last-Translator: Vojtěch Perník <translations@pervoj.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -20,8 +20,8 @@ msgstr ""
 "X-Generator: Gtranslator 42.0\n"
 
 #: src/window.blp:4
-msgid "Word Game"
-msgstr "Slovní hra"
+msgid "Blurble"
+msgstr "Blurble"
 
 #: src/window.vala:52
 msgid "You won!"
@@ -2974,3 +2974,6 @@ msgstr ""
 "t/r/i/m/r\n"
 "z/e/n/i/t\n"
 "p/a/c/k/a"
+
+#~ msgid "Word Game"
+#~ msgstr "Slovní hra"
