@@ -1,6 +1,6 @@
-# [WIP] Word Game
+# [WIP] Blurble
 
-Wordle clone
+Word guessing game
 
 [![Please do not theme this app](https://stopthemingmy.app/badge.svg)](https://stopthemingmy.app)
 [![Liberapay](https://img.shields.io/badge/Liberapay-Donate-F6C915?logo=liberapay)](https://liberapay.com/pervoj)
@@ -9,6 +9,10 @@ Wordle clone
 
 > **⚠️ IMPORTANT:** The project is still work in progress.
 > It is not ready for use.
+
+Solve the riddle until you run out of guesses!
+
+The game is a clone of Wordle and made with localization in mind.
 
 ## ⚙️ Installing
 

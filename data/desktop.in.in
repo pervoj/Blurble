@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Blurble
-Comment=No description
+Comment=Word guessing game
 Exec=@GETTEXT_PACKAGE@
 Icon=@APP_ID@
 Terminal=false

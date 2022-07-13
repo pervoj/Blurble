@@ -7,17 +7,27 @@
   <content_rating type="oars-1.1" />
 
   <name>Blurble</name>
-  <summary>No description</summary>
+  <summary>Word guessing game</summary>
   <description>
-    <p>No description</p>
+    <p>Solve the riddle until you run out of guesses!</p>
+    <p>The game is a clone of Wordle and made with localization in mind.</p>
   </description>
+
+  <releases>
+    <release version="0.1.0" date="2022-07-13">
+      <description>
+        <p>First release</p>
+      </description>
+    </release>
+  </releases>
 
   <developer_name>Vojtěch Perník</developer_name>
   <update_contact>develop@pervoj.cz</update_contact>
 
-  <url type="homepage">https://gitlab.com/pervoj</url>
-  <url type="bugtracker">https://gitlab.com/pervoj</url>
+  <url type="homepage">https://gitlab.gnome.org/pervoj/Blurble</url>
+  <url type="bugtracker">https://gitlab.gnome.org/pervoj/Blurble/-/issues</url>
   <url type="donation">https://liberapay.com/pervoj</url>
+    <url type="donation">https://ko-fi.com/pervoj</url>
   <url type="donation">https://paypal.me/pervoj</url>
 
   <launchable type="desktop-id">@APP_ID@.desktop</launchable>
