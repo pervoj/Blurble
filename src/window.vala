@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-[GtkTemplate (ui = "/cz/pervoj/WordGame/window.ui")]
+[GtkTemplate (ui = "/app/drey/Blurble/window.ui")]
 public class WG.Window : Gtk.ApplicationWindow {
     [GtkChild]
     private unowned Gtk.Box content;

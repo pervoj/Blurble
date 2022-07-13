@@ -1,4 +1,4 @@
-project('wordgame', ['c', 'vala'],
+project('blurble', ['c', 'vala'],
   version: '0.1.0',
   meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2' ]
@@ -6,8 +6,8 @@ project('wordgame', ['c', 'vala'],
 
 
 
-app_id_prefix = 'cz.pervoj.WordGame'
-resource_path_prefix = '/cz/pervoj/WordGame'
+app_id_prefix = 'app.drey.Blurble'
+resource_path_prefix = '/app/drey/Blurble'
 
 app_id_suffix = ''
 resource_path_suffix = ''

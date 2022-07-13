@@ -1,9 +1,9 @@
 {
-    "app-id" : "cz.pervoj.WordGame.Devel",
+    "app-id" : "app.drey.Blurble.Devel",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
-    "command" : "wordgame",
+    "command" : "blurble",
     "finish-args" : [
         "--share=network",
         "--share=ipc",
@@ -25,7 +25,7 @@
     ],
     "modules" : [
         {
-            "name" : "wordgame",
+            "name" : "blurble",
             "builddir" : true,
             "buildsystem" : "meson",
             "config-opts" : [ "-Dprofile=development" ],

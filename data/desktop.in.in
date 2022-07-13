@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=Word Game
+Name=Blurble
 Comment=No description
-Exec=wordgame
+Exec=@GETTEXT_PACKAGE@
 Icon=@APP_ID@
 Terminal=false
 Type=Application
