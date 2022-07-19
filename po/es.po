@@ -55,8 +55,8 @@ msgctxt "Game keyboard"
 msgid "data-keyboard"
 msgstr ""
 "{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};\n"
-"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {ñ/ñ}, {backspace};\n"
-"{z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {enter}"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {ñ/ñ};\n"
+"{enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}"
 
 #.
 #. * Each replacement on its own line. Original and its replacement divide
