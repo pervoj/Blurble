@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the blurble package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: blurble\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-19 09:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/window.blp:4
+msgid "Blurble"
+msgstr ""
+
+#: src/window.vala:52
+msgid "You won!"
+msgstr ""
+
+#: src/window.vala:52
+msgid "You lost!"
+msgstr ""
+
+#: src/game-controller.vala:37
+#, c-format
+msgid "Current word: %s\n"
+msgstr ""
+
+#.
+#. * A key is represented by braces, which contain displayed string, slash
+#. * the string to add to cell.
+#. *
+#. * {a/a}
+#. *
+#. * There are also two special keys:
+#. *
+#. * {enter}, {backspace}
+#. *
+#. * Keys are divided by commas, lines by semicolons.
+#. *
+#. * {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+#. * {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+#. * {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#.
+#: src/data.vala:37
+msgctxt "Game keyboard"
+msgid "data-keyboard"
+msgstr ""
+
+#.
+#. * Each replacement on its own line. Original and its replacement divide
+#. * with slash.
+#. *
+#. * á/a
+#. * č/c
+#. * …
+#.
+#: src/data.vala:56
+msgctxt "Replaced letters"
+msgid "data-replacements"
+msgstr ""
+
+#.
+#. * Letters to be read from the keyboard.
+#. *
+#. * a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#.
+#: src/data.vala:67
+msgctxt "Available letters"
+msgid "data-letters"
+msgstr ""
+
+#.
+#. * All words have to be 5 letters long. Each word on its own line.
+#. * Individual characters please divide with slash. The reason for this
+#. * is that some letters are in unicode made of two characters.
+#. *
+#. * a/a/h/e/d
+#. * a/a/l/i/i
+#. * a/a/r/g/h
+#. * …
+#.
+#: src/data.vala:83
+msgctxt "List of available words"
+msgid "data-dictionary"
+msgstr ""
