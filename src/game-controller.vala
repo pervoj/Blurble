@@ -50,7 +50,7 @@ public class WG.GameController : Object {
     }
 
     private bool check_word () {
-        string[] written_word = grid.get_row ();
+        string?[] written_word = grid.get_row ();
 
         int y = grid.active_row ();
 
@@ -64,7 +64,7 @@ public class WG.GameController : Object {
         }
 
         // make a copy to keep the unmatched letters, (with CellState.WRONG)
-        string[] remaining_word = correct_word.copy ();
+        string?[] remaining_word = correct_word.copy ();
 
         // find exact matches
         for (int x = 0; x < 5; x++) {
@@ -74,7 +74,8 @@ public class WG.GameController : Object {
             if (written_cell == correct_cell) {
                 grid.set_cell_state (x, y, CellState.CORRECT);
                 // match found, remove it from the remaining array
-                remaining_word[x] = "";
+                remaining_word[x] = null;
+                written_word[x] = null;
             } else {
                 grid.set_cell_state (x, y, CellState.WRONG);
                 correct = false;
@@ -82,11 +83,13 @@ public class WG.GameController : Object {
         }
 
         for (int wx = 0; wx < 5; wx++) { // for each letter guessed
+            if (written_word[wx] == null) continue;
+
             for (int rx = 0; rx < 5; rx++) { // find the first matching remaining letter
                 if (written_word[wx] == remaining_word[rx]) {
                     grid.set_cell_state (wx, y, CellState.WRONG_POSITION);
                     // match found, remove it
-                    remaining_word[rx] = "";
+                    remaining_word[rx] = null;
                     break;
                 }
             }
