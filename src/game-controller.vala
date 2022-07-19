@@ -34,7 +34,7 @@ public class WG.GameController : Object {
         int32 word = Random.int_range (0, (int32) dictionary.length ());
         correct_word = DataParser.replace (dictionary.nth_data ((uint) word)).split ("/");
 
-        print (_("Current word: %s\n"), dictionary.nth_data ((uint) word).replace ("/", ""));
+        print (_ ("Current word: %s\n"), dictionary.nth_data ((uint) word).replace ("/", ""));
 
         event.key_pressed.connect (key_pressed);
     }
@@ -51,33 +51,45 @@ public class WG.GameController : Object {
 
     private bool check_word () {
         string[] written_word = grid.get_row ();
+
         int y = grid.active_row ();
 
-        bool exist = word_exist ();
+        bool correct = true;
 
-        bool correct = exist;
+        if (!word_exist ()) {
+            for (int x = 0; x < 5; x++) {
+                grid.set_cell_state (x, y, CellState.UNKNOWN);
+            }
+            return false;
+        }
+
+        // make a copy to keep the unmatched letters, (with CellState.WRONG)
+        string[] remaining_word = correct_word.copy ();
+
+        // find exact matches
         for (int x = 0; x < 5; x++) {
             string correct_cell = correct_word[x];
             string written_cell = written_word[x];
 
-            if (!exist) {
-                grid.set_cell_state (x, y, CellState.UNKNOWN);
-                continue;
-            }
-
             if (written_cell == correct_cell) {
                 grid.set_cell_state (x, y, CellState.CORRECT);
-                continue;
+                // match found, remove it from the remaining array
+                remaining_word[x] = "";
+            } else {
+                grid.set_cell_state (x, y, CellState.WRONG);
+                correct = false;
             }
+        }
 
-            correct = false;
-
-            if (written_cell in correct_word) {
-                grid.set_cell_state (x, y, CellState.WRONG_POSITION);
-                continue;
+        for (int wx = 0; wx < 5; wx++) { // for each letter guessed
+            for (int rx = 0; rx < 5; rx++) { // find the first matching remaining letter
+                if (written_word[wx] == remaining_word[rx]) {
+                    grid.set_cell_state (wx, y, CellState.WRONG_POSITION);
+                    // match found, remove it
+                    remaining_word[rx] = "";
+                    break;
+                }
             }
-
-            grid.set_cell_state (x, y, CellState.WRONG);
         }
 
         return correct;
