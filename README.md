@@ -1,42 +1,17 @@
-<p align="center">
-  <img src="data/icons/app.drey.Blurble.svg" alt="Blurble" width="100" />
-</p>
+# Blurble
 
-<h1 align="center">Blurble</h1>
+**Word guessing game**
 
-<p align="center"><strong>Word guessing game</strong></p>
-
-<p align="center">
+<p>
   <a href="https://flathub.org/apps/details/app.drey.Blurble">
     <img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download on Flathub" width="200" />
   </a>
 </p>
 
-<p align="center">
-  <img src="data/screenshots/screenshot-1.png" alt="UI Screenshot" />
-</p>
-
-<p align="center">
-  <a href="https://stopthemingmy.app">
-    <img src="https://stopthemingmy.app/badge.svg" alt="Please do not theme this app" />
-  </a>
-  <a href="https://liberapay.com/pervoj">
-    <img src="https://img.shields.io/badge/Liberapay-Donate-F6C915?logo=liberapay" alt="Liberapay" />
-  </a>
-  <a href="https://ko-fi.com/pervoj">
-    <img src="https://img.shields.io/badge/Ko--fi-Donate-FF5E5B?logo=kofi" alt="Ko-fi" />
-  </a>
-  <a href="https://www.paypal.com/donate/?hosted_button_id=7P3BD55QX6B9J">
-    <img src="https://img.shields.io/badge/PayPal-Donate-00457C?logo=paypal" alt="PayPal" />
-  </a>
-</p>
-
-<!--
 [![Please do not theme this app](https://stopthemingmy.app/badge.svg)](https://stopthemingmy.app)
 [![Liberapay](https://img.shields.io/badge/Liberapay-Donate-F6C915?logo=liberapay)](https://liberapay.com/pervoj)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Donate-FF5E5B?logo=kofi)](https://ko-fi.com/pervoj)
 [![PayPal](https://img.shields.io/badge/PayPal-Donate-00457C?logo=paypal)](https://www.paypal.com/donate/?hosted_button_id=7P3BD55QX6B9J)
--->
 
 ---
 
