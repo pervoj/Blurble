@@ -1,27 +1,31 @@
 using Gtk 4.0;
+using Adw 1;
 
-template WGWindow : Gtk.ApplicationWindow {
+template WGWindow : Adw.ApplicationWindow {
   title: _("Blurble");
   
-  [titlebar]
-  Gtk.HeaderBar {
-    styles ["flat"]
-
-    [end]
-    Gtk.MenuButton {
-      icon-name: "open-menu-symbolic";
-      menu-model: main_menu;
-    }
-  }
-  
   Gtk.WindowHandle {
-    Gtk.Box content {
+    Gtk.Box {
       orientation: vertical;
-      spacing: 30;
-      halign: center;
-      hexpand: true;
-      valign: center;
-      vexpand: true;
+
+      Adw.HeaderBar {
+        styles ["flat"]
+
+        [end]
+        Gtk.MenuButton {
+          icon-name: "open-menu-symbolic";
+          menu-model: main_menu;
+        }
+      }
+
+      Gtk.Box main_content {
+        orientation: vertical;
+        spacing: 30;
+        halign: center;
+        hexpand: true;
+        valign: center;
+        vexpand: true;
+      }
     }
   }
 }

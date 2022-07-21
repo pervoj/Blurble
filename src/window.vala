@@ -17,9 +17,9 @@
  */
 
 [GtkTemplate (ui = "/app/drey/Blurble/window.ui")]
-public class WG.Window : Gtk.ApplicationWindow {
+public class WG.Window : Adw.ApplicationWindow {
     [GtkChild]
-    private unowned Gtk.Box content;
+    private unowned Gtk.Box main_content;
 
     private GameController gc = new GameController ();
     private Keyboard k = new Keyboard ();
@@ -27,8 +27,8 @@ public class WG.Window : Gtk.ApplicationWindow {
     public Window (Gtk.Application app) {
         Object (application: app);
 
-        content.append (gc.grid);
-        content.append (k);
+        main_content.append (gc.grid);
+        main_content.append (k);
 
         gc.game_over.connect (game_over);
 
