@@ -3,6 +3,8 @@ using Adw 1;
 
 template WGWindow : Adw.ApplicationWindow {
   title: _("Blurble");
+  default-width: 350;
+  default-height: 500;
   
   Gtk.WindowHandle {
     Gtk.Box {
@@ -31,6 +33,7 @@ template WGWindow : Adw.ApplicationWindow {
 }
 
 menu main_menu {
+  item (_("Show keyboard"), "app.show-keyboard")
   item (_("About Blurble"), "app.about")
   item (_("Quit"), "app.quit")
 }

@@ -24,6 +24,8 @@ public class WG.Window : Adw.ApplicationWindow {
     private GameController gc = new GameController ();
     private Keyboard k = new Keyboard ();
 
+    private Settings settings = new Settings (Constants.APP_ID);
+
     public Window (Gtk.Application app) {
         Object (application: app);
 
@@ -38,6 +40,12 @@ public class WG.Window : Adw.ApplicationWindow {
         k.game_over = false;
 
         ((Gtk.Widget) this).add_controller (gc.event);
+
+        set_keyboard_visibility (settings.get_boolean ("show-keyboard"));
+        settings.changed.connect ((key) => {
+            if (key != "show-keyboard") return;
+            set_keyboard_visibility (settings.get_boolean ("show-keyboard"));
+        });
     }
 
     private void game_over (bool win) {
@@ -55,5 +63,9 @@ public class WG.Window : Adw.ApplicationWindow {
         dialog.response.connect (close);
 
         dialog.show ();
+    }
+
+    public void set_keyboard_visibility (bool visible) {
+        k.visible = visible;
     }
 }

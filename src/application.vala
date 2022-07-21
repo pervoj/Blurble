@@ -18,6 +18,7 @@
 
 public class WG.Application : Adw.Application {
     private Gtk.CssProvider css_provider_hc = new Gtk.CssProvider ();
+    private Settings settings = new Settings (Constants.APP_ID);
 
     public Application () {
         Object (
@@ -33,6 +34,8 @@ public class WG.Application : Adw.Application {
         };
         this.add_action_entries (action_entries, this);
         this.set_accels_for_action ("app.quit", {"<primary>q"});
+
+        this.add_action (settings.create_action ("show-keyboard"));
     }
 
     public override void activate () {
