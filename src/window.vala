@@ -21,6 +21,9 @@ public class WG.Window : Adw.ApplicationWindow {
     [GtkChild]
     private unowned Gtk.Box main_content;
 
+    [GtkChild]
+    private unowned Gtk.MenuButton menu_button;
+
     private GameController gc = new GameController ();
     private Keyboard k = new Keyboard ();
 
@@ -67,5 +70,9 @@ public class WG.Window : Adw.ApplicationWindow {
 
     public void set_keyboard_visibility (bool visible) {
         k.visible = visible;
+    }
+
+    public void open_menu () {
+        menu_button.popup ();
     }
 }

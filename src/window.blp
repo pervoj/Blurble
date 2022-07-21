@@ -14,9 +14,10 @@ template WGWindow : Adw.ApplicationWindow {
         styles ["flat"]
 
         [end]
-        Gtk.MenuButton {
+        Gtk.MenuButton menu_button {
           icon-name: "open-menu-symbolic";
           menu-model: main_menu;
+          can-focus: false;
         }
       }
 

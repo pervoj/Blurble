@@ -36,6 +36,14 @@ public class WG.Application : Adw.Application {
         this.set_accels_for_action ("app.quit", {"<primary>q"});
 
         this.add_action (settings.create_action ("show-keyboard"));
+
+        SimpleAction open_menu_action = new SimpleAction ("open-menu", null);
+        this.add_action (open_menu_action);
+        this.set_accels_for_action ("app.open-menu", {"F10"});
+        open_menu_action.activate.connect (() => {
+            Window win = (Window) this.active_window;
+            win.open_menu ();
+        });
     }
 
     public override void activate () {

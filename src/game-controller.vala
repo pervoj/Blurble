@@ -99,12 +99,12 @@ public class WG.GameController : Object {
     }
 
     private bool key_pressed (uint val, uint code, Gdk.ModifierType state) {
-        if (val == 65288 || val == 65535) {
+        if (val == Gdk.Key.BackSpace || val == Gdk.Key.Delete) {
             backspace ();
             return true;
         }
 
-        if (val == 65293) {
+        if (val == Gdk.Key.Return) {
             enter ();
             return true;
         }
