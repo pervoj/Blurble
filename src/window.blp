@@ -1,11 +1,17 @@
 using Gtk 4.0;
 
-template WGWindow : ApplicationWindow {
+template WGWindow : Gtk.ApplicationWindow {
   title: _("Blurble");
   
   [titlebar]
   Gtk.HeaderBar {
     styles ["flat"]
+
+    [end]
+    Gtk.MenuButton {
+      icon-name: "open-menu-symbolic";
+      menu-model: primary_menu;
+    }
   }
   
   Gtk.WindowHandle {
@@ -18,4 +24,9 @@ template WGWindow : ApplicationWindow {
       vexpand: true;
     }
   }
+}
+
+menu primary_menu {
+  item (_("About Blurble"), "app.about")
+  item (_("Quit"), "app.quit")
 }
