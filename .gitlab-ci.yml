@@ -1,6 +1,6 @@
 include: "https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_ci_initiative.yml"
 
-flatpak:
+.vars-devel:
   image: "registry.gitlab.gnome.org/gnome/gnome-runtime-images/gnome:master"
   variables:
     MANIFEST_PATH: "app.drey.Blurble.Devel.json"
@@ -11,9 +11,17 @@ flatpak:
   before_script:
     - "sed -i 's/\"type\" : \"dir\"/\"type\" : \"git\"/g' app.drey.Blurble.Devel.json"
     - "sed -i 's/\"url\" : \".\"/\"url\" : \"https:\\/\\/gitlab.gnome.org\\/pervoj\\/Blurble.git\",\\n\"branch\" : \"main\"/g' app.drey.Blurble.Devel.json"
-  extends: ".flatpak"
 
-nightly:
+flatpak@x86_64:
+  extends: [".flatpak@x86_64:", ".vars-devel"]
+
+flatpak@aarch64:
+  extends: [".flatpak@aarch64:", ".vars-devel"]
+
+nightly@x86_64:
   extends: ".publish_nightly"
-  needs:
-    - "flatpak"
+  needs: ["flatpak@x86_64"]
+
+nightly@aarch64:
+  extends: ".publish_nightly"
+  needs: ["flatpak@aach64"]
