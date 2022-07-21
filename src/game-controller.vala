@@ -34,9 +34,7 @@ public class WG.GameController : Object {
         int32 word = Random.int_range (0, (int32) dictionary.length ());
         correct_word = DataParser.replace (dictionary.nth_data ((uint) word)).split ("/");
 
-        #if DEVEL
-            print (_("Current word: %s\n"), dictionary.nth_data ((uint) word).replace ("/", ""));
-        #endif
+        debug (_("Current word: %s\n"), dictionary.nth_data ((uint) word).replace ("/", ""));
 
         event.key_pressed.connect (key_pressed);
     }
