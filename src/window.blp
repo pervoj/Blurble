@@ -10,7 +10,7 @@ template WGWindow : Gtk.ApplicationWindow {
     [end]
     Gtk.MenuButton {
       icon-name: "open-menu-symbolic";
-      menu-model: primary_menu;
+      menu-model: main_menu;
     }
   }
   
@@ -26,7 +26,7 @@ template WGWindow : Gtk.ApplicationWindow {
   }
 }
 
-menu primary_menu {
+menu main_menu {
   item (_("About Blurble"), "app.about")
   item (_("Quit"), "app.quit")
 }
