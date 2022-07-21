@@ -8,6 +8,9 @@ flatpak:
     APP_ID: "app.drey.Blurble.Devel"
     RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
     BUNDLE: "app.drey.Blurble.Devel.flatpak"
+  before_script:
+    - sed -i 's/"type" : "dir"/"type" : "git"/g' app.drey.Blurble.Devel.json
+    - sed -i 's/"url" : "."/"url" : "https:\/\/gitlab.gnome.org\/pervoj\/Blurble.git",\n"branch" : "main"/g' app.drey.Blurble.Devel.json
   extends: ".flatpak"
 
 nightly:
