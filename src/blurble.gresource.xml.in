@@ -2,7 +2,6 @@
 <gresources>
   <gresource prefix="@RESOURCE_PATH_PREFIX@">
     <file>window.ui</file>
-    <file>gtk/help-overlay.ui</file>
     <file>style.css</file>
     <file>style-hc.css</file>
   </gresource>
