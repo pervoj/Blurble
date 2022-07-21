@@ -7,7 +7,7 @@ flatpak:
     FLATPAK_MODULE: "blurble"
     APP_ID: "app.drey.Blurble.Devel"
     RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
-    BUNDLE: "blurble-dev.flatpak"
+    BUNDLE: "app.drey.Blurble.Devel.flatpak"
   extends: ".flatpak"
 
 nightly:
