@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wordgame\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-13 16:55+0200\n"
+"POT-Creation-Date: 2022-07-22 14:09+0200\n"
 "PO-Revision-Date: 2022-07-13 16:55+0200\n"
 "Last-Translator: Vojtěch Perník <translations@pervoj.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
@@ -19,15 +19,32 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "X-Generator: Gtranslator 42.0\n"
 
-#: src/window.blp:4
+#: src/window.blp:5
 msgid "Blurble"
 msgstr "Blurble"
 
-#: src/window.vala:52
+#: src/window.blp:37
+#, fuzzy
+msgid "Show keyboard"
+msgstr ""
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {z/z}, {u/u}, {i/i}, {o/o}, {p/p};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};\n"
+"{enter}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}"
+
+#: src/window.blp:38
+#, fuzzy
+msgid "About Blurble"
+msgstr "Blurble"
+
+#: src/window.blp:39
+msgid "Quit"
+msgstr ""
+
+#: src/window.vala:63
 msgid "You won!"
 msgstr "Vyhrál jsi!"
 
-#: src/window.vala:52
+#: src/window.vala:63
 msgid "You lost!"
 msgstr "Prohrál jsi!"
 

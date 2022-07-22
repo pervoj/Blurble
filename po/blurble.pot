@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blurble\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-19 09:46+0200\n"
+"POT-Creation-Date: 2022-07-22 14:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/window.blp:4
+#: src/window.blp:5
 msgid "Blurble"
 msgstr ""
 
-#: src/window.vala:52
+#: src/window.blp:37
+msgid "Show keyboard"
+msgstr ""
+
+#: src/window.blp:38
+msgid "About Blurble"
+msgstr ""
+
+#: src/window.blp:39
+msgid "Quit"
+msgstr ""
+
+#: src/window.vala:63
 msgid "You won!"
 msgstr ""
 
-#: src/window.vala:52
+#: src/window.vala:63
 msgid "You lost!"
 msgstr ""
 

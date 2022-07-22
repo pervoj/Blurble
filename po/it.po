@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: blurble\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/pervoj/Blurble/-/issues\n"
-"POT-Creation-Date: 2022-07-20 14:00+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-22 14:09+0200\n"
 "PO-Revision-Date: 2022-07-20 14:00+0100\n"
 "Last-Translator: Michael Moroni <michaelmoroni@disroot.org>\n"
 "Language-Team: Italian <gnome-it-list@gnome.org>\n"
@@ -18,15 +18,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: src/window.blp:4
+#: src/window.blp:5
 msgid "Blurble"
 msgstr "Blurble"
 
-#: src/window.vala:52
+#: src/window.blp:37
+#, fuzzy
+msgid "Show keyboard"
+msgstr ""
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {backspace};\n"
+"{z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {enter}"
+
+#: src/window.blp:38
+#, fuzzy
+msgid "About Blurble"
+msgstr "Blurble"
+
+#: src/window.blp:39
+msgid "Quit"
+msgstr ""
+
+#: src/window.vala:63
 msgid "You won!"
 msgstr "Hai vinto!"
 
-#: src/window.vala:52
+#: src/window.vala:63
 msgid "You lost!"
 msgstr "Hai perso!"
 
@@ -103,21 +120,21 @@ msgctxt "Available letters"
 msgid "data-letters"
 msgstr "a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z"
 
-#. In IT, the following Python script was used to use Lexica's database (see https://github.com/lexica/lexica/blob/master/LICENSES). Remember to remove "\n" from last word
 #
-#	#!/usr/bin/python
-#	# -*- coding: utf-8 -*-
+# 	#!/usr/bin/python
+# 	# -*- coding: utf-8 -*-
 #
-#	import urllib.request
+# 	import urllib.request
 #
-#	target_url = "https://lexica.github.io/lexica/api/v1/language/it/dictionary.txt"
+# 	target_url = "https://lexica.github.io/lexica/api/v1/language/it/dictionary.txt"
 #
-#	data = urllib.request.urlopen(target_url)
-#	for line in data:
-#		word = line.decode('utf-8')[:-1]
-#		if len(word) == 5 and word.isalpha() == True:
-#			print("\"" + "/".join(list(word)) + "\\n\"")
+# 	data = urllib.request.urlopen(target_url)
+# 	for line in data:
+# 		word = line.decode('utf-8')[:-1]
+# 		if len(word) == 5 and word.isalpha() == True:
+# 			print("\"" + "/".join(list(word)) + "\\n\"")
 #
+#.
 #. * All words have to be 5 letters long. Each word on its own line.
 #. * Individual characters please divide with slash. The reason for this
 #. * is that some letters are in unicode made of two characters.

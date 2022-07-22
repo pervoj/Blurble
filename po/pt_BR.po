@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: blurble\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/pervoj/Blurble/-/issues\n"
-"POT-Creation-Date: 2022-07-15 13:53-0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-22 14:09+0200\n"
 "PO-Revision-Date: 2022-07-15 15:52-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
@@ -19,15 +19,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "X-Generator: Gtranslator 40.0\n"
 
-#: src/window.blp:4
+#: src/window.blp:5
 msgid "Blurble"
 msgstr "Blurble"
 
-#: src/window.vala:52
+#: src/window.blp:37
+#, fuzzy
+msgid "Show keyboard"
+msgstr ""
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {backspace};\n"
+"{z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {enter}"
+
+#: src/window.blp:38
+#, fuzzy
+msgid "About Blurble"
+msgstr "Blurble"
+
+#: src/window.blp:39
+msgid "Quit"
+msgstr ""
+
+#: src/window.vala:63
 msgid "You won!"
 msgstr "Você conseguiu!"
 
-#: src/window.vala:52
+#: src/window.vala:63
 msgid "You lost!"
 msgstr "Você perdeu!"
 
