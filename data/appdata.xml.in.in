@@ -23,6 +23,17 @@
   </screenshots>
 
   <releases>
+    <release version="0.2.0" date="2022-07-22">
+      <description>
+        <ul>
+          <li>Add Brazilian Portugese translation (Rafael Fontenelle)</li>
+          <li>Add Spanish translation (Santiago Cézar)</li>
+          <li>Add Italian translation (Michael Moroni)</li>
+          <li>Correct letter is marked only once (Santiago Cézar)</li>
+          <li>Add main menu</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.1.0" date="2022-07-13">
       <description>
         <p>First release</p>
