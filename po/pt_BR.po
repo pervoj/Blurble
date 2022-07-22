@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: blurble\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-22 14:09+0200\n"
-"PO-Revision-Date: 2022-07-15 15:52-0300\n"
+"PO-Revision-Date: 2022-07-22 09:27-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -24,21 +24,16 @@ msgid "Blurble"
 msgstr "Blurble"
 
 #: src/window.blp:37
-#, fuzzy
 msgid "Show keyboard"
-msgstr ""
-"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};\n"
-"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {backspace};\n"
-"{z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {enter}"
+msgstr "Mostrar teclado"
 
 #: src/window.blp:38
-#, fuzzy
 msgid "About Blurble"
-msgstr "Blurble"
+msgstr "Sobre o Blurble"
 
 #: src/window.blp:39
 msgid "Quit"
-msgstr ""
+msgstr "Sair"
 
 #: src/window.vala:63
 msgid "You won!"
