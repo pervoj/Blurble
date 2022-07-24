@@ -84,7 +84,7 @@ msgstr ""
 #: src/data.vala:56
 msgctxt "Replaced letters"
 msgid "data-replacements"
-msgstr ""
+msgstr "data-replacements"
 
 #.
 #. * Letters to be read from the keyboard.
@@ -94,7 +94,7 @@ msgstr ""
 #: src/data.vala:67
 msgctxt "Available letters"
 msgid "data-letters"
-msgstr "a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z"
+msgstr "a/ä/b/c/d/e/f/g/h/i/j/k/l/m/n/o/ö/p/q/r/s/ß/t/u/ü/v/w/x/y/z"
 
 #.
 #. * All words have to be 5 letters long. Each word on its own line.
