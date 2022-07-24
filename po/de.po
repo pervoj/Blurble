@@ -71,7 +71,7 @@ msgstr ""
 "ü};\n"
 "{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {ö/ö}, {ä/"
 "ä};\n"
-"{enter}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}"
+"{enter}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {ß/ß}, {backspace}"
 
 #.
 #. * Each replacement on its own line. Original and its replacement divide
