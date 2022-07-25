@@ -26,11 +26,12 @@
     <release version="0.2.0" date="2022-07-29">
       <description>
         <ul>
-          <li>Add Brazilian Portugese translation (Rafael Fontenelle)</li>
-          <li>Add Spanish translation (Santiago Cézar)</li>
+          <li>Add Brazilian Portuguese translation (Rafael Fontenelle)</li>
+          <li>Add German translation (Jürgen Benvenuti)</li>
           <li>Add Italian translation (Michael Moroni)</li>
-          <li>Correct letter is marked only once (Santiago Cézar)</li>
+          <li>Add Spanish translation (Santiago Cézar)</li>
           <li>Add main menu</li>
+          <li>Correct letter is marked only once (Santiago Cézar)</li>
         </ul>
       </description>
     </release>
