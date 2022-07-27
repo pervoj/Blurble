@@ -15,10 +15,10 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://gitlab.gnome.org/pervoj/Blurble/-/raw/main/data/screenshots/screenshot-1.png</image>
+      <image>https://gitlab.gnome.org/World/Blurble/-/raw/main/data/screenshots/screenshot-1.png</image>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.gnome.org/pervoj/Blurble/-/raw/main/data/screenshots/screenshot-2.png</image>
+      <image>https://gitlab.gnome.org/World/Blurble/-/raw/main/data/screenshots/screenshot-2.png</image>
     </screenshot>
   </screenshots>
 
@@ -45,10 +45,10 @@
   <developer_name>Vojtěch Perník</developer_name>
   <update_contact>develop@pervoj.cz</update_contact>
 
-  <url type="homepage">https://gitlab.gnome.org/pervoj/Blurble</url>
-  <url type="bugtracker">https://gitlab.gnome.org/pervoj/Blurble/-/issues</url>
+  <url type="homepage">https://gitlab.gnome.org/World/Blurble</url>
+  <url type="bugtracker">https://gitlab.gnome.org/World/Blurble/-/issues</url>
   <url type="donation">https://liberapay.com/pervoj</url>
-    <url type="donation">https://ko-fi.com/pervoj</url>
+  <url type="donation">https://ko-fi.com/pervoj</url>
   <url type="donation">https://paypal.me/pervoj</url>
 
   <launchable type="desktop-id">@APP_ID@.desktop</launchable>
