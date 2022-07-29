@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wordgame\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-22 14:09+0200\n"
-"PO-Revision-Date: 2022-07-22 14:10+0200\n"
+"POT-Creation-Date: 2022-07-29 18:31+0200\n"
+"PO-Revision-Date: 2022-07-29 18:35+0200\n"
 "Last-Translator: Vojtěch Perník <translations@pervoj.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -19,13 +19,68 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
 "X-Generator: Gtranslator 42.0\n"
 
-#: src/window.blp:5
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
+#: src/application.vala:88 src/window.blp:5
 msgid "Blurble"
 msgstr "Blurble"
 
-#: src/window.blp:37
+#: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+#: src/application.vala:89
+msgid "Word guessing game"
+msgstr "Uhodněte tajenku"
+
+#: data/blurble.appdata.xml.in.in:12
+msgid "Solve the riddle until you run out of guesses!"
+msgstr "Vyřešte hádanku, než vám dojdou tipy!"
+
+#: data/blurble.appdata.xml.in.in:13
+msgid "The game is a clone of Wordle and made with localization in mind."
+msgstr "Hra je klonem hry Wordle a je vytvořena s ohledem na lokalizaci."
+
+#: data/blurble.appdata.xml.in.in:29
+msgid "Add Brazilian Portuguese translation (Rafael Fontenelle)"
+msgstr "Přidán překlad do brazilské portugalštiny (Rafael Fontenelle)"
+
+#: data/blurble.appdata.xml.in.in:30
+msgid "Add German translation (Jürgen Benvenuti)"
+msgstr "Přidán německý překlad (Jürgen Benvenuti)"
+
+#: data/blurble.appdata.xml.in.in:31
+msgid "Add Italian translation (Michael Moroni)"
+msgstr "Přidán italský překlad (Michael Moroni)"
+
+#: data/blurble.appdata.xml.in.in:32
+msgid "Add Spanish translation (Santiago Cézar)"
+msgstr "Přidán španělský překlad (Santiago Cézar)"
+
+#: data/blurble.appdata.xml.in.in:33
+msgid "Add main menu"
+msgstr "Přidáno hlavní menu"
+
+#: data/blurble.appdata.xml.in.in:34
+msgid "Correct letter is marked only once (Santiago Cézar)"
+msgstr "Správná písmena jsou označena pouze jednou (Santiago Cézar)"
+
+#: data/blurble.appdata.xml.in.in:40
+msgid "First release"
+msgstr "První vydání"
+
+#: data/blurble.appdata.xml.in.in:45
+msgid "Vojtěch Perník"
+msgstr "Vojtěch Perník"
+
+#: data/blurble.gschema.xml.in:6 src/window.blp:37
 msgid "Show keyboard"
 msgstr "Zobrazit klávesnici"
+
+#: src/application.vala:91
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Copyright © 2022 Vojtěch Perník"
+
+#. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
+#: src/application.vala:94
+msgid "translator-credits"
+msgstr "translator-credits"
 
 #: src/window.blp:38
 msgid "About Blurble"
