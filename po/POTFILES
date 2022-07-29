@@ -1,7 +1,0 @@
-data/desktop.in.in
-data/appdata.xml.in.in
-data/gschema.xml.in
-src/window.blp
-src/window.vala
-src/game-controller.vala
-src/data.vala

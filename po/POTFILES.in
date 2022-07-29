@@ -1,0 +1,8 @@
+data/blurble.desktop.in.in
+data/blurble.appdata.xml.in.in
+data/blurble.gschema.xml.in
+src/application.vala
+src/window.blp
+src/window.vala
+src/game-controller.vala
+src/data.vala
