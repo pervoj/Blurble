@@ -46,7 +46,7 @@ So if you want a new feature:
 Since this app is a word game, it is **very important** to make the word list
 localized.
 
-In the future I'll add the app to Damned Lies.
+The app can be translated on [Damned Lies](https://l10n.gnome.org/module/Blurble).
 
 ## 💻 Writing Code
 
