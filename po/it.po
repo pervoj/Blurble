@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blurble\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-22 14:09+0200\n"
-"PO-Revision-Date: 2022-07-20 14:00+0100\n"
+"POT-Creation-Date: 2022-07-29 18:40+0200\n"
+"PO-Revision-Date: 2022-07-29 10:19+0100\n"
 "Last-Translator: Michael Moroni <michaelmoroni@disroot.org>\n"
 "Language-Team: Italian <gnome-it-list@gnome.org>\n"
 "Language: it\n"
@@ -18,26 +18,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
-#: src/window.blp:5
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
+#: src/application.vala:88 src/window.blp:5
 msgid "Blurble"
 msgstr "Blurble"
 
-#: src/window.blp:37
-#, fuzzy
-msgid "Show keyboard"
+#: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+#: src/application.vala:89
+msgid "Word guessing game"
 msgstr ""
-"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};\n"
-"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {backspace};\n"
-"{z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {enter}"
+
+#: data/blurble.appdata.xml.in.in:12
+msgid "Solve the riddle until you run out of guesses!"
+msgstr ""
+
+#: data/blurble.appdata.xml.in.in:13
+msgid "The game is a clone of Wordle and made with localization in mind."
+msgstr ""
+
+#: data/blurble.appdata.xml.in.in:29
+msgid "Add Brazilian Portuguese translation (Rafael Fontenelle)"
+msgstr ""
+
+#: data/blurble.appdata.xml.in.in:30
+msgid "Add German translation (Jürgen Benvenuti)"
+msgstr ""
+
+#: data/blurble.appdata.xml.in.in:31
+msgid "Add Italian translation (Michael Moroni)"
+msgstr ""
+
+#: data/blurble.appdata.xml.in.in:32
+msgid "Add Spanish translation (Santiago Cézar)"
+msgstr ""
+
+#: data/blurble.appdata.xml.in.in:33
+msgid "Add main menu"
+msgstr ""
+
+#: data/blurble.appdata.xml.in.in:34
+msgid "Correct letter is marked only once (Santiago Cézar)"
+msgstr ""
+
+#: data/blurble.appdata.xml.in.in:40
+msgid "First release"
+msgstr ""
+
+#: data/blurble.appdata.xml.in.in:45
+msgid "Vojtěch Perník"
+msgstr ""
+
+#: data/blurble.gschema.xml.in:6 src/window.blp:37
+msgid "Show keyboard"
+msgstr "Mostra tastiera"
+
+#: src/application.vala:91
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr ""
+
+#. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
+#: src/application.vala:94
+msgid "translator-credits"
+msgstr ""
 
 #: src/window.blp:38
-#, fuzzy
 msgid "About Blurble"
-msgstr "Blurble"
+msgstr "Informazioni"
 
 #: src/window.blp:39
 msgid "Quit"
-msgstr ""
+msgstr "Chiudi"
 
 #: src/window.vala:63
 msgid "You won!"
