@@ -45,29 +45,62 @@ public class WG.Keyboard : Gtk.Box {
             foreach (string key in line.split (",")) {
                 string key_temp = key.strip ();
                 key_temp = key_temp.replace ("{", "").replace ("}", "");
+                string[] key_parts = key_temp.split ("/");
 
                 Gtk.Button btn;
 
-                if (key_temp == "enter") {
+                const int resize = 30; // magic number that just works
+                int size = 1;
+
+                if (key_parts[0] == "enter") {
                     btn = new Gtk.Button.from_icon_name ("keyboard-enter-symbolic");
+
                     btn.clicked.connect (() => {
                         if (!game_over) enter ();
                     });
-                } else if (key_temp == "backspace") {
+
+                    if (key_parts.length > 1) {
+                        size = int.parse (key_parts[1].strip ());
+                        if (!(size > 0)) size = 1;
+                    }
+                } else if (key_parts[0] == "backspace") {
                     btn = new Gtk.Button.from_icon_name ("entry-clear-symbolic");
+
                     btn.clicked.connect (() => {
                         if (!game_over) backspace ();
                     });
+
+                    if (key_parts.length > 1) {
+                        size = int.parse (key_parts[1].strip ());
+                        if (!(size > 0)) size = 1;
+                    }
                 } else {
-                    string[] key_parts = key_temp.split ("/");
-                    btn = new Gtk.Button.with_label (@"$(key_parts[0].strip ().up ())");
+                    btn = new Gtk.Button.with_label (key_parts[0].strip ().up ());
+
                     btn.clicked.connect (() => {
-                        if (!game_over) insert (key_parts[1].strip ());
+                        if (!game_over) {
+                            string to_insert = key_parts[0].strip ().down ();
+
+                            if (key_parts.length > 1) {
+                                to_insert = key_parts[1].strip ().down ();
+                            }
+
+                            insert (to_insert);
+                        }
                     });
+
+                    if (key_parts.length > 2) {
+                        size = int.parse (key_parts[2].strip ());
+                        if (!(size > 0)) size = 1;
+                    }
                 }
 
                 btn.can_focus = false;
                 btn.add_css_class ("key");
+
+                // (size * resize) - resize size-times
+                // ((size - 1) * 4) - include the box spacing into the size
+                btn.width_request = (size * resize) + ((size - 1) * 4);
 
                 box.append (btn);
             }
