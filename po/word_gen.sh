@@ -50,9 +50,16 @@ if [ ! -f "$DIC" ]; then
     error_dict_not_installed "$1"
 fi
 
-unmunch "$DIC" "$AFF" 2>/dev/null | grep -E '^.{5}$' \
-| sed -r 's/./&\//g;                
-          s/^(.*)\/$/"\1\\n"/g;
-          $s/\\n//;' \
-| tr '[:upper:]' '[:lower:]'                                \
-| sort | uniq
+filter_and_format() {
+    sed -r '
+    /^.{5}$/!d              # delete words without exactly 5 letters
+    s/[[:upper:]]*/\L&/g    # lowercase
+    s/./&\//g               # add slash between letters
+    s/^(.*)\/$/"\1\\n"/g    # add quotes and newline
+    '
+}
+
+unmunch "$DIC" "$AFF" 2>/dev/null | 
+filter_and_format |
+sort -u | 
+sed '$s/\\n"$/"/' # remove trailing newline
