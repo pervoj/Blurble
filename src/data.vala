@@ -19,21 +19,26 @@
 namespace WG.Data {
     public string get_keyboard () {
         /*
-         * A key is represented by braces, which contain displayed string, slash
-         * the string to add to cell.
-         *
-         * {a/a}
-         *
-         * There are also two special keys:
-         *
-         * {enter}, {backspace}
-         *
-         * Keys are divided by commas, lines by semicolons.
-         *
-         * {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
-         * {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
-         * {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
-         */
+         A key is represented by braces, which contain displayed string, slash
+         the string to add to cell.
+
+         {a/a}
+
+         There are also two special keys:
+
+         {enter}, {backspace}
+
+         You can also specify the size of the key by adding the size
+         information:
+
+         {a/a/1}, {enter/2}, {backspace/3}
+
+         Keys are divided by commas, lines by semicolons.
+
+         {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+         {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+         {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+        */
         string keyboard = C_("Game keyboard", "data-keyboard");
         if (keyboard == "data-keyboard")
             keyboard = @"
@@ -46,13 +51,13 @@ namespace WG.Data {
 
     public string get_replacements () {
         /*
-         * Each replacement on its own line. Original and its replacement divide
-         * with slash.
-         *
-         * á/a
-         * č/c
-         * …
-         */
+         Each replacement on its own line. Original and its replacement divide
+         with slash.
+
+         á/a
+         č/c
+         …
+        */
         string replacements = C_("Replaced letters", "data-replacements");
         if (replacements == "data-replacements") replacements = "";
         return replacements;
@@ -60,10 +65,10 @@ namespace WG.Data {
 
     public string get_available_letters () {
         /*
-         * Letters to be read from the keyboard.
-         *
-         * a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
-         */
+         Letters to be read from the keyboard.
+
+         a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+        */
         string letters = C_("Available letters", "data-letters");
         if (letters == "data-letters") letters = "a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z";
         return letters;
@@ -71,15 +76,15 @@ namespace WG.Data {
 
     public string get_dictionary () {
         /*
-         * All words have to be 5 letters long. Each word on its own line.
-         * Individual characters please divide with slash. The reason for this
-         * is that some letters are in unicode made of two characters.
-         *
-         * a/a/h/e/d
-         * a/a/l/i/i
-         * a/a/r/g/h
-         * …
-         */
+         All words have to be 5 letters long. Each word on its own line.
+         Individual characters please divide with slash. The reason for this
+         is that some letters are in unicode made of two characters.
+
+         a/a/h/e/d
+         a/a/l/i/i
+         a/a/r/g/h
+         …
+        */
         string dictionary = C_("List of available words", "data-dictionary");
         if (dictionary == "data-dictionary") dictionary = DICTIONARY;
         return dictionary;
