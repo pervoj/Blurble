@@ -46,7 +46,6 @@ if [ -z ${DICTS+x} ]; then
     error_no_dicts
 fi
 
-DICTS=~/Descargas
 DIC="$DICTS/$1.dic"
 AFF="$DICTS/$1.aff"
 
