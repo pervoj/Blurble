@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -ue
+TMP=$(mktemp -d)
 
 usage () {
     echo "Usage: $0 <DICTIONARY>"
@@ -43,11 +46,29 @@ if [ -z ${DICTS+x} ]; then
     error_no_dicts
 fi
 
+DICTS=~/Descargas
 DIC="$DICTS/$1.dic"
 AFF="$DICTS/$1.aff"
 
 if [ ! -f "$DIC" ]; then
     error_dict_not_installed "$1"
+fi
+
+# don't assume UTF-8
+SET=$(head -1 "$AFF")
+# luckily, .aff files begin with 'SET UTF-8' or whatever the encoding i·
+ENCODING=${SET##*[[:space:]]}
+
+if [ "$ENCODING" != "UTF-8" ]; then
+    echo "reencoding from $ENCODING to UTF-8" >&2
+    BDIC=$(basename "$DIC")
+    BAFF=$(basename "$AFF")
+
+    iconv "$DIC" -f "$ENCODING" -t 'UTF-8' -o "$TMP/$BDIC"
+    iconv "$AFF" -f "$ENCODING" -t 'UTF-8' -o "$TMP/$BAFF"
+
+    DIC="$TMP/$BDIC"
+    AFF="$TMP/$BAFF"
 fi
 
 filter_and_format() {
@@ -59,7 +80,9 @@ filter_and_format() {
     '
 }
 
-unmunch "$DIC" "$AFF" 2>/dev/null | 
+unmunch "$DIC" "$AFF" 2>/dev/null |
 filter_and_format |
 sort -u | 
 sed '$s/\\n"$/"/' # remove trailing newline
+
+rm -rf "$TMP"
