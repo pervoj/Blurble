@@ -96,6 +96,9 @@ msgstr "Uneko hitza: %s\n"
 msgctxt "Game keyboard"
 msgid "data-keyboard"
 msgstr ""
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {ñ/ñ};\n"
+"{enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}"
 
 #.
 #. Each replacement on its own line. Original and its replacement divide
@@ -108,7 +111,7 @@ msgstr ""
 #: src/data.vala:61
 msgctxt "Replaced letters"
 msgid "data-replacements"
-msgstr ""
+msgstr "data-replacements"
 
 #.
 #. Letters to be read from the keyboard.
@@ -118,7 +121,7 @@ msgstr ""
 #: src/data.vala:72
 msgctxt "Available letters"
 msgid "data-letters"
-msgstr ""
+msgstr "a/b/c/d/e/f/g/h/i/j/k/l/m/n/ñ/o/p/q/r/s/t/u/v/w/x/y/z"
 
 #.
 #. All words have to be 5 letters long. Each word on its own line.
