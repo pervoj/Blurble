@@ -99,11 +99,10 @@ msgstr "Jelenlegi szó: %s\n"
 msgctxt "Game keyboard"
 msgid "data-keyboard"
 msgstr ""
-"{0/0}, {1/1}, {2/2}, {3/3}, {4/4}, {5/5}, {6/6}, {7/7}, {8/8}, {9/9}, {ö/ö}, "
-"{ü/ü};{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {z/z}, {u/u}, {i/i}, {o/o}, {p/p}, "
-"{ő/ő}, {ú/ú};{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, "
-"{é/é}, {á/á}, {ű/ű};{í/í}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, "
-"{ó/ó}, {backspace}, {enter/2}"
+"{0/0}, {1/1}, {2/2}, {3/3}, {4/4}, {5/5}, {6/6}, {7/7}, {8/8}, {9/9}, {ö/ö}, {ü/ü};\n"
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {z/z}, {u/u}, {i/i}, {o/o}, {p/p}, {ő/ő}, {ú/ú};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {é/é}, {á/á}, {ű/ű};\n"
+"{í/í}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {ó/ó}, {backspace}, {enter/2}"
 
 #.
 #. Each replacement on its own line. Original and its replacement divide
@@ -116,7 +115,16 @@ msgstr ""
 #: src/data.vala:61
 msgctxt "Replaced letters"
 msgid "data-replacements"
-msgstr "á/aé/eí/ió/oö/oő/oú/uü/uű/u"
+msgstr ""
+"á/a\n"
+"é/e\n"
+"í/i\n"
+"ó/o\n"
+"ö/o\n"
+"ő/o\n"
+"ú/u\n"
+"ü/u\n"
+"ű/u"
 
 #.
 #. Letters to be read from the keyboard.
