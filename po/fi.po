@@ -1,0 +1,139 @@
+# Finnish translation for Blurble.
+# Copyright (C) 2022 Blurble's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Blurble package.
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Blurble main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
+"POT-Creation-Date: 2022-08-29 18:41+0000\n"
+"PO-Revision-Date: 2022-08-30 20:03+0300\n"
+"Last-Translator: \n"
+"Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
+#: src/application.vala:88 src/window.blp:5
+msgid "Blurble"
+msgstr "Blurble"
+
+#: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+#: src/application.vala:89
+msgid "Word guessing game"
+msgstr "Sananarvauspeli"
+
+#: data/blurble.appdata.xml.in.in:12
+msgid "Solve the riddle until you run out of guesses!"
+msgstr "Selvitä pulma ennen kuin arvaukset loppuvat!"
+
+#: data/blurble.appdata.xml.in.in:13
+msgid "The game is a clone of Wordle and made with localization in mind."
+msgstr "Peli on klooni Wordlesta ja toteutettu lokalisointi mielessä."
+
+#: data/blurble.appdata.xml.in.in:42
+msgid "Vojtěch Perník"
+msgstr "Vojtěch Perník"
+
+#: data/blurble.gschema.xml.in:6 src/window.blp:37
+msgid "Show keyboard"
+msgstr "Näytä näppäimistö"
+
+#: src/application.vala:91
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Tekijänoikeus © 2022 Vojtěch Perník"
+
+#. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
+#: src/application.vala:94
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
+#: src/window.vala:63
+msgid "You won!"
+msgstr "Voitit!"
+
+#: src/window.vala:63
+msgid "You lost!"
+msgstr "Hävisit!"
+
+#: src/window.blp:38
+msgid "About Blurble"
+msgstr "Tietoja - Blurble"
+
+#: src/window.blp:39
+msgid "Quit"
+msgstr "Lopeta"
+
+#: src/game-controller.vala:37
+#, c-format
+msgid "Current word: %s\n"
+msgstr "Nykyinen sana: %s\n"
+
+#.
+#. A key is represented by braces, which contain displayed string, slash
+#. the string to add to cell.
+#.
+#. {a/a}
+#.
+#. There are also two special keys:
+#.
+#. {enter}, {backspace}
+#.
+#. You can also specify the size of the key by adding the size
+#. information:
+#.
+#. {a/a/1}, {enter/2}, {backspace/3}
+#.
+#. Keys are divided by commas, lines by semicolons.
+#.
+#. {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+#. {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+#. {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#.
+#: src/data.vala:42
+msgctxt "Game keyboard"
+msgid "data-keyboard"
+msgstr ""
+
+#.
+#. Each replacement on its own line. Original and its replacement divide
+#. with slash.
+#.
+#. á/a
+#. č/c
+#. …
+#.
+#: src/data.vala:61
+msgctxt "Replaced letters"
+msgid "data-replacements"
+msgstr ""
+
+#.
+#. Letters to be read from the keyboard.
+#.
+#. a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#.
+#: src/data.vala:72
+msgctxt "Available letters"
+msgid "data-letters"
+msgstr ""
+
+#.
+#. All words have to be 5 letters long. Each word on its own line.
+#. Individual characters please divide with slash. The reason for this
+#. is that some letters are in unicode made of two characters.
+#.
+#. a/a/h/e/d
+#. a/a/l/i/i
+#. a/a/r/g/h
+#. …
+#.
+#: src/data.vala:88
+msgctxt "List of available words"
+msgid "data-dictionary"
+msgstr ""
