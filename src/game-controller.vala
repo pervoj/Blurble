@@ -17,8 +17,9 @@
  */
 
 public class WG.GameController : Object {
-    public string[] correct_word;
-    public List<string> dictionary = DataParser.dictionary ();
+    public string correct_word_notreplaced { get; private set; }
+    public string[] correct_word { get; private set; }
+    private List<string> dictionary = DataParser.dictionary ();
 
     public Grid grid { get; construct; }
     public Gtk.EventControllerKey event { get; construct; }
@@ -31,12 +32,17 @@ public class WG.GameController : Object {
             event: new Gtk.EventControllerKey ()
         );
 
-        int32 word = Random.int_range (0, (int32) dictionary.length ());
-        correct_word = DataParser.replace (dictionary.nth_data ((uint) word)).split ("/");
+        int32 word_index = Random.int_range (0, (int32) dictionary.length ());
+        correct_word_notreplaced = dictionary.nth_data ((uint) word_index);
+        correct_word = DataParser.replace (correct_word_notreplaced).split ("/");
 
-        debug (_("Current word: %s\n"), dictionary.nth_data ((uint) word).replace ("/", ""));
+        debug (_("Current word: %s\n"), get_word ());
 
         event.key_pressed.connect (key_pressed);
+    }
+
+    public string get_word () {
+        return correct_word_notreplaced.replace ("/", "");
     }
 
     private bool word_exist () {

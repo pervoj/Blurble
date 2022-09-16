@@ -60,7 +60,9 @@ public class WG.Window : Adw.ApplicationWindow {
             Gtk.DialogFlags.MODAL,
             Gtk.MessageType.INFO,
             Gtk.ButtonsType.OK,
-            win ? _("You won!") : _("You lost!")
+            win ?
+                _("You won!") :
+                _("You lost! The word was: %s").printf (gc.get_word ())
         );
 
         dialog.response.connect (close);
