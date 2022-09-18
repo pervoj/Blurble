@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-08-29 18:40+0000\n"
-"PO-Revision-Date: 2022-09-10 21:06+0200\n"
+"POT-Creation-Date: 2022-09-16 14:30+0000\n"
+"PO-Revision-Date: 2022-09-18 08:32+0200\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -53,13 +53,14 @@ msgstr "Copyright © 2022 Vojtěch Perník"
 msgid "translator-credits"
 msgstr "Úr Balázs <ur dot balazs at fsf dot hu>, 2022."
 
-#: src/window.vala:63
+#: src/window.vala:64
 msgid "You won!"
 msgstr "Ön nyert!"
 
-#: src/window.vala:63
-msgid "You lost!"
-msgstr "Ön vesztett!"
+#: src/window.vala:65
+#, c-format
+msgid "You lost! The word was: %s"
+msgstr "Ön vesztett! Ez volt a szó: %s"
 
 #: src/window.blp:38
 msgid "About Blurble"
@@ -69,7 +70,7 @@ msgstr "A Blurble névjegye"
 msgid "Quit"
 msgstr "Kilépés"
 
-#: src/game-controller.vala:37
+#: src/game-controller.vala:39
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Jelenlegi szó: %s\n"
@@ -99,10 +100,14 @@ msgstr "Jelenlegi szó: %s\n"
 msgctxt "Game keyboard"
 msgid "data-keyboard"
 msgstr ""
-"{0/0}, {1/1}, {2/2}, {3/3}, {4/4}, {5/5}, {6/6}, {7/7}, {8/8}, {9/9}, {ö/ö}, {ü/ü};\n"
-"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {z/z}, {u/u}, {i/i}, {o/o}, {p/p}, {ő/ő}, {ú/ú};\n"
-"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {é/é}, {á/á}, {ű/ű};\n"
-"{í/í}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {ó/ó}, {backspace}, {enter/2}"
+"{0/0}, {1/1}, {2/2}, {3/3}, {4/4}, {5/5}, {6/6}, {7/7}, {8/8}, {9/9}, {ö/ö}, "
+"{ü/ü};\n"
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {z/z}, {u/u}, {i/i}, {o/o}, {p/p}, {ő/ő}, "
+"{ú/ú};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {é/é}, {á/á}, "
+"{ű/ű};\n"
+"{í/í}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {ó/ó}, {backspace}, "
+"{enter/2}"
 
 #.
 #. Each replacement on its own line. Original and its replacement divide
