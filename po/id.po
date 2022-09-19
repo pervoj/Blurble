@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-09-10 19:13+0000\n"
-"PO-Revision-Date: 2022-09-14 15:41+0700\n"
+"POT-Creation-Date: 2022-09-16 14:30+0000\n"
+"PO-Revision-Date: 2022-09-19 09:50+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -33,7 +33,9 @@ msgstr "Pecahkan teka-teki sampai Anda kehabisan tebakan!"
 
 #: data/blurble.appdata.xml.in.in:13
 msgid "The game is a clone of Wordle and made with localization in mind."
-msgstr "Permainan ini adalah tiruan dari Wordle dan dibuat dengan mempertimbangkan pelokalan."
+msgstr ""
+"Permainan ini adalah tiruan dari Wordle dan dibuat dengan mempertimbangkan "
+"pelokalan."
 
 #: data/blurble.appdata.xml.in.in:42
 msgid "Vojtěch Perník"
@@ -52,13 +54,14 @@ msgstr "Hak Cipta © 2022 Vojtěch Perník"
 msgid "translator-credits"
 msgstr "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2022."
 
-#: src/window.vala:63
+#: src/window.vala:64
 msgid "You won!"
 msgstr "Anda menang!"
 
-#: src/window.vala:63
-msgid "You lost!"
-msgstr "Anda kalah!"
+#: src/window.vala:65
+#, c-format
+msgid "You lost! The word was: %s"
+msgstr "Anda kalah! Kata itu adalah: %s"
 
 #: src/window.blp:38
 msgid "About Blurble"
@@ -68,7 +71,7 @@ msgstr "Tentang Blurble"
 msgid "Quit"
 msgstr "Keluar"
 
-#: src/game-controller.vala:37
+#: src/game-controller.vala:39
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Kata saat ini: %s\n"
@@ -136,3 +139,6 @@ msgstr "data-huruf"
 msgctxt "List of available words"
 msgid "data-dictionary"
 msgstr "data-kamus"
+
+#~ msgid "You lost!"
+#~ msgstr "Anda kalah!"
