@@ -1,4 +1,4 @@
 .cell {
-    border: 1px solid @window_fg_color;
-    box-shadow: none;
+  border: 1px solid @window_fg_color;
+  box-shadow: none;
 }

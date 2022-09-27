@@ -51,16 +51,16 @@ public class WG.Application : Adw.Application {
         base.activate ();
 
         Gdk.Display? display = Gdk.Display.get_default ();
-		assert (display != null);
+        assert (display != null);
 
         var css_provider = new Gtk.CssProvider ();
         css_provider.load_from_resource (Constants.RESOURCE_PATH_PREFIX + "/style.css");
-		Gtk.StyleContext.add_provider_for_display (display, css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_display (display, css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-		css_provider_hc.load_from_resource (Constants.RESOURCE_PATH_PREFIX + "/style-hc.css");
+        css_provider_hc.load_from_resource (Constants.RESOURCE_PATH_PREFIX + "/style-hc.css");
 
-		set_high_contrast ();
-		this.style_manager.notify["high-contrast"].connect (set_high_contrast);
+        set_high_contrast ();
+        this.style_manager.notify["high-contrast"].connect (set_high_contrast);
 
         var win = this.active_window;
         if (win == null) {
@@ -101,12 +101,12 @@ public class WG.Application : Adw.Application {
 
     private void set_high_contrast () {
         Gdk.Display? display = Gdk.Display.get_default ();
-		assert (display != null);
+        assert (display != null);
 
         if (this.style_manager.high_contrast) {
-		    Gtk.StyleContext.add_provider_for_display (display, css_provider_hc, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-		} else {
-		    Gtk.StyleContext.remove_provider_for_display (display, css_provider_hc);
-		}
+            Gtk.StyleContext.add_provider_for_display (display, css_provider_hc, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        } else {
+            Gtk.StyleContext.remove_provider_for_display (display, css_provider_hc);
+        }
     }
 }
