@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blurble\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-07-29 15:59+0000\n"
-"PO-Revision-Date: 2022-07-29 19:19+0200\n"
+"POT-Creation-Date: 2022-09-16 14:30+0000\n"
+"PO-Revision-Date: 2022-09-17 10:58+0200\n"
 "Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -36,7 +36,7 @@ msgstr "Lösen Sie das Rätsel, bis Ihnen die Ratemöglichkeiten ausgehen!"
 msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr "Das Spiel ist ein Klon von Wordle und auf Übersetzbarkeit ausgelegt."
 
-#: data/blurble.appdata.xml.in.in:45
+#: data/blurble.appdata.xml.in.in:42
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
@@ -53,6 +53,15 @@ msgstr "Copyright © 2022 Vojtěch Perník"
 msgid "translator-credits"
 msgstr "Jürgen Benvenuti <gastornis@posteo.org>, 2022"
 
+#: src/window.vala:64
+msgid "You won!"
+msgstr "Sie haben gewonnen!"
+
+#: src/window.vala:65
+#, c-format
+msgid "You lost! The word was: %s"
+msgstr "Sie haben verloren! Das Wort war: %s"
+
 #: src/window.blp:38
 msgid "About Blurble"
 msgstr "Info zu Blurble"
@@ -61,36 +70,33 @@ msgstr "Info zu Blurble"
 msgid "Quit"
 msgstr "Beenden"
 
-#: src/window.vala:63
-msgid "You won!"
-msgstr "Sie haben gewonnen!"
-
-#: src/window.vala:63
-msgid "You lost!"
-msgstr "Sie haben verloren!"
-
-#: src/game-controller.vala:37
+#: src/game-controller.vala:39
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Aktuelles Wort: %s\n"
 
 #.
-#. * A key is represented by braces, which contain displayed string, slash
-#. * the string to add to cell.
-#. *
-#. * {a/a}
-#. *
-#. * There are also two special keys:
-#. *
-#. * {enter}, {backspace}
-#. *
-#. * Keys are divided by commas, lines by semicolons.
-#. *
-#. * {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
-#. * {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
-#. * {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#. A key is represented by braces, which contain displayed string, slash
+#. the string to add to cell.
 #.
-#: src/data.vala:37
+#. {a/a}
+#.
+#. There are also two special keys:
+#.
+#. {enter}, {backspace}
+#.
+#. You can also specify the size of the key by adding the size
+#. information:
+#.
+#. {a/a/1}, {enter/2}, {backspace/3}
+#.
+#. Keys are divided by commas, lines by semicolons.
+#.
+#. {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+#. {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+#. {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#.
+#: src/data.vala:42
 msgctxt "Game keyboard"
 msgid "data-keyboard"
 msgstr ""
@@ -102,39 +108,39 @@ msgstr ""
 
 # Hier muss im Deutschen nichts geändert werden. - jb
 #.
-#. * Each replacement on its own line. Original and its replacement divide
-#. * with slash.
-#. *
-#. * á/a
-#. * č/c
-#. * …
+#. Each replacement on its own line. Original and its replacement divide
+#. with slash.
 #.
-#: src/data.vala:56
+#. á/a
+#. č/c
+#. …
+#.
+#: src/data.vala:61
 msgctxt "Replaced letters"
 msgid "data-replacements"
 msgstr "data-replacements"
 
 #.
-#. * Letters to be read from the keyboard.
-#. *
-#. * a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#. Letters to be read from the keyboard.
 #.
-#: src/data.vala:67
+#. a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#.
+#: src/data.vala:72
 msgctxt "Available letters"
 msgid "data-letters"
 msgstr "a/ä/b/c/d/e/f/g/h/i/j/k/l/m/n/o/ö/p/q/r/s/ß/t/u/ü/v/w/x/y/z"
 
 #.
-#. * All words have to be 5 letters long. Each word on its own line.
-#. * Individual characters please divide with slash. The reason for this
-#. * is that some letters are in unicode made of two characters.
-#. *
-#. * a/a/h/e/d
-#. * a/a/l/i/i
-#. * a/a/r/g/h
-#. * …
+#. All words have to be 5 letters long. Each word on its own line.
+#. Individual characters please divide with slash. The reason for this
+#. is that some letters are in unicode made of two characters.
 #.
-#: src/data.vala:83
+#. a/a/h/e/d
+#. a/a/l/i/i
+#. a/a/r/g/h
+#. …
+#.
+#: src/data.vala:88
 msgctxt "List of available words"
 msgid "data-dictionary"
 msgstr ""
@@ -2414,3 +2420,6 @@ msgstr ""
 "n/ä/g/e/l\n"
 "a/r/s/e/n\n"
 "f/a/u/s/t"
+
+#~ msgid "You lost!"
+#~ msgstr "Sie haben verloren!"

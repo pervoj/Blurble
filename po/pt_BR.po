@@ -2,23 +2,23 @@
 # Traduções em português brasileiro para o pacote blurble.
 # Copyright (C) 2022 THE blurble'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the blurble package.
-# Rafael Fontenelle <rafaelff@gnome.org>, 2022.
 # Enrico Nicoletto <hiko@duck.com>, 2022.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: blurble\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-07-29 15:59+0000\n"
-"PO-Revision-Date: 2022-09-05 22:11-0300\n"
-"Last-Translator: Enrico Nicoletto <hiko@duck.com>\n"
+"POT-Creation-Date: 2022-09-16 14:30+0000\n"
+"PO-Revision-Date: 2022-09-20 23:27-0300\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
 #: src/application.vala:88 src/window.blp:5
@@ -36,9 +36,11 @@ msgstr "Resolva o enigma até ficar sem palpites!"
 
 #: data/blurble.appdata.xml.in.in:13
 msgid "The game is a clone of Wordle and made with localization in mind."
-msgstr "O jogo é um clone do Wordle (jogo de palavras) e feito com a localização em mente."
+msgstr ""
+"O jogo é um clone do Wordle (jogo de palavras) e feito com a localização em "
+"mente."
 
-#: data/blurble.appdata.xml.in.in:45
+#: data/blurble.appdata.xml.in.in:42
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
@@ -57,6 +59,15 @@ msgstr ""
 "Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Enrico Nicoletto <hiko@duck.com>"
 
+#: src/window.vala:64
+msgid "You won!"
+msgstr "Você conseguiu!"
+
+#: src/window.vala:65
+#, c-format
+msgid "You lost! The word was: %s"
+msgstr "Você perdeu! A palavra era: %s"
+
 #: src/window.blp:38
 msgid "About Blurble"
 msgstr "Sobre o Blurble"
@@ -65,36 +76,33 @@ msgstr "Sobre o Blurble"
 msgid "Quit"
 msgstr "Sair"
 
-#: src/window.vala:63
-msgid "You won!"
-msgstr "Você conseguiu!"
-
-#: src/window.vala:63
-msgid "You lost!"
-msgstr "Você perdeu!"
-
-#: src/game-controller.vala:37
+#: src/game-controller.vala:39
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Palavra atual: %s\n"
 
 #.
-#. * A key is represented by braces, which contain displayed string, slash
-#. * the string to add to cell.
-#. *
-#. * {a/a}
-#. *
-#. * There are also two special keys:
-#. *
-#. * {enter}, {backspace}
-#. *
-#. * Keys are divided by commas, lines by semicolons.
-#. *
-#. * {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
-#. * {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
-#. * {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#. A key is represented by braces, which contain displayed string, slash
+#. the string to add to cell.
 #.
-#: src/data.vala:37
+#. {a/a}
+#.
+#. There are also two special keys:
+#.
+#. {enter}, {backspace}
+#.
+#. You can also specify the size of the key by adding the size
+#. information:
+#.
+#. {a/a/1}, {enter/2}, {backspace/3}
+#.
+#. Keys are divided by commas, lines by semicolons.
+#.
+#. {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+#. {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+#. {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#.
+#: src/data.vala:42
 msgctxt "Game keyboard"
 msgid "data-keyboard"
 msgstr ""
@@ -103,14 +111,14 @@ msgstr ""
 "{z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {enter}"
 
 #.
-#. * Each replacement on its own line. Original and its replacement divide
-#. * with slash.
-#. *
-#. * á/a
-#. * č/c
-#. * …
+#. Each replacement on its own line. Original and its replacement divide
+#. with slash.
 #.
-#: src/data.vala:56
+#. á/a
+#. č/c
+#. …
+#.
+#: src/data.vala:61
 msgctxt "Replaced letters"
 msgid "data-replacements"
 msgstr ""
@@ -137,11 +145,11 @@ msgstr ""
 "ç/c"
 
 #.
-#. * Letters to be read from the keyboard.
-#. *
-#. * a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#. Letters to be read from the keyboard.
 #.
-#: src/data.vala:67
+#. a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#.
+#: src/data.vala:72
 msgctxt "Available letters"
 msgid "data-letters"
 msgstr "a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z"
@@ -155,16 +163,16 @@ msgstr "a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z"
 # In pt_BR, the following command was used to use https://term.ooo's database (MIT license)
 #    curl https://raw.githubusercontent.com/fserb/pt-br/master/palavras | grep -o -w "\w\{5\}" | sed 's/./&\//g;s/\/$//' > output.txt
 #.
-#. * All words have to be 5 letters long. Each word on its own line.
-#. * Individual characters please divide with slash. The reason for this
-#. * is that some letters are in unicode made of two characters.
-#. *
-#. * a/a/h/e/d
-#. * a/a/l/i/i
-#. * a/a/r/g/h
-#. * …
+#. All words have to be 5 letters long. Each word on its own line.
+#. Individual characters please divide with slash. The reason for this
+#. is that some letters are in unicode made of two characters.
 #.
-#: src/data.vala:83
+#. a/a/h/e/d
+#. a/a/l/i/i
+#. a/a/r/g/h
+#. …
+#.
+#: src/data.vala:88
 msgctxt "List of available words"
 msgid "data-dictionary"
 msgstr ""
@@ -19250,3 +19258,6 @@ msgstr ""
 "ú/v/i/d/a\n"
 "ú/v/i/d/o\n"
 "ú/v/u/l/a"
+
+#~ msgid "You lost!"
+#~ msgstr "Você perdeu!"
