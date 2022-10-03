@@ -29,9 +29,11 @@ public class WG.Application : Adw.Application {
 
     construct {
         ActionEntry[] action_entries = {
-            { "about", this.on_about_action }
+            { "about", this.on_about_action },
+            { "quit", this.quit }
         };
         this.add_action_entries (action_entries, this);
+        this.set_accels_for_action ("app.quit", {"<primary>q"});
 
         this.add_action (settings.create_action ("show-keyboard"));
 
