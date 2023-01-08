@@ -1,0 +1,133 @@
+# Friulian translation for Blurble.
+# Copyright (C) 2023 Blurble's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Blurble package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Blurble main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
+"POT-Creation-Date: 2022-12-08 17:59+0000\n"
+"PO-Revision-Date: 2023-01-08 12:56+0000\n"
+"Last-Translator: Fabio T. <f.t.public@gmail.com>\n"
+"Language-Team: Friulian <f.t.public@gmail.com>\n"
+"Language: fur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Editor: HaiPO 1.4 beta\n"
+
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
+#: src/application.vala:88 src/window.blp:5
+msgid "Blurble"
+msgstr "Blurble"
+
+#: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+msgid "Word guessing game"
+msgstr "Zûc di induvinâ peraulis"
+
+#: data/blurble.appdata.xml.in.in:12
+msgid "Solve the riddle until you run out of guesses!"
+msgstr "Risolf l'induvinel fintremai che no tu finissis lis pussibilitâts!"
+
+#: data/blurble.appdata.xml.in.in:13
+msgid "The game is a clone of Wordle and made with localization in mind."
+msgstr ""
+"Chest zûc al è un clon di Wordle e creât tignint iniments la localizazion."
+
+#: data/blurble.appdata.xml.in.in:42
+msgid "Vojtěch Perník"
+msgstr "Vojtěch Perník"
+
+#: data/blurble.gschema.xml.in:6 src/window.blp:37
+msgid "Show keyboard"
+msgstr "Mostre tastiere"
+
+#. Translators: Here write your names, or leave it empty. Each name on new
+#. line. You can also add email (John Doe <j.doe@example.com>). Do not
+#. translate literally!
+#: src/application.vala:93
+msgid "translator-credits"
+msgstr "Fabio Tomat <f.t.public@gmail.com>"
+
+#: src/application.vala:94
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Copyright © 2022 Vojtěch Perník"
+
+#: src/window.vala:64
+msgid "You won!"
+msgstr "Tu âs vinçût!"
+
+#: src/window.vala:65
+#, c-format
+msgid "You lost! The word was: %s"
+msgstr "Tu âs pierdût! La peraule e jere: %s"
+
+#: src/window.blp:38
+msgid "About Blurble"
+msgstr "Informazions su Blurble"
+
+#: src/game-controller.vala:39
+#, c-format
+msgid "Current word: %s\n"
+msgstr "Peraule atuâl: %s\n"
+
+#. A key is represented by braces, which contain displayed string, slash
+#. the string to add to cell.
+#. {a/a}
+#. There are also two special keys:
+#. {enter}, {backspace}
+#. You can also specify the size of the key by adding the size
+#. information:
+#. {a/a/1}, {enter/2}, {backspace/3}
+#. Keys are divided by commas, lines by semicolons.
+#. {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+#. {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+#. {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#: src/data.vala:42
+msgctxt "Game keyboard"
+msgid "data-keyboard"
+msgstr ""
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p}, {backspace};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {enter} ;\n"
+"{z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}"
+
+#. Each replacement on its own line. Original and its replacement divide
+#. with slash.
+#. á/a
+#. č/c
+#. …
+#: src/data.vala:61
+msgctxt "Replaced letters"
+msgid "data-replacements"
+msgstr ""
+"à/a\n"
+"â/a\n"
+"è/e\n"
+"ê/e\n"
+"ì/i\n"
+"î/i\n"
+"ò/o\n"
+"ô/o\n"
+"ù/u\n"
+"û/u\n"
+"ç/c"
+
+#. Letters to be read from the keyboard.
+#. a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#: src/data.vala:72
+msgctxt "Available letters"
+msgid "data-letters"
+msgstr "a/à/b/c/d/e/è/f/g/h/i/ì/j/k/l/m/n/o/ò/p/q/r/s//t/u/ù/v/w/x/y/z"
+
+#. All words have to be 5 letters long. Each word on its own line.
+#. Individual characters please divide with slash. The reason for this
+#. is that some letters are in unicode made of two characters.
+#. a/a/h/e/d
+#. a/a/l/i/i
+#. a/a/r/g/h
+#. …
+#: src/data.vala:88
+msgctxt "List of available words"
+msgid "data-dictionary"
+msgstr ""
