@@ -1,3 +1,5 @@
-_build/
 subprojects/blueprint-compiler/
+_build/
+.flatpak/
+.vscode/
 po/blurble.pot
