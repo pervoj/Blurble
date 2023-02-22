@@ -24,15 +24,81 @@ public enum WG.CellState {
     NONE
 }
 
-public class WG.Grid : Gtk.Grid {
+public class WG.Cell : Adw.Bin {
+    public string content { get; set; default = ""; }
+    public CellState state { get; set; default = CellState.NONE; }
+    public bool focused { get; set; default = false; }
+
+    construct {
+        add_css_class ("cell");
+
+        var label = new Gtk.Label (content);
+        this.child = label;
+        bind_property ("content", label, "label", BindingFlags.DEFAULT);
+
+        notify["state"].connect (update_styles);
+        notify["focused"].connect (update_styles);
+        update_styles ();
+    }
+
+    private void update_styles () {
+        remove_css_class ("focused");
+        remove_css_class ("correct");
+        remove_css_class ("wrong");
+        remove_css_class ("position");
+        remove_css_class ("unknown");
+
+        if (focused) add_css_class ("focused");
+
+        switch (state) {
+            case CellState.CORRECT:
+                add_css_class ("correct");
+                break;
+            case CellState.WRONG:
+                add_css_class ("wrong");
+                break;
+            case CellState.WRONG_POSITION:
+                add_css_class ("position");
+                break;
+            case CellState.UNKNOWN:
+                add_css_class ("unknown");
+                break;
+            case CellState.NONE:
+                break;
+        }
+    }
+}
+
+public class WG.Grid : Adw.Bin {
     private int active_x = 0;
     private int active_y = 0;
 
-    public Grid () {
-        style ();
+    private Gtk.Grid grid = new Gtk.Grid ();
+
+    construct {
+        this.focusable = true;
+        this.can_focus = true;
+
+        add_css_class ("letter-grid");
+
+        margin_top = 10;
+        margin_bottom = 10;
+        margin_start = 10;
+        margin_end = 10;
+        halign = Gtk.Align.CENTER;
+        hexpand = true;
+        valign = Gtk.Align.CENTER;
+        vexpand = true;
+
+        this.child = grid;
+        grid.column_homogeneous = true;
+        grid.row_homogeneous = true;
+        grid.column_spacing = 6;
+        grid.row_spacing = 6;
+
         fill ();
     }
-    
+
     public void active_dimensions (out int x, out int y) {
         x = active_x;
         y = active_y;
@@ -46,18 +112,18 @@ public class WG.Grid : Gtk.Grid {
         return active_x;
     }
 
-    public Gtk.Label cell (int x, int y) {
-        return (Gtk.Label) get_child_at (x, y);
+    public Cell cell (int x, int y) {
+        return (Cell) grid.get_child_at (x, y);
     }
 
-    public Gtk.Label active_cell () {
+    public Cell active_cell () {
         return cell (active_x, active_y);
     }
 
     public string[] get_row () {
         string[] row = {};
         for (int x = 0; x < 5; x++) {
-            row += cell (x, active_y).label.down ();
+            row += cell (x, active_y).content.down ();
         }
         return row;
     }
@@ -76,78 +142,58 @@ public class WG.Grid : Gtk.Grid {
     }
 
     public void set_cell_state (int x, int y, CellState state) {
-        Gtk.Label cell = this.cell (x, y);
-        cell.remove_css_class ("correct");
-        cell.remove_css_class ("wrong");
-        cell.remove_css_class ("position");
-        cell.remove_css_class ("unknown");
-        switch (state) {
-            case CellState.CORRECT:
-                cell.add_css_class ("correct");
-                break;
-            case CellState.WRONG:
-                cell.add_css_class ("wrong");
-                break;
-            case CellState.WRONG_POSITION:
-                cell.add_css_class ("position");
-                break;
-            case CellState.UNKNOWN:
-                cell.add_css_class ("unknown");
-                break;
-            case CellState.NONE:
-                break;
-        }
+        cell (x, y).state = state;
     }
 
     public CellState get_cell_state (int x, int y) {
-        Gtk.Label cell = this.cell (x, y);
-        if (cell.has_css_class ("correct")) return CellState.CORRECT;
-        else if (cell.has_css_class ("wrong")) return CellState.WRONG;
-        else if (cell.has_css_class ("position")) return CellState.WRONG_POSITION;
-        else if (cell.has_css_class ("unknown")) return CellState.UNKNOWN;
-        return CellState.NONE;
+        return cell (x, y).state;
     }
 
     public void backspace () {
         if (active_x == 0) return;
+        Cell cell;
+        if (active_x < 5) {
+            cell = active_cell ();
+            cell.focused = false;
+        }
+
         active_x--;
-        active_cell ().label = "";
+        cell = active_cell ();
+        cell.content = "";
+        cell.focused = true;
     }
     
     public void insert (string text) {
         if (active_x == 5) return;
-        active_cell ().label = text;
+        var cell = active_cell ();
+        cell.content = text;
+        cell.focused = false;
+
         active_x++;
+        if (active_x < 5) {
+            cell = active_cell ();
+            cell.focused = true;
+        }
     }
 
     public void next_row () {
         if (active_y == 5) return;
+        var cell = active_cell ();
+        cell.focused = false;
+
         active_x = 0;
         active_y++;
+        cell = active_cell ();
+        cell.focused = true;
     }
     
     private void fill () {
         for (int y = 0; y < 6; y++) {
             for (int x = 0; x < 5; x++) {
-                Gtk.Label cell = new Gtk.Label ("");
-                attach (cell, x, y);
-                cell.add_css_class ("cell");
+                grid.attach (new Cell (), x, y);
             }
         }
-    }
 
-    private void style () {
-        column_homogeneous = true;
-        row_homogeneous = true;
-        column_spacing = 6;
-        row_spacing = 6;
-        margin_top = 10;
-        margin_bottom = 10;
-        margin_start = 10;
-        margin_end = 10;
-        halign = Gtk.Align.CENTER;
-        hexpand = true;
-        valign = Gtk.Align.CENTER;
-        vexpand = true;
+        active_cell ().focused = true;
     }
 }

@@ -2,3 +2,7 @@
   border: 1px solid @window_fg_color;
   box-shadow: none;
 }
+
+.letter-grid:focus .cell.focused {
+  outline: 2px solid @accent_color;
+}

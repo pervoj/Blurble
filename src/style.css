@@ -1,3 +1,7 @@
+.letter-grid:focus .cell.focused {
+  border-color: alpha(@accent_color, 0.5);
+}
+
 .cell {
   min-width: 2.6rem;
   min-height: 2.6rem;
@@ -8,6 +12,7 @@
   box-shadow: 0 0.125rem 0.25rem @card_shade_color;
   background-color: @card_bg_color;
   color: @card_fg_color;
+  outline-offset: -2px;
   transition: all 0.2s ease;
 }
 
@@ -24,10 +29,9 @@
 }
 
 .cell.wrong {
-  background-color: @window_fg_color;
+  background-color: alpha(@window_fg_color, 0.4);
   color: @window_bg_color;
   border-color: @card_shade_color;
-  opacity: 0.4;
 }
 
 .cell.unknown {
