@@ -16,126 +16,87 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class WG.GameController : Object {
+public class WG.GameController : Adw.Bin {
     public DataParser.Word correct_word { get; private set; }
     private DataParser.Word[] dictionary = DataParser.get_dictionary ();
 
-    public Grid grid { get; construct; }
-    public Gtk.EventControllerKey event { get; construct; }
-
     public signal void game_over (bool win);
 
-    public GameController () {
-        Object (
-            grid: new Grid (),
-            event: new Gtk.EventControllerKey ()
-        );
+    private Grid grid = new Grid ();
 
+    public GameController () {
         int32 word_index = Random.int_range (0, (int32) dictionary.length);
         correct_word = dictionary[(uint) word_index];
 
         debug (_("Current word: %s\n"), correct_word.word);
-
-        event.key_pressed.connect (key_pressed);
     }
 
-    private bool word_exist () {
-        string word = string.joinv ("/", grid.get_row ());
-        foreach (var current_word in dictionary) {
-            if (word == current_word.replaced) return true;
-        }
-        return false;
+    construct {
+        this.child = grid;
+
+        grid.confirmed.connect (check_word);
+        grid.game_over.connect ((win) => { game_over (win); });
     }
 
-    private bool check_word () {
-        string?[] written_word = grid.get_row ();
-
-        int y = grid.active_row ();
-
-        bool correct = true;
-
-        if (!word_exist ()) {
-            for (int x = 0; x < 5; x++) {
-                grid.set_cell_state (x, y, CellState.UNKNOWN);
-            }
-            return false;
+    private List<CellState> check_word (string[] written_word) {
+        if (!DataParser.check_if_word_exists (written_word)) {
+            return new List<CellState> ();
         }
+
+        var res_table = new HashTable<int, CellState> (null, null);
 
         // make a copy to keep the unmatched letters, (with CellState.WRONG)
         string?[] remaining_word = correct_word.characters.copy ();
 
         // find exact matches
-        for (int x = 0; x < 5; x++) {
-            string correct_cell = correct_word.characters[x];
-            string written_cell = written_word[x];
+        for (int i = 0; i < written_word.length; i++) {
+            string correct_cell = correct_word.characters[i];
+            string written_cell = written_word[i];
 
             if (written_cell == correct_cell) {
-                grid.set_cell_state (x, y, CellState.CORRECT);
+                res_table.set (i, CellState.CORRECT);
                 // match found, remove it from the remaining array
-                remaining_word[x] = null;
-                written_word[x] = null;
+                remaining_word[i] = null;
+                written_word[i] = null;
             } else {
-                grid.set_cell_state (x, y, CellState.WRONG);
-                correct = false;
+                res_table.set (i, CellState.WRONG);
             }
         }
 
-        for (int wx = 0; wx < 5; wx++) { // for each letter guessed
-            if (written_word[wx] == null) continue;
+        for (int w = 0; w < 5; w++) { // for each letter guessed
+            if (written_word[w] == null) continue;
 
-            for (int rx = 0; rx < 5; rx++) { // find the first matching remaining letter
-                if (written_word[wx] == remaining_word[rx]) {
-                    grid.set_cell_state (wx, y, CellState.WRONG_POSITION);
+            for (int r = 0; r < 5; r++) { // find the first matching remaining letter
+                if (written_word[w] == remaining_word[r]) {
+                    res_table.set (w, CellState.WRONG_POSITION);
                     // match found, remove it
-                    remaining_word[rx] = null;
+                    remaining_word[r] = null;
                     break;
                 }
             }
         }
 
-        return correct;
+        var keys = res_table.get_keys ();
+        keys.sort ((a, b) => {
+            return (int) (a > b) - (int) (a < b);
+        });
+
+        var res = new List<CellState> ();
+        foreach (int i in keys) {
+            res.append (res_table.get (i));
+        }
+        return res;
     }
 
-    private bool key_pressed (uint val, uint code, Gdk.ModifierType state) {
-        if (val == Gdk.Key.BackSpace || val == Gdk.Key.Delete) {
-            backspace ();
-            return true;
-        }
-
-        if (val == Gdk.Key.Return) {
-            enter ();
-            return true;
-        }
-
-        insert (((unichar) val).to_string ());
-        return true;
-    }
-
-    public void insert (string cell) {
-        if (!(cell.down () in Data.get_available_letters ().split ("/"))) return;
-        grid.reset_row_state ();
-        grid.insert (cell.up ());
+    public void insert (string text) {
+        grid.insert (text);
     }
 
     public void backspace () {
-        grid.reset_row_state ();
         grid.backspace ();
     }
 
-    public void enter () {
-        if (!grid.row_filled ()) return;
-
-        if (check_word ()) {
-            game_over (true);
-            return;
-        }
-
-        if (word_exist ()) {
-            if (grid.active_row () < 5) {
-                grid.next_row ();
-            } else {
-                game_over (false);
-            }
-        }
+    public void confirm () {
+        grid.confirm ();
     }
 }

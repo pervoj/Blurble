@@ -17,12 +17,18 @@
  */
 
 public class WG.Grid : Adw.Bin {
+    public const int COLS = 5;
+    public const int ROWS = 6;
+
     private int active_x = 0;
     private int active_y = 0;
 
     private Gtk.Grid grid = new Gtk.Grid ();
+    private Gtk.EventControllerKey controller = new Gtk.EventControllerKey ();
 
     construct {
+        // setup this widget
+
         this.focusable = true;
         this.can_focus = true;
 
@@ -37,110 +43,196 @@ public class WG.Grid : Adw.Bin {
         valign = Gtk.Align.CENTER;
         vexpand = true;
 
+        // setup children
+
         this.child = grid;
         grid.column_homogeneous = true;
         grid.row_homogeneous = true;
         grid.column_spacing = 6;
         grid.row_spacing = 6;
 
-        fill ();
+        for (int y = 0; y < ROWS; y++) {
+            for (int x = 0; x < COLS; x++) {
+                grid.attach (new Cell (), x, y);
+            }
+        }
+        active_cell ().focused = true;
+
+        // setup events
+
+        this.add_controller (controller);
+        var context = new Gtk.IMMulticontext ();
+        controller.set_im_context (context);
+
+        context.commit.connect ((str) => {
+            string key = DataParser.replace (str.down ());
+            if (!(key in DataParser.get_available_letters ())) return;
+            insert (key);
+        });
+
+        controller.key_pressed.connect ((val, code, state) => {
+            if (val == Gdk.Key.BackSpace ||
+                val == Gdk.Key.Delete ||
+                val == Gdk.Key.KP_Delete) {
+                backspace ();
+                return true;
+            }
+
+            if (val == Gdk.Key.Return ||
+                val == Gdk.Key.KP_Enter ||
+                val == Gdk.Key.ISO_Enter) {
+                confirm ();
+                return true;
+            }
+
+            return false;
+        });
     }
 
-    public void active_dimensions (out int x, out int y) {
-        x = active_x;
-        y = active_y;
-    }
-    
-    public int active_row () {
-        return active_y;
+    /**
+     * Emitted when the current word is confirmed.
+     *
+     * Gets the current row content as the first argument.
+     * The second argument is a bool, true if the current row is the last one.
+     *
+     * Returns List of CellStates.
+     * If the word is unknown, it's expected to be an empty list.
+     */
+    public signal List<CellState> confirmed (string[] row_content);
+
+    /**
+     * Emitted when the game ends.
+     * (the grid is filled up or the word is guessed)
+     *
+     * If the game was won is given as a bool argument.
+     */
+    public virtual signal void game_over (bool win) {
+        remove_controller (controller);
     }
 
-    public int active_column () {
-        return active_x;
+    /**
+     * Insert into active cell and move the cursor.
+     */
+    public void insert (string text) {
+        reset_row_state ();
+        var cell = active_cell ();
+        if (cell == null) return;
+        cell.content = text.up ();
+        activate_next ();
     }
 
-    public Cell cell (int x, int y) {
+    /**
+     * Delete from the last cell and move cursor back.
+     */
+    public void backspace () {
+        reset_row_state ();
+        Cell cell = activate_prev ();
+        cell.content = "";
+    }
+
+    /**
+     * Confirm the current row content.
+     *
+     * If the confirmation is possible, emits the confirmed() signal.
+     */
+    public void confirm () {
+        // don't do anything if the row is not complete
+        if (!is_row_filled ()) return;
+
+        // load the response
+        var res = confirmed (get_current_content ());
+
+        // if the response is an empty list, set state as an unknown word
+        if (res == null || res.length () <= 0) {
+            for (int x = 0; x < COLS; x++) {
+                set_cell_state (x, active_y, CellState.UNKNOWN);
+            }
+            return;
+        }
+
+        // otherwise set the state from the response
+        bool win = true;
+        int x = 0;
+        while (x < COLS && x < res.length ()) {
+            var current_state = res.nth_data (x);
+            set_cell_state (x, active_y, current_state);
+            if (current_state != CellState.CORRECT) win = false;
+            x++;
+        }
+
+        // if the whole row is correct, end the game
+        if (win) {
+            game_over (true);
+            return;
+        }
+
+        // finally move the cursor down
+        activate_next_row ();
+
+        // if we are out of rows, end the game
+        if (active_y >= ROWS) game_over (false);
+    }
+
+    private Cell get_cell (int x, int y) {
         return (Cell) grid.get_child_at (x, y);
     }
 
-    public Cell active_cell () {
-        return cell (active_x, active_y);
+    private Cell active_cell () {
+        return get_cell (active_x, active_y);
     }
 
-    public string[] get_row () {
+    private Cell set_active_cell (int x, int y) {
+        var cell = active_cell ();
+        if (cell != null) cell.focused = false;
+        active_x = x;
+        active_y = y;
+        cell = active_cell ();
+        if (cell != null) cell.focused = true;
+        return cell;
+    }
+
+    private Cell activate_next () {
+        if (active_x == COLS) return active_cell ();
+        return set_active_cell (active_x + 1, active_y);
+    }
+
+    private Cell activate_prev () {
+        if (active_x == 0) return active_cell ();
+        return set_active_cell (active_x - 1, active_y);
+    }
+
+    private Cell activate_next_row () {
+        if (active_y == (ROWS - 1)) return active_cell ();
+        return set_active_cell (0, active_y + 1);
+    }
+
+    public string[] get_current_content () {
         string[] row = {};
-        for (int x = 0; x < 5; x++) {
-            row += cell (x, active_y).content.down ();
+        for (int x = 0; x < COLS; x++) {
+            var cell = get_cell (x, active_y);
+            if (cell == null) {
+                row += "";
+                continue;
+            }
+            row += cell.content.down ();
         }
         return row;
     }
 
-    public bool row_filled () {
-        foreach (string cell in get_row ()) {
+    public bool is_row_filled () {
+        foreach (string cell in get_current_content ()) {
             if (cell.length == 0) return false;
         }
         return true;
     }
 
-    public void reset_row_state () {
-        for (int x = 0; x < 5; x++) {
+    private void set_cell_state (int x, int y, CellState state) {
+        get_cell (x, y).state = state;
+    }
+
+    private void reset_row_state () {
+        for (int x = 0; x < COLS; x++) {
             set_cell_state (x, active_y, CellState.NONE);
         }
-    }
-
-    public void set_cell_state (int x, int y, CellState state) {
-        cell (x, y).state = state;
-    }
-
-    public CellState get_cell_state (int x, int y) {
-        return cell (x, y).state;
-    }
-
-    public void backspace () {
-        if (active_x == 0) return;
-        Cell cell;
-        if (active_x < 5) {
-            cell = active_cell ();
-            cell.focused = false;
-        }
-
-        active_x--;
-        cell = active_cell ();
-        cell.content = "";
-        cell.focused = true;
-    }
-    
-    public void insert (string text) {
-        if (active_x == 5) return;
-        var cell = active_cell ();
-        cell.content = text;
-        cell.focused = false;
-
-        active_x++;
-        if (active_x < 5) {
-            cell = active_cell ();
-            cell.focused = true;
-        }
-    }
-
-    public void next_row () {
-        if (active_y == 5) return;
-        var cell = active_cell ();
-        cell.focused = false;
-
-        active_x = 0;
-        active_y++;
-        cell = active_cell ();
-        cell.focused = true;
-    }
-    
-    private void fill () {
-        for (int y = 0; y < 6; y++) {
-            for (int x = 0; x < 5; x++) {
-                grid.attach (new Cell (), x, y);
-            }
-        }
-
-        active_cell ().focused = true;
     }
 }

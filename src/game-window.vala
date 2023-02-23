@@ -32,17 +32,8 @@ public class WG.GameWindow : Adw.ApplicationWindow {
     public GameWindow (Gtk.Application app) {
         Object (application: app);
 
-        main_content.append (gc.grid);
-        main_content.append (k);
-
         gc.game_over.connect (game_over);
-
-        k.insert.connect (gc.insert);
-        k.enter.connect (gc.enter);
-        k.backspace.connect (gc.backspace);
         k.game_over = false;
-
-        ((Gtk.Widget) this).add_controller (gc.event);
 
         set_keyboard_visibility (settings.get_boolean ("show-keyboard"));
         settings.changed.connect ((key) => {
@@ -51,8 +42,12 @@ public class WG.GameWindow : Adw.ApplicationWindow {
         });
     }
 
+    construct {
+        main_content.append (gc);
+        main_content.append (k);
+    }
+
     private void game_over (bool win) {
-        ((Gtk.Widget) this).remove_controller (gc.event);
         k.game_over = true;
 
         var dialog = new Gtk.MessageDialog (
