@@ -65,6 +65,16 @@ namespace WG.DataParser {
     }
     private Word[] _dictionary;
 
+    public bool check_if_word_exists (string[] characters) {
+        string needle = string.joinv ("/", characters);
+        var dict = get_dictionary ();
+        foreach (var word in dict) {
+            string current = string.joinv ("/", word.characters);
+            if (needle == current) return true;
+        }
+        return false;
+    }
+
     /**
      * Class representing a word from the dictionary.
      */
