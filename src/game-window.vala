@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-[GtkTemplate (ui = "/app/drey/Blurble/window.ui")]
-public class WG.Window : Adw.ApplicationWindow {
+[GtkTemplate (ui = "/app/drey/Blurble/game-window.ui")]
+public class WG.GameWindow : Adw.ApplicationWindow {
     [GtkChild]
     private unowned Gtk.Box main_content;
 
@@ -29,7 +29,7 @@ public class WG.Window : Adw.ApplicationWindow {
 
     private Settings settings = new Settings (Constants.APP_ID);
 
-    public Window (Gtk.Application app) {
+    public GameWindow (Gtk.Application app) {
         Object (application: app);
 
         main_content.append (gc.grid);

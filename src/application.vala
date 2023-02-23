@@ -41,7 +41,7 @@ public class WG.Application : Adw.Application {
         this.add_action (open_menu_action);
         this.set_accels_for_action ("app.open-menu", {"F10"});
         open_menu_action.activate.connect (() => {
-            Window win = (Window) this.active_window;
+            var win = (GameWindow) this.active_window;
             win.open_menu ();
         });
     }
@@ -64,7 +64,7 @@ public class WG.Application : Adw.Application {
 
         var win = this.active_window;
         if (win == null) {
-            win = new Window (this);
+            win = new GameWindow (this);
         }
         win.present ();
     }

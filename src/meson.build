@@ -1,6 +1,6 @@
 sources = [
   'application.vala',
-  'window.vala',
+  'game-window.vala',
   'grid.vala',
   'game-controller.vala',
   'keyboard.vala',
@@ -10,7 +10,7 @@ sources = [
 
 
 blueprints_src = [
-  'window.blp',
+  'game-window.blp',
 ]
 
 
