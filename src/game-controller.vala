@@ -17,9 +17,8 @@
  */
 
 public class WG.GameController : Object {
-    public string correct_word_notreplaced { get; private set; }
-    public string[] correct_word { get; private set; }
-    private List<string> dictionary = DataParser.dictionary ();
+    public DataParser.Word correct_word { get; private set; }
+    private DataParser.Word[] dictionary = DataParser.get_dictionary ();
 
     public Grid grid { get; construct; }
     public Gtk.EventControllerKey event { get; construct; }
@@ -32,27 +31,20 @@ public class WG.GameController : Object {
             event: new Gtk.EventControllerKey ()
         );
 
-        int32 word_index = Random.int_range (0, (int32) dictionary.length ());
-        correct_word_notreplaced = dictionary.nth_data ((uint) word_index);
-        correct_word = DataParser.replace (correct_word_notreplaced).split ("/");
+        int32 word_index = Random.int_range (0, (int32) dictionary.length);
+        correct_word = dictionary[(uint) word_index];
 
-        debug (_("Current word: %s\n"), get_word ());
+        debug (_("Current word: %s\n"), correct_word.word);
 
         event.key_pressed.connect (key_pressed);
     }
 
-    public string get_word () {
-        return correct_word_notreplaced.replace ("/", "");
-    }
-
     private bool word_exist () {
         string word = string.joinv ("/", grid.get_row ());
-        bool found = false;
-        dictionary.foreach ((current_word) => {
-            if (found) return;
-            if (word == DataParser.replace (current_word)) found = true;
-        });
-        return found;
+        foreach (var current_word in dictionary) {
+            if (word == current_word.replaced) return true;
+        }
+        return false;
     }
 
     private bool check_word () {
@@ -70,11 +62,11 @@ public class WG.GameController : Object {
         }
 
         // make a copy to keep the unmatched letters, (with CellState.WRONG)
-        string?[] remaining_word = correct_word.copy ();
+        string?[] remaining_word = correct_word.characters.copy ();
 
         // find exact matches
         for (int x = 0; x < 5; x++) {
-            string correct_cell = correct_word[x];
+            string correct_cell = correct_word.characters[x];
             string written_cell = written_word[x];
 
             if (written_cell == correct_cell) {

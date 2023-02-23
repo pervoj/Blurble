@@ -62,7 +62,7 @@ public class WG.GameWindow : Adw.ApplicationWindow {
             Gtk.ButtonsType.OK,
             win ?
                 _("You won!") :
-                _("You lost! The word was: %s").printf (gc.get_word ())
+                _("You lost! The word was: %s").printf (gc.correct_word.word)
         );
 
         dialog.response.connect (close);

@@ -17,24 +17,109 @@
  */
 
 namespace WG.DataParser {
+    private HashTable<string, string> replacements;
+    private void load_replacements () {
+        if (replacements == null) {
+            replacements = new HashTable<string, string> (str_hash, str_equal);
+            foreach (var replacement in Data.get_replacements ().split ("\n")) {
+                string[] _splitted = replacement.split ("/");
+                replacements.set (_splitted[0].strip (), _splitted[1].strip ());
+            }
+        }
+    }
+
+    /**
+     * Replaces characters in the given string according to the rules.
+     */
     public string replace (string original) {
+        load_replacements ();
         string replaced = original;
-        foreach (var replacement in Data.get_replacements ().split ("\n")) {
-            string needle = replacement.split ("/")[0].strip ();
-            string to_replace = replacement.split ("/")[1].strip ();
+        foreach (string needle in replacements.get_keys ()) {
+            string to_replace = replacements.get (needle);
             replaced = replaced.replace (needle, to_replace);
+            replaced = replaced.replace (needle.up (), to_replace.up ());
         }
         return replaced;
     }
 
-    public List<string> dictionary () {
-        string[] words = Data.get_dictionary ().strip ().split ("\n");
-        var dict = new List<string> ();
-
-        foreach (string word in words) {
-            dict.append (word.strip ());
+    public string[] get_available_letters () {
+        if (_available_letters == null) {
+            _available_letters = Data.get_available_letters ().split ("/");
         }
+        return _available_letters;
+    }
+    private string[] _available_letters;
 
-        return dict;
+    /**
+     * Returns List of Word instances from the dictionary.
+     */
+    public Word[] get_dictionary () {
+        if (_dictionary == null) {
+            _dictionary = {};
+            string[] words = Data.get_dictionary ().strip ().split ("\n");
+            foreach (string word in words) {
+                _dictionary += new Word (word);
+            }
+        }
+        return _dictionary;
+    }
+    private Word[] _dictionary;
+
+    /**
+     * Class representing a word from the dictionary.
+     */
+    public class Word : Object {
+        /**
+         * The exact value of the word from the dictionary (with slashes).
+         */
+        public string val { get; construct; }
+
+        /**
+         * The normal form of the word.
+         */
+        public string word {
+            get {
+                if (_word == null) {
+                    _word = val.replace ("/", "");
+                }
+                return _word;
+            }
+        }
+        private string _word;
+
+        /**
+         * The replaced form of the word.
+         */
+        public string replaced {
+            get {
+                if (_replaced == null) {
+                    _replaced = replace(word);
+                }
+                return _replaced;
+            }
+        }
+        private string _replaced;
+
+        /**
+         * Characters of the word with already replaced characters.
+         */
+        public string[] characters {
+            get {
+                if (_characters == null) {
+                    _characters = replace(val).split ("/");
+                }
+                return _characters;
+            }
+        }
+        private string[] _characters;
+
+        /**
+         * Takes the exact value of the word from the dictionary (with slashes).
+         *
+         * For example: h/o/u/s/e
+         */
+        public Word (string val) {
+            Object (val: val.strip ().down ());
+        }
     }
 }
