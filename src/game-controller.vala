@@ -21,6 +21,7 @@ public class WG.GameController : Adw.Bin {
     private DataParser.Word[] dictionary = DataParser.get_dictionary ();
 
     public signal void game_over (bool win);
+    public signal void change_letter_state (string val, CellState state);
 
     private Grid grid = new Grid ();
 
@@ -50,7 +51,8 @@ public class WG.GameController : Adw.Bin {
         var res_table = new HashTable<int, CellState> (null, null);
 
         // make a copy to keep the unmatched letters, (with CellState.WRONG)
-        string?[] remaining_word = correct_word.characters.copy ();
+        string?[] _written_word = correct_word.characters.copy ();
+        string?[] _remaining_word = correct_word.characters.copy ();
 
         // find exact matches
         for (int i = 0; i < written_word.length; i++) {
@@ -59,26 +61,60 @@ public class WG.GameController : Adw.Bin {
 
             if (written_cell == correct_cell) {
                 res_table.set (i, CellState.CORRECT);
+                change_letter_state (written_cell, CellState.CORRECT);
                 // match found, remove it from the remaining array
-                remaining_word[i] = null;
-                written_word[i] = null;
+                _remaining_word[i] = null;
+                _written_word[i] = null;
             } else {
                 res_table.set (i, CellState.WRONG);
+                change_letter_state (written_cell, CellState.WRONG);
             }
         }
 
-        for (int w = 0; w < 5; w++) { // for each letter guessed
-            if (written_word[w] == null) continue;
+        for (int w = 0; w < written_word.length; w++) { // for each letter guessed
+            if (_written_word[w] == null) continue;
 
             for (int r = 0; r < 5; r++) { // find the first matching remaining letter
-                if (written_word[w] == remaining_word[r]) {
+                if (written_word[w] == _remaining_word[r]) {
                     res_table.set (w, CellState.WRONG_POSITION);
+                    change_letter_state (written_word[w], CellState.WRONG_POSITION);
                     // match found, remove it
-                    remaining_word[r] = null;
+                    _remaining_word[r] = null;
                     break;
                 }
             }
         }
+
+        // FIXME: there could be a better solution
+        // colors keys with WRONG_POSITION if the letter is twice in the correct
+        //   word and only once in the written word
+        string[] checked_characters = {};
+        foreach (string character in written_word) {
+            // we don't need to check same letters twice
+            if (character in checked_characters) continue;
+            checked_characters += character;
+
+            // get counts of the letter in both words
+            int count_in_correct = 0;
+            int count_in_written = 0;
+            foreach (string _character in correct_word.characters) {
+                if (_character == character) count_in_correct++;
+            }
+            foreach (string _character in written_word) {
+                if (_character == character) count_in_written++;
+            }
+
+            // these states should be handled by previous loops
+            if (count_in_correct == 0) continue;
+            if (count_in_written == 0) continue;
+
+            // if this is the case, color with WRONG_POSITION
+            if (count_in_correct > count_in_written) {
+                change_letter_state (character, CellState.WRONG_POSITION);
+            }
+        }
+
+        // prepare response
 
         var keys = res_table.get_keys ();
         keys.sort ((a, b) => {
