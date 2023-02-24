@@ -208,7 +208,7 @@ public class WG.Grid : Adw.Bin {
     }
 
     private Cell activate_next_row () {
-        if (active_y == (ROWS - 1)) return active_cell ();
+        if (active_y >= ROWS) return active_cell ();
         return set_active_cell (0, active_y + 1);
     }
 
