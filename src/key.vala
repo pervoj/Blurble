@@ -25,6 +25,7 @@ public class WG.Key : Adw.Bin {
 
     public signal void clicked (string val);
 
+    private Gtk.Button button;
     private int spacing;
 
     public Key (
@@ -42,7 +43,7 @@ public class WG.Key : Adw.Bin {
     }
 
     construct {
-        var button = new Gtk.Button ();
+        button = new Gtk.Button ();
         this.child = button;
         button.add_css_class ("key");
 
@@ -70,19 +71,19 @@ public class WG.Key : Adw.Bin {
     }
 
     private void update_styles () {
-        remove_css_class ("correct");
-        remove_css_class ("wrong");
-        remove_css_class ("position");
+        button.remove_css_class ("correct");
+        button.remove_css_class ("wrong");
+        button.remove_css_class ("position");
 
         switch (state) {
             case CellState.CORRECT:
-                add_css_class ("correct");
+                button.add_css_class ("correct");
                 break;
             case CellState.WRONG:
-                add_css_class ("wrong");
+                button.add_css_class ("wrong");
                 break;
             case CellState.WRONG_POSITION:
-                add_css_class ("position");
+                button.add_css_class ("position");
                 break;
             case CellState.UNKNOWN:
             case CellState.NONE:
