@@ -35,7 +35,7 @@ public class WG.Keyboard : Gtk.Box {
     }
 
     construct {
-        keys = new HashTable<string, Key> (direct_hash, direct_equal);
+        keys = new HashTable<string, Key> (str_hash, str_equal);
         halign = Gtk.Align.CENTER;
         hexpand = true;
         valign = Gtk.Align.CENTER;
