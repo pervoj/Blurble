@@ -35,6 +35,10 @@ public class WG.GameWindow : Adw.ApplicationWindow {
         gc.game_over.connect (game_over);
         k.game_over = false;
 
+        k.insert.connect (gc.insert);
+        k.enter.connect (gc.confirm);
+        k.backspace.connect (gc.backspace);
+
         set_keyboard_visibility (settings.get_boolean ("show-keyboard"));
         settings.changed.connect ((key) => {
             if (key != "show-keyboard") return;
