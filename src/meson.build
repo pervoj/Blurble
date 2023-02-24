@@ -5,6 +5,7 @@ sources = [
   'cell.vala',
   'game-controller.vala',
   'keyboard.vala',
+  'key.vala',
   'data.vala',
   'data-parser.vala',
 ]

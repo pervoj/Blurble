@@ -17,17 +17,25 @@
  */
 
 public class WG.Keyboard : Gtk.Box {
+    private const int MARGIN = 6;
+    private const int SPACING = 4;
+
     public signal void insert (string cell);
     public signal void backspace ();
     public signal void enter ();
     public bool game_over = false;
+
+    private HashTable<string, Key> keys;
 
     public Keyboard () {
         Object (
             orientation: Gtk.Orientation.VERTICAL,
             spacing: 4
         );
+    }
 
+    construct {
+        keys = new HashTable<string, Key> (direct_hash, direct_equal);
         halign = Gtk.Align.CENTER;
         hexpand = true;
         valign = Gtk.Align.CENTER;
@@ -42,68 +50,69 @@ public class WG.Keyboard : Gtk.Box {
             append (box);
             box.halign = Gtk.Align.CENTER;
             box.hexpand = true;
-            foreach (string key in line.split (",")) {
-                string key_temp = key.strip ();
-                key_temp = key_temp.replace ("{", "").replace ("}", "");
-                string[] key_parts = key_temp.split ("/");
 
-                Gtk.Button btn;
+            foreach (string _key_str in line.split (",")) {
+                string _key = _key_str.strip ();
+                _key = _key.replace ("{", "").replace ("}", "");
+                var parts = _key.split ("/");
 
-                const int resize = 30; // magic number that just works
-                int size = 1;
+                if (parts.length <= 0) continue;
 
-                if (key_parts[0] == "enter") {
-                    btn = new Gtk.Button.from_icon_name ("keyboard-enter-symbolic");
+                string? display_val = null;
+                string? val = null;
+                int? size = null;
 
-                    btn.clicked.connect (() => {
-                        if (!game_over) enter ();
-                    });
-
-                    if (key_parts.length > 1) {
-                        size = int.parse (key_parts[1].strip ());
-                        if (!(size > 0)) size = 1;
+                foreach (string _part in parts) {
+                    if (display_val != null && val != null && size != null) {
+                        break;
                     }
-                } else if (key_parts[0] == "backspace") {
-                    btn = new Gtk.Button.from_icon_name ("entry-clear-symbolic");
+                    string part = _part.strip ();
+                    if (part.length == 0) continue;
 
-                    btn.clicked.connect (() => {
-                        if (!game_over) backspace ();
-                    });
-
-                    if (key_parts.length > 1) {
-                        size = int.parse (key_parts[1].strip ());
-                        if (!(size > 0)) size = 1;
+                    if (display_val == null) {
+                        display_val = part;
+                        continue;
                     }
-                } else {
-                    btn = new Gtk.Button.with_label (key_parts[0].strip ().up ());
 
-                    btn.clicked.connect (() => {
-                        if (!game_over) {
-                            string to_insert = key_parts[0].strip ().down ();
+                    int _parsed = -1;
+                    if (size == null && int.try_parse (part, out _parsed)) {
+                        size = _parsed < 1 ? 1 : _parsed;
+                        continue;
+                    }
 
-                            if (key_parts.length > 1) {
-                                to_insert = key_parts[1].strip ().down ();
-                            }
-
-                            insert (to_insert);
-                        }
-                    });
-
-                    if (key_parts.length > 2) {
-                        size = int.parse (key_parts[2].strip ());
-                        if (!(size > 0)) size = 1;
+                    if (val == null) {
+                        val = part;
                     }
                 }
 
-                btn.can_focus = false;
-                btn.add_css_class ("key");
+                if (display_val == null) continue;
+                if (size == null) size = 1;
 
-                // (size * resize) - resize size-times
-                // ((size - 1) * 4) - include the box spacing into the size
-                btn.width_request = (size * resize) + ((size - 1) * 4);
-
-                box.append (btn);
+                var key = new Key (display_val, val, size, SPACING);
+                if (keys.contains (key.val)) continue;
+                keys.set (key.val, key);
+                box.append (key);
+                key.clicked.connect (clicked);
             }
+        }
+    }
+
+    public void set_key_state (string val, CellState state) {
+        if (!keys.contains (val)) return;
+        keys.get (val).state = state;
+    }
+
+    private void clicked (string val) {
+        switch (val) {
+            case "enter":
+                enter ();
+                break;
+            case "backspace":
+                backspace ();
+                break;
+            default:
+                insert (val);
+                break;
         }
     }
 }
