@@ -38,6 +38,10 @@ public class WG.GameController : Adw.Bin {
         grid.game_over.connect ((win) => { game_over (win); });
     }
 
+    public new bool grab_focus () {
+        return grid.grab_focus ();
+    }
+
     private List<CellState> check_word (string[] written_word) {
         if (!DataParser.check_if_word_exists (written_word)) {
             return new List<CellState> ();
@@ -89,14 +93,17 @@ public class WG.GameController : Adw.Bin {
     }
 
     public void insert (string text) {
+        grab_focus ();
         grid.insert (text);
     }
 
     public void backspace () {
+        grab_focus ();
         grid.backspace ();
     }
 
     public void confirm () {
+        grab_focus ();
         grid.confirm ();
     }
 }

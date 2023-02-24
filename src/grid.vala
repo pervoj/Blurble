@@ -87,6 +87,12 @@ public class WG.Grid : Adw.Bin {
 
             return false;
         });
+
+        // click event
+
+        var click_controller = new Gtk.GestureClick ();
+        this.add_controller (click_controller);
+        click_controller.released.connect (() => { this.grab_focus (); });
     }
 
     /**

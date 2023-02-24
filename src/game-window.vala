@@ -49,6 +49,7 @@ public class WG.GameWindow : Adw.ApplicationWindow {
     construct {
         main_content.append (gc);
         main_content.append (k);
+        gc.grab_focus ();
     }
 
     private void game_over (bool win) {
