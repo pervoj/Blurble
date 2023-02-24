@@ -46,13 +46,16 @@ public class WG.Key : Adw.Bin {
         button = new Gtk.Button ();
         this.child = button;
         button.add_css_class ("key");
+        button.can_focus = false;
 
         switch (display_val) {
             case "enter":
                 button.icon_name = "keyboard-enter-symbolic";
+                button.add_css_class ("suggested-action");
                 break;
             case "backspace":
                 button.icon_name = "entry-clear-symbolic";
+                button.add_css_class ("destructive-action");
                 break;
             default:
                 button.label = display_val.up ();

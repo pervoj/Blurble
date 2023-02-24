@@ -57,14 +57,23 @@
   background-color: @success_bg_color;
   color: @success_fg_color;
 }
+.key.correct:hover {
+  background-color: shade(@success_bg_color, 0.95);
+}
 
 .key.position {
   background-color: @warning_bg_color;
   color: @warning_fg_color;
+}
+.key.position:hover {
+  background-color: shade(@warning_bg_color, 0.95);
 }
 
 .key.wrong {
   background-color: alpha(@window_fg_color, 0.4);
   color: @window_bg_color;
   opacity: 0.8;
+}
+.key.wrong:hover {
+  opacity: 0.95;
 }
