@@ -20,6 +20,15 @@
   </screenshots>
 
   <releases>
+    <release version="0.3.0" date="2023-02-27">
+      <description>
+        <ul>
+          <li>Letters on the keyboard are now colored as well</li>
+          <li>Keyboard navigation through the app was enhanced</li>
+          <li>A lot of translations were updated</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.2.0" date="2022-07-29">
       <description>
         <ul>
