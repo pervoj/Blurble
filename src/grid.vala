@@ -31,6 +31,8 @@ public class WG.Grid : Adw.Bin {
 
         this.focusable = true;
         this.can_focus = true;
+        accessible_role = Gtk.AccessibleRole.TEXT_BOX;
+        update_property (Gtk.AccessibleProperty.LABEL, _("the letter grid"), -1);
 
         add_css_class ("letter-grid");
 
@@ -125,6 +127,7 @@ public class WG.Grid : Adw.Bin {
         if (cell == null) return;
         cell.content = text.up ();
         activate_next ();
+        update_properties ();
     }
 
     /**
@@ -134,6 +137,7 @@ public class WG.Grid : Adw.Bin {
         reset_row_state ();
         Cell cell = activate_prev ();
         cell.content = "";
+        update_properties ();
     }
 
     /**
@@ -174,9 +178,17 @@ public class WG.Grid : Adw.Bin {
 
         // finally move the cursor down
         activate_next_row ();
+        update_properties ();
 
         // if we are out of rows, end the game
         if (active_y >= ROWS) game_over (false);
+    }
+
+    private void update_properties () {
+        update_property (
+            Gtk.AccessibleProperty.VALUE_TEXT,
+                string.joinv ("", get_current_content()),
+            -1);
     }
 
     private Cell get_cell (int x, int y) {
