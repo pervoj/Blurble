@@ -1,79 +1,79 @@
 .letter-grid:focus .cell.focused {
-  border-color: alpha(@accent_color, 0.5);
+    border-color: alpha(@accent_color, 0.5);
 }
 
 .cell {
-  min-width: 2.6rem;
-  min-height: 2.6rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  border: 2px solid @card_shade_color;
-  border-radius: 5px;
-  box-shadow: 0 0.125rem 0.25rem @card_shade_color;
-  background-color: @card_bg_color;
-  color: @card_fg_color;
-  outline-offset: -2px;
-  transition: all 0.2s ease;
+    min-width: 2.6rem;
+    min-height: 2.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 2px solid @card_shade_color;
+    border-radius: 5px;
+    box-shadow: 0 0.125rem 0.25rem @card_shade_color;
+    background-color: @card_bg_color;
+    color: @card_fg_color;
+    outline-offset: -2px;
+    transition: all 0.2s ease;
 }
 
 .cell.correct {
-  background-color: @success_bg_color;
-  color: @success_fg_color;
-  border-color: @success_color;
+    background-color: @success_bg_color;
+    color: @success_fg_color;
+    border-color: @success_color;
 }
 
 .cell.position {
-  background-color: @warning_bg_color;
-  color: @warning_fg_color;
-  border-color: @warning_color;
+    background-color: @warning_bg_color;
+    color: @warning_fg_color;
+    border-color: @warning_color;
 }
 
 .cell.wrong {
-  background-color: alpha(@window_fg_color, 0.4);
-  color: @window_bg_color;
-  border-color: @card_shade_color;
+    background-color: alpha(@window_fg_color, 0.4);
+    color: @window_bg_color;
+    border-color: @card_shade_color;
 }
 
 .cell.unknown {
-  animation: unknown 0.4s ease 2 alternate;
+    animation: unknown 0.4s ease 2 alternate;
 }
 
 @keyframes unknown {
-  to {
-    background-color: @error_bg_color;
-    color: @error_fg_color;
-    border-color: @error_color;
-  }
+    to {
+        background-color: @error_bg_color;
+        color: @error_fg_color;
+        border-color: @error_color;
+    }
 }
 
 .key {
-  padding: 0;
-  min-width: 2em;
-  min-height: 2em;
-  transition: all 0.2s ease;
+    padding: 0;
+    min-width: 2em;
+    min-height: 2em;
+    transition: all 0.2s ease;
 }
 
 .key.correct {
-  background-color: @success_bg_color;
-  color: @success_fg_color;
+    background-color: @success_bg_color;
+    color: @success_fg_color;
 }
 .key.correct:hover {
-  background-color: shade(@success_bg_color, 0.95);
+    background-color: shade(@success_bg_color, 0.95);
 }
 
 .key.position {
-  background-color: @warning_bg_color;
-  color: @warning_fg_color;
+    background-color: @warning_bg_color;
+    color: @warning_fg_color;
 }
 .key.position:hover {
-  background-color: shade(@warning_bg_color, 0.95);
+    background-color: shade(@warning_bg_color, 0.95);
 }
 
 .key.wrong {
-  background-color: alpha(@window_fg_color, 0.4);
-  color: @window_bg_color;
-  opacity: 0.8;
+    background-color: alpha(@window_fg_color, 0.4);
+    color: @window_bg_color;
+    opacity: 0.8;
 }
 .key.wrong:hover {
-  opacity: 0.95;
+    opacity: 0.95;
 }

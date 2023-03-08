@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="@GETTEXT_PACKAGE@">
-  <schema id="@APP_ID@" path="@RESOURCE_PATH@/">
-    <key name="show-keyboard" type="b">
-      <default>true</default>
-      <summary>Show keyboard</summary>
-    </key>
-  </schema>
+    <schema id="@APP_ID@" path="@RESOURCE_PATH@/">
+        <key name="show-keyboard" type="b">
+            <default>true</default>
+            <summary>Show keyboard</summary>
+        </key>
+    </schema>
 </schemalist>

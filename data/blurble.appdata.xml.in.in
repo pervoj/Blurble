@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
 
-  <id>@APP_ID@</id>
-  <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-3.0-or-later</project_license>
-  <content_rating type="oars-1.1" />
+    <id>@APP_ID@</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0-or-later</project_license>
+    <content_rating type="oars-1.1" />
 
-  <name>Blurble</name>
-  <summary>Word guessing game</summary>
-  <description>
-    <p>Solve the riddle until you run out of guesses!</p>
-    <p>The game is a clone of Wordle and made with localization in mind.</p>
-  </description>
+    <name>Blurble</name>
+    <summary>Word guessing game</summary>
+    <description>
+        <p>Solve the riddle until you run out of guesses!</p>
+        <p>The game is a clone of Wordle and made with localization in mind.</p>
+    </description>
 
-  <screenshots>
-    <screenshot type="default">
-      <image>https://gitlab.gnome.org/World/Blurble/-/raw/main/data/screenshots/screenshot-1.png</image>
-    </screenshot>
-  </screenshots>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://gitlab.gnome.org/World/Blurble/-/raw/main/data/screenshots/screenshot-1.png</image>
+        </screenshot>
+    </screenshots>
 
-  <releases>
-    <release version="0.3.0" date="2023-02-27">
-      <description>
-        <ul>
-          <li>Letters on the keyboard are now colored as well</li>
-          <li>Keyboard navigation through the app was enhanced</li>
-          <li>A lot of translations were updated</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.2.0" date="2022-07-29">
-      <description>
-        <ul>
-          <li>Add Brazilian Portuguese translation (Rafael Fontenelle)</li>
-          <li>Add German translation (Jürgen Benvenuti)</li>
-          <li>Add Italian translation (Michael Moroni)</li>
-          <li>Add Spanish translation (Santiago Cézar)</li>
-          <li>Add main menu</li>
-          <li>Correct letter is marked only once (Santiago Cézar)</li>
-        </ul>
-      </description>
-    </release>
-    <release version="0.1.0" date="2022-07-13">
-      <description>
-        <p>First release</p>
-      </description>
-    </release>
-  </releases>
+    <releases>
+        <release version="0.3.0" date="2023-02-27">
+            <description>
+                <ul>
+                    <li>Letters on the keyboard are now colored as well</li>
+                    <li>Keyboard navigation through the app was enhanced</li>
+                    <li>A lot of translations were updated</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.2.0" date="2022-07-29">
+            <description>
+                <ul>
+                    <li>Add Brazilian Portuguese translation (Rafael Fontenelle)</li>
+                    <li>Add German translation (Jürgen Benvenuti)</li>
+                    <li>Add Italian translation (Michael Moroni)</li>
+                    <li>Add Spanish translation (Santiago Cézar)</li>
+                    <li>Add main menu</li>
+                    <li>Correct letter is marked only once (Santiago Cézar)</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.1.0" date="2022-07-13">
+            <description>
+                <p>First release</p>
+            </description>
+        </release>
+    </releases>
 
-  <developer_name>Vojtěch Perník</developer_name>
-  <update_contact>develop@pervoj.cz</update_contact>
+    <developer_name>Vojtěch Perník</developer_name>
+    <update_contact>develop@pervoj.cz</update_contact>
 
-  <url type="homepage">https://gitlab.gnome.org/World/Blurble</url>
-  <url type="bugtracker">https://gitlab.gnome.org/World/Blurble/-/issues</url>
-  <url type="translate">https://l10n.gnome.org/module/Blurble</url>
-  <url type="donation">https://liberapay.com/pervoj</url>
-  <url type="donation">https://ko-fi.com/pervoj</url>
-  <url type="donation">https://paypal.me/pervoj</url>
+    <url type="homepage">https://gitlab.gnome.org/World/Blurble</url>
+    <url type="bugtracker">https://gitlab.gnome.org/World/Blurble/-/issues</url>
+    <url type="translate">https://l10n.gnome.org/module/Blurble</url>
+    <url type="donation">https://liberapay.com/pervoj</url>
+    <url type="donation">https://ko-fi.com/pervoj</url>
+    <url type="donation">https://paypal.me/pervoj</url>
 
-  <launchable type="desktop-id">@APP_ID@.desktop</launchable>
-  <translation type="gettext">@GETTEXT_PACKAGE@</translation>
+    <launchable type="desktop-id">@APP_ID@.desktop</launchable>
+    <translation type="gettext">@GETTEXT_PACKAGE@</translation>
 
 </component>

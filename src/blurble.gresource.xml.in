@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="@RESOURCE_PATH_PREFIX@">
-    <file>game-window.ui</file>
-    <file>style.css</file>
-    <file>style-hc.css</file>
-  </gresource>
-  <gresource prefix="@RESOURCE_PATH@/icons/scalable/actions">
-    <file preprocess="xml-stripblanks" alias="keyboard-enter-symbolic.svg">icons/keyboard-enter-symbolic.svg</file>
-    <file preprocess="xml-stripblanks" alias="entry-clear-symbolic.svg">icons/entry-clear-symbolic.svg</file>
-  </gresource>
+    <gresource prefix="@RESOURCE_PATH_PREFIX@">
+        <file>game-window.ui</file>
+        <file>style.css</file>
+        <file>style-hc.css</file>
+    </gresource>
+    <gresource prefix="@RESOURCE_PATH@/icons/scalable/actions">
+        <file preprocess="xml-stripblanks" alias="keyboard-enter-symbolic.svg">icons/keyboard-enter-symbolic.svg</file>
+        <file preprocess="xml-stripblanks" alias="entry-clear-symbolic.svg">icons/entry-clear-symbolic.svg</file>
+    </gresource>
 </gresources>
