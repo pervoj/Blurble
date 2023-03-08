@@ -7,5 +7,6 @@ src/window.blp
 src/welcome-page.blp
 src/game-page.vala
 src/game-controller.vala
+src/result-page.vala
 src/help-page.vala
 src/data.vala
