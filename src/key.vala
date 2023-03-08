@@ -17,29 +17,33 @@
  */
 
 public class WG.Key : Adw.Bin {
+    private const int PREV_SIZE = 30;
+
     public string display_val { get; construct; }
     public string val { get; construct; }
-    public int size { get; construct; }
+    public double size { get; construct; }
+    public int spacing { get; construct; }
 
     public CellState state { get; set; default = CellState.NONE; }
 
     public signal void clicked (string val);
 
     private Gtk.Button button;
-    private int spacing;
 
     public Key (
-        string display_val, string? val = null, int size = 1, int spacing = 0
+        string display_val, string? val = null, double size = 1, int spacing = 0
     ) {
         string _display_val = display_val.strip ();
 
         string _val = val == null ? _display_val : val.strip ();
         if (_val == "") _val = _display_val;
 
-        int _size = size < 1 ? 1 : size;
-
-        Object (display_val: _display_val, val: _val, size: _size);
-        this.spacing = spacing >= 0 ? spacing : 0;
+        Object (
+            display_val: _display_val,
+            val: _val,
+            size: size < 1 ? 1 : size,
+            spacing: spacing < 0 ? 0 : spacing
+        );
     }
 
     construct {
@@ -62,10 +66,11 @@ public class WG.Key : Adw.Bin {
                 break;
         }
 
-        // (size * prev_size) - the new size is size-times the previous size
-        // ((size - 1) * spacing) - include the box spacing into the size
-        int prev_size = button.width_request;
-        button.width_request = (size * prev_size) + ((size - 1) * spacing);
+        double new_size = size * PREV_SIZE;
+        new_size = new_size + ((Math.ceil (size) - 1) * spacing);
+        new_size = new_size - ((size - Math.floor (size)) * spacing);
+
+        button.width_request = (int) Math.round (new_size);
 
         button.clicked.connect (() => { clicked (val); });
 
@@ -94,3 +99,4 @@ public class WG.Key : Adw.Bin {
         }
     }
 }
+

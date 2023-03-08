@@ -30,7 +30,7 @@ public class WG.Keyboard : Gtk.Box {
     public Keyboard () {
         Object (
             orientation: Gtk.Orientation.VERTICAL,
-            spacing: 4
+            spacing: SPACING
         );
     }
 
@@ -46,7 +46,7 @@ public class WG.Keyboard : Gtk.Box {
         margin_end = 6;
 
         foreach (string line in Data.get_keyboard ().split (";")) {
-            Gtk.Box box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 4);
+            Gtk.Box box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, SPACING);
             append (box);
             box.halign = Gtk.Align.CENTER;
             box.hexpand = true;
@@ -60,7 +60,7 @@ public class WG.Keyboard : Gtk.Box {
 
                 string? display_val = null;
                 string? val = null;
-                int? size = null;
+                double? size = null;
 
                 foreach (string _part in parts) {
                     if (display_val != null && val != null && size != null) {
@@ -74,8 +74,8 @@ public class WG.Keyboard : Gtk.Box {
                         continue;
                     }
 
-                    int _parsed = -1;
-                    if (size == null && int.try_parse (part, out _parsed)) {
+                    double _parsed = -1;
+                    if (size == null && double.try_parse (part, out _parsed)) {
                         size = _parsed < 1 ? 1 : _parsed;
                         continue;
                     }
