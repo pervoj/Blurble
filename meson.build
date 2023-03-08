@@ -30,6 +30,7 @@ add_project_arguments('-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()), la
 
 i18n = import('i18n')
 gnome = import('gnome')
+cc = meson.get_compiler('c')
 
 
 

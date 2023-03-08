@@ -18,6 +18,7 @@ blueprints_src = [
 
 dependencies = [
   dependency('libadwaita-1', version: '>= 1.0'),
+  cc.find_library('m', required: true),
 ]
 
 
