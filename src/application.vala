@@ -33,7 +33,9 @@ public class WG.Application : Adw.Application {
             { "quit", this.quit }
         };
         this.add_action_entries (action_entries, this);
+
         this.set_accels_for_action ("app.quit", {"<primary>q"});
+        this.set_accels_for_action ("win.help", {"F1"});
 
         this.add_action (settings.create_action ("show-keyboard"));
 
@@ -41,7 +43,7 @@ public class WG.Application : Adw.Application {
         this.add_action (open_menu_action);
         this.set_accels_for_action ("app.open-menu", {"F10"});
         open_menu_action.activate.connect (() => {
-            var win = (GameWindow) this.active_window;
+            var win = (Window) this.active_window;
             win.open_menu ();
         });
     }
@@ -64,7 +66,7 @@ public class WG.Application : Adw.Application {
 
         var win = this.active_window;
         if (win == null) {
-            win = new GameWindow (this);
+            win = new Window (this);
         }
         win.present ();
     }

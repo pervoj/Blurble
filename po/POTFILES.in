@@ -2,7 +2,10 @@ data/blurble.desktop.in.in
 data/blurble.appdata.xml.in.in
 data/blurble.gschema.xml.in
 src/application.vala
-src/game-window.vala
-src/game-window.blp
+src/window.vala
+src/window.blp
+src/welcome-page.blp
+src/game-page.vala
 src/game-controller.vala
+src/help-page.vala
 src/data.vala

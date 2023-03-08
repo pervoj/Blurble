@@ -1,0 +1,67 @@
+/* window.blp
+ *
+ * Copyright 2022 Vojtěch Perník
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+using Gtk 4.0;
+using Adw 1;
+
+template WGWindow : Adw.ApplicationWindow {
+    title: "";
+    default-width: 980;
+    default-height: 640;
+
+    Gtk.WindowHandle {
+        Gtk.Box {
+            orientation: vertical;
+
+            Adw.HeaderBar {
+                styles ["flat"]
+
+                [start]
+                Gtk.Revealer {
+                    transition-type: crossfade;
+                    reveal-child: bind WGWindow.show-back-button;
+
+                    child: Gtk.Button back_button {
+                        icon-name: "go-previous-symbolic";
+                    };
+                }
+
+                [end]
+                Gtk.MenuButton menu_button {
+                    icon-name: "open-menu-symbolic";
+                    menu-model: main_menu;
+                }
+            }
+
+            Gtk.Stack stack {
+                vexpand: true;
+                transition-type: slide_left_right;
+            }
+        }
+    }
+}
+
+menu main_menu {
+    section {
+        item (_("Show keyboard"), "app.show-keyboard")
+    }
+    section {
+        item (_("Help"), "win.help")
+        item (_("About Blurble"), "app.about")
+    }
+}

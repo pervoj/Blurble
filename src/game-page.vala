@@ -16,23 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-[GtkTemplate (ui = "/app/drey/Blurble/game-window.ui")]
-public class WG.GameWindow : Adw.ApplicationWindow {
-    [GtkChild]
-    private unowned Gtk.Box main_content;
-
-    [GtkChild]
-    private unowned Gtk.MenuButton menu_button;
-
+public class WG.GamePage : Adw.Bin {
     private GameController gc = new GameController ();
     private Keyboard k = new Keyboard ();
 
     private Settings settings = new Settings (Constants.APP_ID);
 
-    public GameWindow (Gtk.Application app) {
-        Object (application: app);
+    public signal void game_over ();
 
-        gc.game_over.connect (game_over);
+    public GamePage () {
+        gc.game_over.connect (do_game_over);
         k.game_over = false;
 
         k.insert.connect (gc.insert);
@@ -51,16 +44,22 @@ public class WG.GameWindow : Adw.ApplicationWindow {
     }
 
     construct {
-        main_content.append (gc);
-        main_content.append (k);
+        var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32);
+        this.child = main_box;
+        main_box.halign = Gtk.Align.CENTER;
+        main_box.valign = Gtk.Align.CENTER;
+
+        main_box.append (gc);
+        main_box.append (k);
+
         gc.grab_focus ();
     }
 
-    private void game_over (bool win) {
+    private void do_game_over (bool win) {
         k.game_over = true;
 
         var dialog = new Gtk.MessageDialog (
-            this,
+            null,
             Gtk.DialogFlags.MODAL,
             Gtk.MessageType.INFO,
             Gtk.ButtonsType.OK,
@@ -69,16 +68,12 @@ public class WG.GameWindow : Adw.ApplicationWindow {
                 _("You lost! The word was: %s").printf (gc.correct_word.word)
         );
 
-        dialog.response.connect (close);
+        dialog.response.connect (() => { game_over (); });
 
         dialog.show ();
     }
 
     public void set_keyboard_visibility (bool visible) {
         k.visible = visible;
-    }
-
-    public void open_menu () {
-        menu_button.popup ();
     }
 }

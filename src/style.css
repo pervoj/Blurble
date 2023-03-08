@@ -1,3 +1,7 @@
+.container {
+    padding: 1rem;
+}
+
 .letter-grid:focus .cell.focused {
     border-color: alpha(@accent_color, 0.5);
 }
