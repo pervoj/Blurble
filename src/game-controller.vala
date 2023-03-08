@@ -25,11 +25,12 @@ public class WG.GameController : Adw.Bin {
 
     private Grid grid = new Grid ();
 
-    public GameController () {
+    public void new_word () {
         int32 word_index = Random.int_range (0, (int32) dictionary.length);
         correct_word = dictionary[(uint) word_index];
-
         debug (_("Current word: %s\n"), correct_word.word);
+
+        grid.new_game ();
     }
 
     construct {

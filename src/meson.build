@@ -3,6 +3,7 @@ sources = [
   'window.vala',
   'welcome-page.vala',
   'game-page.vala',
+  'result-page.vala',
   'help-page.vala',
   'grid.vala',
   'cell.vala',

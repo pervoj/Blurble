@@ -1,4 +1,4 @@
-/* welcome-page.blp
+/* result-page.blp
  *
  * Copyright 2022 Vojtěch Perník
  *
@@ -19,19 +19,21 @@
 using Gtk 4.0;
 using Adw 1;
 
-template WGWelcomePage : Adw.Bin {
+template WGResultPage : Adw.Bin {
     vexpand: true;
 
-    Adw.StatusPage {
-        vexpand: true;
-        icon-name: bind WGWelcomePage.icon-name;
-        title: _("Blurble");
-        description: _("Word guessing game");
-        child: Gtk.Button play_button {
-            styles ["pill", "suggested-action"]
-            halign: center;
-            use-underline: true;
-            label: _("_Play");
-        };
+    Gtk.ScrolledWindow {
+        Gtk.Viewport {
+            Adw.Clamp {
+                styles ["container"]
+                tightening-threshold: 400;
+                maximum-size: 600;
+
+                Gtk.Box {
+                    orientation: vertical;
+                    spacing: 32;
+                }
+            }
+        }
     }
 }

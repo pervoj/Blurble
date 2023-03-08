@@ -101,6 +101,13 @@ public class WG.Keyboard : Gtk.Box {
         });
     }
 
+    public void reset () {
+        var _keys = keys.get_values ();
+        foreach (var key in _keys) {
+            key.state = CellState.NONE;
+        }
+    }
+
     public void set_key_state (string val, CellState state) {
         if (!keys.contains (val)) return;
         keys.get (val).state = state;

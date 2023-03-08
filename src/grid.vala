@@ -62,7 +62,6 @@ public class WG.Grid : Adw.Bin {
 
         // setup events
 
-        this.add_controller (controller);
         var context = new Gtk.IMMulticontext ();
         controller.set_im_context (context);
 
@@ -95,6 +94,11 @@ public class WG.Grid : Adw.Bin {
         var click_controller = new Gtk.GestureClick ();
         this.add_controller (click_controller);
         click_controller.released.connect (() => { this.grab_focus (); });
+    }
+
+    public void new_game () {
+        clear ();
+        this.add_controller (controller);
     }
 
     /**
@@ -252,5 +256,16 @@ public class WG.Grid : Adw.Bin {
         for (int x = 0; x < COLS; x++) {
             set_cell_state (x, active_y, CellState.NONE);
         }
+    }
+
+    private void clear () {
+        for (int y = 0; y < ROWS; y++) {
+            for (int x = 0; x < COLS; x++) {
+                Cell cell = get_cell (x, y);
+                cell.content = "";
+                cell.state = CellState.NONE;
+            }
+        }
+        set_active_cell (0, 0);
     }
 }

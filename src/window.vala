@@ -20,6 +20,7 @@
 public class WG.Window : Adw.ApplicationWindow {
     public bool show_back_button { get; private set; }
     private bool game_started = false;
+    private bool game_over = false;
 
     [GtkChild]
     private unowned Gtk.Button back_button;
@@ -37,7 +38,9 @@ public class WG.Window : Adw.ApplicationWindow {
     construct {
         var help_action = new SimpleAction ("help", null);
         this.add_action (help_action);
-        help_action.activate.connect (help);
+        help_action.activate.connect (() => {
+            stack.visible_child_name = "help";
+        });
 
         stack.notify["visible-child-name"].connect (update_back_btn_visibility);
         back_button.clicked.connect (back);
@@ -48,25 +51,46 @@ public class WG.Window : Adw.ApplicationWindow {
         var game_page = new GamePage ();
         stack.add_named (game_page, "game");
 
+        var result_page = new ResultPage ();
+        stack.add_named (result_page, "result");
+
         var help_page = new HelpPage ();
         stack.add_named (help_page, "help");
 
-        welcome_page.play.connect (start_game);
-        game_page.game_over.connect (close);
+        welcome_page.play.connect (() => {
+            stack.visible_child_name = "game";
+            game_started = true;
+            game_page.new_word ();
+        });
+
+        game_page.game_over.connect ((word, win) => {
+            game_over = true;
+            result_page.win = win;
+            result_page.word = word;
+            result_page.reload ();
+            stack.visible_child_name = "result";
+        });
+
+        result_page.play_again.connect (() => {
+            game_started = false;
+            game_over = false;
+            stack.visible_child_name = "welcome";
+        });
+        result_page.quit.connect (close);
+
         help_page.back.connect (back);
     }
 
-    private void start_game () {
-        stack.visible_child_name = "game";
-        game_started = true;
-    }
-
-    private void help () {
-        stack.visible_child_name = "help";
-    }
-
     private void back () {
-        stack.visible_child_name = game_started ? "game" : "welcome";
+        if (game_started || game_over) {
+            if (game_over) {
+                stack.visible_child_name = "result";
+            } else {
+                stack.visible_child_name = "game";
+            }
+        } else {
+            stack.visible_child_name = "welcome";
+        }
     }
 
     private void update_back_btn_visibility () {

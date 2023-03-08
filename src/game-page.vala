@@ -22,7 +22,7 @@ public class WG.GamePage : Adw.Bin {
 
     private Settings settings = new Settings (Constants.APP_ID);
 
-    public signal void game_over ();
+    public signal void game_over (DataParser.Word word, bool win);
 
     public GamePage () {
         gc.game_over.connect (do_game_over);
@@ -43,6 +43,12 @@ public class WG.GamePage : Adw.Bin {
         });
     }
 
+    public void new_word () {
+        k.game_over = false;
+        gc.new_word ();
+        k.reset ();
+    }
+
     construct {
         var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32);
         this.child = main_box;
@@ -57,20 +63,7 @@ public class WG.GamePage : Adw.Bin {
 
     private void do_game_over (bool win) {
         k.game_over = true;
-
-        var dialog = new Gtk.MessageDialog (
-            null,
-            Gtk.DialogFlags.MODAL,
-            Gtk.MessageType.INFO,
-            Gtk.ButtonsType.OK,
-            win ?
-                _("You won!") :
-                _("You lost! The word was: %s").printf (gc.correct_word.word)
-        );
-
-        dialog.response.connect (() => { game_over (); });
-
-        dialog.show ();
+        game_over (gc.correct_word, win);
     }
 
     public void set_keyboard_visibility (bool visible) {
