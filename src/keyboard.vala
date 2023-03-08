@@ -23,7 +23,7 @@ public class WG.Keyboard : Gtk.Box {
     public signal void insert (string cell);
     public signal void backspace ();
     public signal void enter ();
-    public bool game_over = false;
+    public bool game_over { get; set; default = false; }
 
     private HashTable<string, Key> keys;
 
@@ -95,6 +95,10 @@ public class WG.Keyboard : Gtk.Box {
                 key.clicked.connect (clicked);
             }
         }
+
+        notify["game-over"].connect (() => {
+            this.sensitive = !game_over;
+        });
     }
 
     public void set_key_state (string val, CellState state) {
