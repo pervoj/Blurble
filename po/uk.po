@@ -2,13 +2,13 @@
 # Copyright (C) 2022 Blurble's COPYRIGHT HOLDER
 # This file is distributed under the same license as the Blurble package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-09-16 14:30+0000\n"
-"PO-Revision-Date: 2022-09-16 21:55+0300\n"
+"POT-Creation-Date: 2023-03-08 20:13+0000\n"
+"PO-Revision-Date: 2023-03-09 09:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -20,12 +20,12 @@ msgstr ""
 "X-Generator: Lokalize 20.12.0\n"
 
 #: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
-#: src/application.vala:88 src/window.blp:5
+#: src/application.vala:90 src/welcome-page.blp:28
 msgid "Blurble"
 msgstr "Blurble"
 
 #: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
-#: src/application.vala:89
+#: src/welcome-page.blp:29
 msgid "Word guessing game"
 msgstr "Гра у вгадування слів"
 
@@ -38,44 +38,105 @@ msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr ""
 "Гра є клоном Wordle, який створено із врахуванням можливості локалізації."
 
-#: data/blurble.appdata.xml.in.in:42
+#: data/blurble.appdata.xml.in.in:51
 msgid "Vojtěch Perník"
 msgstr "Войцех Пернік"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:37
+#: data/blurble.gschema.xml.in:6 src/window.blp:61
 msgid "Show keyboard"
 msgstr "Показувати клавіатуру"
 
-#: src/application.vala:91
-msgid "Copyright © 2022 Vojtěch Perník"
-msgstr "© Vojtěch Perník, 2022"
-
 #. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
-#: src/application.vala:94
+#: src/application.vala:95
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2022"
 
-#: src/window.vala:64
-msgid "You won!"
-msgstr "Ви перемогли!"
+#: src/application.vala:96
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "© Vojtěch Perník, 2022"
 
-#: src/window.vala:65
-#, c-format
-msgid "You lost! The word was: %s"
-msgstr "Ви програли! Слово було таким: %s"
+#: src/window.blp:64 src/help-page.vala:20
+msgid "Help"
+msgstr "Довідка"
 
-#: src/window.blp:38
+#: src/window.blp:65
 msgid "About Blurble"
 msgstr "Про «Blurble»"
 
-#: src/window.blp:39
-msgid "Quit"
-msgstr "Вийти"
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Грати"
 
-#: src/game-controller.vala:39
+#: src/game-controller.vala:31
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Поточне слово: %s\n"
+
+#: src/result-page.vala:31
+msgid "You won!"
+msgstr "Ви перемогли!"
+
+#: src/result-page.vala:31
+msgid "You lost!"
+msgstr "Ви програли!"
+
+#: src/result-page.vala:64
+#| msgid "You lost! The word was: %s"
+msgid "The word was:"
+msgstr "Слово було таким:"
+
+#: src/result-page.vala:75
+msgid "_Play Again"
+msgstr "Зі_грати знову"
+
+#: src/result-page.vala:81
+#| msgid "Quit"
+msgid "_Quit"
+msgstr "Ви_йти"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+"Гра полягає у <b>вгадуванні слів</b> з п'яти літер. Ви намагаєтеся вгадати"
+" літери одна за одною, натискаючи після кожної здогадки Enter.\n"
+"\n"
+"Після підтвердження комірка <b>змінює колір</b>, щоб повідомити вам"
+" наскільки близькі ви були до слова, яке вгадуєте:"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "!w/e/a/r/y"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>W</b> є частиною слова і стоїть на правильному місці."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "p/!i/l/l/s"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>I</b> є частиною слова, але стоїть не там, де слід."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "v/a/g/!u/e"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>U</b> не є частиною слова."
 
 #.
 #. A key is represented by braces, which contain displayed string, slash
@@ -1474,6 +1535,3 @@ msgstr ""
 "ґ/е/д/з/ь\n"
 "ґ/р/у/н/т\n"
 "ґ/у/д/з/ь"
-
-#~ msgid "You lost!"
-#~ msgstr "Ви програли!"
