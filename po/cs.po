@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wordgame\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-08 21:35+0100\n"
-"PO-Revision-Date: 2023-03-08 21:42+0100\n"
+"POT-Creation-Date: 2023-03-10 13:36+0100\n"
+"PO-Revision-Date: 2023-03-10 13:37+0100\n"
 "Last-Translator: Vojtěch Perník <translations@pervoj.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -37,47 +37,63 @@ msgstr "Vyřešte hádanku, než vám dojdou tipy!"
 msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr "Hra je klonem hry Wordle a je vytvořena s ohledem na lokalizaci."
 
-#: data/blurble.appdata.xml.in.in:26
+#: data/blurble.appdata.xml.in.in:28
+msgid "The UI was redesigned:"
+msgstr "Uživatelské rozhraní bylo přepracováno:"
+
+#: data/blurble.appdata.xml.in.in:30
+msgid "Added welcome page"
+msgstr "Přidána uvítací stránka"
+
+#: data/blurble.appdata.xml.in.in:31
+msgid "Added help with information about how to play the game"
+msgstr "Přidána nápověda s informacemi o tom, jak hru hrát"
+
+#: data/blurble.appdata.xml.in.in:32
+msgid "After the game ends the window is not closed anymore"
+msgstr "Po skončení hry se okno již nezavře"
+
+#: data/blurble.appdata.xml.in.in:39
 msgid "Letters on the keyboard are now colored as well"
 msgstr "Písmena na klávesnici jsou nyní také obarvována"
 
-#: data/blurble.appdata.xml.in.in:27
+#: data/blurble.appdata.xml.in.in:40
 msgid "Keyboard navigation through the app was enhanced"
 msgstr "Byla vylepšena navigace pomocí klávesnice v aplikaci"
 
-#: data/blurble.appdata.xml.in.in:28
+#: data/blurble.appdata.xml.in.in:41
 msgid "A lot of translations were updated"
 msgstr "Bylo aktualizováno mnoho překladů"
 
-#: data/blurble.appdata.xml.in.in:35
+#: data/blurble.appdata.xml.in.in:48
 msgid "Add Brazilian Portuguese translation (Rafael Fontenelle)"
 msgstr "Přidán překlad do brazilské portugalštiny (Rafael Fontenelle)"
 
-#: data/blurble.appdata.xml.in.in:36
+#: data/blurble.appdata.xml.in.in:49
 msgid "Add German translation (Jürgen Benvenuti)"
 msgstr "Přidán německý překlad (Jürgen Benvenuti)"
 
-#: data/blurble.appdata.xml.in.in:37
+#: data/blurble.appdata.xml.in.in:50
 msgid "Add Italian translation (Michael Moroni)"
 msgstr "Přidán italský překlad (Michael Moroni)"
 
-#: data/blurble.appdata.xml.in.in:38
+#: data/blurble.appdata.xml.in.in:51
 msgid "Add Spanish translation (Santiago Cézar)"
 msgstr "Přidán španělský překlad (Santiago Cézar)"
 
-#: data/blurble.appdata.xml.in.in:39
+#: data/blurble.appdata.xml.in.in:52
 msgid "Add main menu"
 msgstr "Přidáno hlavní menu"
 
-#: data/blurble.appdata.xml.in.in:40
+#: data/blurble.appdata.xml.in.in:53
 msgid "Correct letter is marked only once (Santiago Cézar)"
 msgstr "Správná písmena jsou označena pouze jednou (Santiago Cézar)"
 
-#: data/blurble.appdata.xml.in.in:46
+#: data/blurble.appdata.xml.in.in:59
 msgid "First release"
 msgstr "První vydání"
 
-#: data/blurble.appdata.xml.in.in:51
+#: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
