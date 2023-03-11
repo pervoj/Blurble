@@ -56,10 +56,12 @@ public class WG.Key : Adw.Bin {
             case "enter":
                 button.icon_name = "keyboard-enter-symbolic";
                 button.add_css_class ("suggested-action");
+                button.tooltip_text = _("Enter");
                 break;
             case "backspace":
                 button.icon_name = "entry-clear-symbolic";
                 button.add_css_class ("destructive-action");
+                button.tooltip_text = _("Erase");
                 break;
             default:
                 button.label = display_val.up ();
