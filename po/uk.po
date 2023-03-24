@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2023-03-08 20:13+0000\n"
-"PO-Revision-Date: 2023-03-09 09:43+0200\n"
+"POT-Creation-Date: 2023-03-24 09:52+0000\n"
+"PO-Revision-Date: 2023-03-24 15:10+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -38,11 +38,11 @@ msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr ""
 "Гра є клоном Wordle, який створено із врахуванням можливості локалізації."
 
-#: data/blurble.appdata.xml.in.in:51
+#: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Войцех Пернік"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:61
+#: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
 msgstr "Показувати клавіатуру"
 
@@ -55,11 +55,20 @@ msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2022"
 msgid "Copyright © 2022 Vojtěch Perník"
 msgstr "© Vojtěch Perník, 2022"
 
-#: src/window.blp:64 src/help-page.vala:20
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Головне меню"
+
+#: src/window.blp:62
+#| msgid "Show keyboard"
+msgid "Show Keyboard"
+msgstr "Показати клавіатуру"
+
+#: src/window.blp:65 src/help-page.vala:20
 msgid "Help"
 msgstr "Довідка"
 
-#: src/window.blp:65
+#: src/window.blp:66
 msgid "About Blurble"
 msgstr "Про «Blurble»"
 
@@ -81,7 +90,6 @@ msgid "You lost!"
 msgstr "Ви програли!"
 
 #: src/result-page.vala:64
-#| msgid "You lost! The word was: %s"
 msgid "The word was:"
 msgstr "Слово було таким:"
 
@@ -90,7 +98,6 @@ msgid "_Play Again"
 msgstr "Зі_грати знову"
 
 #: src/result-page.vala:81
-#| msgid "Quit"
 msgid "_Quit"
 msgstr "Ви_йти"
 
@@ -102,11 +109,11 @@ msgid ""
 "After confirmation, the cell <b>color changes</b> to indicate how close you "
 "are to the word you are looking for with your guess:"
 msgstr ""
-"Гра полягає у <b>вгадуванні слів</b> з п'яти літер. Ви намагаєтеся вгадати"
-" літери одна за одною, натискаючи після кожної здогадки Enter.\n"
+"Гра полягає у <b>вгадуванні слів</b> з п'яти літер. Ви намагаєтеся вгадати "
+"літери одна за одною, натискаючи після кожної здогадки Enter.\n"
 "\n"
-"Після підтвердження комірка <b>змінює колір</b>, щоб повідомити вам"
-" наскільки близькі ви були до слова, яке вгадуєте:"
+"Після підтвердження комірка <b>змінює колір</b>, щоб повідомити вам "
+"наскільки близькі ви були до слова, яке вгадуєте:"
 
 #. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
 #: src/help-page.vala:30
