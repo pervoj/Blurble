@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2023-03-08 20:13+0000\n"
-"PO-Revision-Date: 2023-03-09 05:27+0100\n"
+"POT-Creation-Date: 2023-03-24 09:52+0000\n"
+"PO-Revision-Date: 2023-03-25 02:24+0100\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
@@ -35,11 +35,11 @@ msgstr "გამოიცანი გამოცანა, სანამ �
 msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr "თამაში Wordle-ის კლონია და შექმნილია ლოკალიზაციის გათვალისწინებით."
 
-#: data/blurble.appdata.xml.in.in:51
+#: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:61
+#: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
 msgstr "კლავიატურის ჩვენება"
 
@@ -52,11 +52,19 @@ msgstr "თემური დოღონაძე"
 msgid "Copyright © 2022 Vojtěch Perník"
 msgstr "© 2022 Vojtěch Perník, ყველა უფლება დაცულია"
 
-#: src/window.blp:64 src/help-page.vala:20
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "მთავარი მენიუ"
+
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "კლავიატურის ჩვენება"
+
+#: src/window.blp:65 src/help-page.vala:20
 msgid "Help"
 msgstr "დახმარება"
 
-#: src/window.blp:65
+#: src/window.blp:66
 msgid "About Blurble"
 msgstr "Blurble-ის შესახებ"
 
@@ -100,8 +108,8 @@ msgstr ""
 "თამაში ხუთსიმბოლოიანი <b>სიტყვების გამოცნობისგან</b> შედგება. თქვენ ცდილობთ "
 "შეიყვანოთ თქვენი ვარაუდები სათითაოდ, Enter თითოეული მათგანის შემდეგ.\n"
 "\n"
-"დადასტურების შემდეგ, უჯრედის <b>ფერი იცვლება</b> იმის მითითებით, თუ "
-"რამდენად ახლოს ხართ იმ სიტყვასთან, რომელსაც ეძებთ თქვენი ვარაუდით:"
+"დადასტურების შემდეგ, უჯრედის <b>ფერი იცვლება</b> იმის მითითებით, თუ რამდენად "
+"ახლოს ხართ იმ სიტყვასთან, რომელსაც ეძებთ თქვენი ვარაუდით:"
 
 #. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
 #: src/help-page.vala:30
