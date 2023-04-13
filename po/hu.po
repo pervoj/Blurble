@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2023-03-08 20:13+0000\n"
-"PO-Revision-Date: 2023-03-11 01:41+0100\n"
+"POT-Creation-Date: 2023-03-24 09:52+0000\n"
+"PO-Revision-Date: 2023-04-13 23:25+0200\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
-"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,11 +36,11 @@ msgstr "Fejtse meg a rejtvényt, mielőtt kifogyna a találgatásokból!"
 msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr "A játék a Wordle klónja, és a honosítást szem előtt tartva készült."
 
-#: data/blurble.appdata.xml.in.in:51
+#: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:61
+#: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
 msgstr "Billentyűzet megjelenítése"
 
@@ -53,11 +53,20 @@ msgstr "Úr Balázs <ur dot balazs at fsf dot hu>, 2022, 2023."
 msgid "Copyright © 2022 Vojtěch Perník"
 msgstr "Copyright © 2022 Vojtěch Perník"
 
-#: src/window.blp:64 src/help-page.vala:20
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Főmenü"
+
+#: src/window.blp:62
+#| msgid "Show keyboard"
+msgid "Show Keyboard"
+msgstr "Billentyűzet megjelenítése"
+
+#: src/window.blp:65 src/help-page.vala:20
 msgid "Help"
 msgstr "Súgó"
 
-#: src/window.blp:65
+#: src/window.blp:66
 msgid "About Blurble"
 msgstr "A Blurble névjegye"
 
@@ -75,12 +84,10 @@ msgid "You won!"
 msgstr "Ön nyert!"
 
 #: src/result-page.vala:31
-#| msgid "You won!"
 msgid "You lost!"
 msgstr "Ön vesztett!"
 
 #: src/result-page.vala:64
-#| msgid "You lost! The word was: %s"
 msgid "The word was:"
 msgstr "Ez volt a szó:"
 
@@ -89,7 +96,6 @@ msgid "_Play Again"
 msgstr "Új_rajátszás"
 
 #: src/result-page.vala:81
-#| msgid "Quit"
 msgid "_Quit"
 msgstr "_Kilépés"
 
@@ -101,11 +107,11 @@ msgid ""
 "After confirmation, the cell <b>color changes</b> to indicate how close you "
 "are to the word you are looking for with your guess:"
 msgstr ""
-"A játék öt karakter hosszúságú <b>találgató szavakból</b> áll. A"
-" találgatásokat egyenként próbálja meg beírni, mindegyik után Entert nyomva.\n"
+"A játék öt karakter hosszúságú <b>találgató szavakból</b> áll. A "
+"találgatásokat egyenként próbálja meg beírni, mindegyik után Entert nyomva.\n"
 "\n"
-"A megerősítés után a cella <b>színe megváltozik</b> annak jelzéséhez, hogy"
-" mennyire közel van a keresett szóhoz a tippje:"
+"A megerősítés után a cella <b>színe megváltozik</b> annak jelzéséhez, hogy "
+"mennyire közel van a keresett szóhoz a tippje:"
 
 #. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
 #: src/help-page.vala:30
