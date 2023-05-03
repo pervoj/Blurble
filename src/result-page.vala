@@ -21,10 +21,15 @@ public class WG.ResultPage : Adw.Bin {
     public DataParser.Word word { get; set; }
     public bool win { get; set; }
 
+    private Gtk.Picture illustration = new Gtk.Picture ();
     private Gtk.Label title_label = new Gtk.Label (null);
     private Adw.Bin word_container = new Adw.Bin ();
 
     public void reload () {
+        illustration.file = GLib.File.new_for_uri (
+            "resource:///app/drey/Blurble/" + (win ? "win.svg" : "lose.svg")
+        );
+
         title_label.remove_css_class ("success");
         title_label.remove_css_class ("error");
         title_label.add_css_class (win ? "success" : "error");
@@ -53,6 +58,8 @@ public class WG.ResultPage : Adw.Bin {
         var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32);
         clamp.child = main_box;
         main_box.valign = Gtk.Align.CENTER;
+
+        main_box.append(illustration);
 
         main_box.append (title_label);
         title_label.halign = Gtk.Align.CENTER;

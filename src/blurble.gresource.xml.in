@@ -5,9 +5,11 @@
         <file>welcome-page.ui</file>
         <file>style.css</file>
         <file>style-hc.css</file>
+        <file preprocess="xml-stripblanks" alias="win.svg">assets/win.svg</file>
+        <file preprocess="xml-stripblanks" alias="lose.svg">assets/lose.svg</file>
     </gresource>
     <gresource prefix="@RESOURCE_PATH@/icons/scalable/actions">
-        <file preprocess="xml-stripblanks" alias="keyboard-enter-symbolic.svg">icons/keyboard-enter-symbolic.svg</file>
-        <file preprocess="xml-stripblanks" alias="entry-clear-symbolic.svg">icons/entry-clear-symbolic.svg</file>
+        <file preprocess="xml-stripblanks" alias="keyboard-enter-symbolic.svg">assets/keyboard-enter-symbolic.svg</file>
+        <file preprocess="xml-stripblanks" alias="entry-clear-symbolic.svg">assets/entry-clear-symbolic.svg</file>
     </gresource>
 </gresources>
