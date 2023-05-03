@@ -84,11 +84,6 @@ public class WG.ResultPage : Adw.Bin {
         play_button.add_css_class ("pill");
         play_button.add_css_class ("suggested-action");
         play_button.clicked.connect (() => { play_again (); });
-
-        var quit_button = new Gtk.Button.with_mnemonic (_("_Quit"));
-        buttons_box.append (quit_button);
-        quit_button.add_css_class ("pill");
-        quit_button.clicked.connect (() => { quit (); });
     }
 
     private Gtk.Widget get_cells_for_word (DataParser.Word word, bool win) {
