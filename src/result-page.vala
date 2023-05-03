@@ -30,9 +30,6 @@ public class WG.ResultPage : Adw.Bin {
             "resource:///app/drey/Blurble/" + (win ? "win.svg" : "lose.svg")
         );
 
-        title_label.remove_css_class ("success");
-        title_label.remove_css_class ("error");
-        title_label.add_css_class (win ? "success" : "error");
         title_label.label = win ? _("You won!") : _("You lost!");
         word_container.child = get_cells_for_word (word, win);
     }
@@ -55,19 +52,20 @@ public class WG.ResultPage : Adw.Bin {
         clamp.maximum_size = 600;
         clamp.add_css_class ("container");
 
-        var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 32);
+        var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         clamp.child = main_box;
         main_box.valign = Gtk.Align.CENTER;
 
         main_box.append(illustration);
 
         main_box.append (title_label);
+        title_label.margin_top = 36;
         title_label.halign = Gtk.Align.CENTER;
         title_label.add_css_class ("title-1");
 
         var word_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
         main_box.append (word_box);
-
+        word_box.margin_top = 12;
         var word_label = new Gtk.Label (_("The word was:"));
         word_box.append (word_label);
         word_label.halign = Gtk.Align.CENTER;
@@ -75,12 +73,13 @@ public class WG.ResultPage : Adw.Bin {
         word_box.append (word_container);
         word_container.halign = Gtk.Align.CENTER;
 
-        var buttons_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 12);
-        main_box.append (buttons_box);
-        buttons_box.halign = Gtk.Align.CENTER;
+        var button_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        main_box.append (button_box);
+        button_box.halign = Gtk.Align.CENTER;
+        button_box.margin_top = 36;
 
         var play_button = new Gtk.Button.with_mnemonic (_("_Play Again"));
-        buttons_box.append (play_button);
+        button_box.append (play_button);
         play_button.add_css_class ("pill");
         play_button.add_css_class ("suggested-action");
         play_button.clicked.connect (() => { play_again (); });
