@@ -91,7 +91,7 @@ public class WG.Application : Adw.Application {
             version = Constants.VERSION,
             developers = { "Vojtěch Perník <develop@pervoj.cz>" },
             developer_name = "Vojtěch Perník",
-            artists = { "Brage Fuglseth", "Jakub Steiner" },
+            artists = { "Brage Fuglseth", "Jakub Steiner", "Tobias Bernard" },
             // Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
             translator_credits = _("translator-credits"),
             copyright = _("Copyright \xc2\xa9 2022 Vojtěch Perník"),
