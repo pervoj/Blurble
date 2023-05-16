@@ -74,4 +74,9 @@
     <launchable type="desktop-id">@APP_ID@.desktop</launchable>
     <translation type="gettext">@GETTEXT_PACKAGE@</translation>
 
+    <custom>
+        <value key="Purism::form_factor">workstation</value>
+        <value key="Purism::form_factor">mobile</value>
+    </custom>
+
 </component>
