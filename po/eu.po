@@ -1,13 +1,13 @@
 # Basque translation for Blurble.
 # Copyright (C) 2022 Blurble's COPYRIGHT HOLDER
 # This file is distributed under the same license as the Blurble package.
-# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2022.
+# Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2022, 2023.
 #
 msgid ""
 msgstr "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-08-30 17:04+0000\n"
-"PO-Revision-Date: 2022-08-31 06:47+0000\n"
+"POT-Creation-Date: 2023-05-05 19:52+0000\n"
+"PO-Revision-Date: 2023-08-20 06:47+0000\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -16,12 +16,12 @@ msgstr "Project-Id-Version: Blurble main\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
-#: src/application.vala:88 src/window.blp:5
+#: src/application.vala:90 src/welcome-page.blp:28
 msgid "Blurble"
 msgstr "Blurble"
 
 #: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
-#: src/application.vala:89
+#: src/welcome-page.blp:29
 msgid "Word guessing game"
 msgstr "Hitzak asmatzeko jokoa"
 
@@ -33,43 +33,104 @@ msgstr "Ebatzi asmakizuna aukerarik geratu arte!"
 msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr "Wordle jokoaren klon bat da, lokalizazioa kontuan hartuta sortutakoa."
 
-#: data/blurble.appdata.xml.in.in:42
+#: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:37
+#: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
 msgstr "Erakutsi teklatua"
 
-#: src/application.vala:91
-msgid "Copyright © 2022 Vojtěch Perník"
-msgstr "Copyright © 2022 Vojtěch Perník"
-
 #. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
-#: src/application.vala:94
+#: src/application.vala:96
 msgid "translator-credits"
 msgstr "translator-credits"
 
-#: src/window.vala:63
-msgid "You won!"
-msgstr "Irabazi duzu!"
+#: src/application.vala:97
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Copyright © 2022 Vojtěch Perník"
 
-#: src/window.vala:63
-msgid "You lost!"
-msgstr "Galdu duzu!"
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Menu nagusia"
 
-#: src/window.blp:38
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Erakutsi teklatua"
+
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "Laguntza"
+
+#: src/window.blp:66
 msgid "About Blurble"
 msgstr "Blurble aplikazioari buruz"
 
-#: src/window.blp:39
-msgid "Quit"
-msgstr "Irten"
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Jokatu"
 
-#: src/game-controller.vala:37
+#: src/game-controller.vala:31
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Uneko hitza: %s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "Irabazi duzu!"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "Galdu duzu!"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "Hitza honakoa zen:"
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "Jokatu _berriro"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr "Joko honetan, bost karaktere dituzten <b>hitzak igarri</b> behar dira. Sartu zure proposamenak banan-banan, eta sakatu 'Enter' bakoitzaren ondoren.\n"
+"\n"
+"Gelaxkaren <b>kolorea aldatuko da</b> benetako hitzera zenbat hurbildu zaren adierazteko:"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "!w/e/a/r/y"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>W</b> hitzean dago eta toki zuzenean dago."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "p/!i/l/l/s"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>I</b> hitzean dago baina okerreko tokian dago<b>I</b> is in the word but in the wrong spot.."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "v/a/g/!u/e"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>U</b> ez dago hitzean."
 
 #.
 #. A key is represented by braces, which contain displayed string, slash
@@ -95,8 +156,7 @@ msgstr "Uneko hitza: %s\n"
 #: src/data.vala:42
 msgctxt "Game keyboard"
 msgid "data-keyboard"
-msgstr ""
-"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};\n"
+msgstr "{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};\n"
 "{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {ñ/ñ};\n"
 "{enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}"
 
@@ -137,3 +197,6 @@ msgstr "a/b/c/d/e/f/g/h/i/j/k/l/m/n/ñ/o/p/q/r/s/t/u/v/w/x/y/z"
 msgctxt "List of available words"
 msgid "data-dictionary"
 msgstr ""
+
+#~ msgid "Quit"
+#~ msgstr "Irten"
