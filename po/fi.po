@@ -7,24 +7,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-08-29 18:41+0000\n"
-"PO-Revision-Date: 2022-08-30 20:03+0300\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2023-05-05 19:52+0000\n"
+"PO-Revision-Date: 2023-09-02 18:56+0300\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
-#: src/application.vala:88 src/window.blp:5
+#: src/application.vala:90 src/welcome-page.blp:28
 msgid "Blurble"
 msgstr "Blurble"
 
 #: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
-#: src/application.vala:89
+#: src/welcome-page.blp:29
 msgid "Word guessing game"
 msgstr "Sananarvauspeli"
 
@@ -36,43 +36,102 @@ msgstr "Selvitä pulma ennen kuin arvaukset loppuvat!"
 msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr "Peli on klooni Wordlesta ja toteutettu lokalisointi mielessä."
 
-#: data/blurble.appdata.xml.in.in:42
+#: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:37
+#: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
 msgstr "Näytä näppäimistö"
 
-#: src/application.vala:91
-msgid "Copyright © 2022 Vojtěch Perník"
-msgstr "Tekijänoikeus © 2022 Vojtěch Perník"
-
 #. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
-#: src/application.vala:94
+#: src/application.vala:96
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
-#: src/window.vala:63
-msgid "You won!"
-msgstr "Voitit!"
+#: src/application.vala:97
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Tekijänoikeus © 2022 Vojtěch Perník"
 
-#: src/window.vala:63
-msgid "You lost!"
-msgstr "Hävisit!"
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Päävalikko"
 
-#: src/window.blp:38
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Näytä näppäimistö"
+
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "Ohje"
+
+#: src/window.blp:66
 msgid "About Blurble"
 msgstr "Tietoja - Blurble"
 
-#: src/window.blp:39
-msgid "Quit"
-msgstr "Lopeta"
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Pelaa"
 
-#: src/game-controller.vala:37
+#: src/game-controller.vala:31
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Nykyinen sana: %s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "Voitit!"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "Hävisit!"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "Sana oli:"
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "_Pelaa uudelleen"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr ""
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr ""
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr ""
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr ""
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr ""
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr ""
 
 #.
 #. A key is represented by braces, which contain displayed string, slash
@@ -137,3 +196,6 @@ msgstr ""
 msgctxt "List of available words"
 msgid "data-dictionary"
 msgstr ""
+
+#~ msgid "Quit"
+#~ msgstr "Lopeta"
