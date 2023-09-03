@@ -7,17 +7,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wordgame\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-10 13:36+0100\n"
-"PO-Revision-Date: 2023-03-10 13:37+0100\n"
-"Last-Translator: Vojtěch Perník <translations@pervoj.cz>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
+"POT-Creation-Date: 2023-05-05 19:52+0000\n"
+"PO-Revision-Date: 2023-09-03 23:58+0200\n"
+"Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
-"X-Generator: Gtranslator 42.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
 #: src/application.vala:90 src/welcome-page.blp:28
@@ -37,84 +37,36 @@ msgstr "Vyřešte hádanku, než vám dojdou tipy!"
 msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr "Hra je klonem hry Wordle a je vytvořena s ohledem na lokalizaci."
 
-#: data/blurble.appdata.xml.in.in:28
-msgid "The UI was redesigned:"
-msgstr "Uživatelské rozhraní bylo přepracováno:"
-
-#: data/blurble.appdata.xml.in.in:30
-msgid "Added welcome page"
-msgstr "Přidána uvítací stránka"
-
-#: data/blurble.appdata.xml.in.in:31
-msgid "Added help with information about how to play the game"
-msgstr "Přidána nápověda s informacemi o tom, jak hru hrát"
-
-#: data/blurble.appdata.xml.in.in:32
-msgid "After the game ends the window is not closed anymore"
-msgstr "Po skončení hry se okno již nezavře"
-
-#: data/blurble.appdata.xml.in.in:39
-msgid "Letters on the keyboard are now colored as well"
-msgstr "Písmena na klávesnici jsou nyní také obarvována"
-
-#: data/blurble.appdata.xml.in.in:40
-msgid "Keyboard navigation through the app was enhanced"
-msgstr "Byla vylepšena navigace pomocí klávesnice v aplikaci"
-
-#: data/blurble.appdata.xml.in.in:41
-msgid "A lot of translations were updated"
-msgstr "Bylo aktualizováno mnoho překladů"
-
-#: data/blurble.appdata.xml.in.in:48
-msgid "Add Brazilian Portuguese translation (Rafael Fontenelle)"
-msgstr "Přidán překlad do brazilské portugalštiny (Rafael Fontenelle)"
-
-#: data/blurble.appdata.xml.in.in:49
-msgid "Add German translation (Jürgen Benvenuti)"
-msgstr "Přidán německý překlad (Jürgen Benvenuti)"
-
-#: data/blurble.appdata.xml.in.in:50
-msgid "Add Italian translation (Michael Moroni)"
-msgstr "Přidán italský překlad (Michael Moroni)"
-
-#: data/blurble.appdata.xml.in.in:51
-msgid "Add Spanish translation (Santiago Cézar)"
-msgstr "Přidán španělský překlad (Santiago Cézar)"
-
-#: data/blurble.appdata.xml.in.in:52
-msgid "Add main menu"
-msgstr "Přidáno hlavní menu"
-
-#: data/blurble.appdata.xml.in.in:53
-msgid "Correct letter is marked only once (Santiago Cézar)"
-msgstr "Správná písmena jsou označena pouze jednou (Santiago Cézar)"
-
-#: data/blurble.appdata.xml.in.in:59
-msgid "First release"
-msgstr "První vydání"
-
 #: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:61
+#: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
 msgstr "Zobrazit klávesnici"
 
 #. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
-#: src/application.vala:95
+#: src/application.vala:96
 msgid "translator-credits"
 msgstr "translator-credits"
 
-#: src/application.vala:96
+#: src/application.vala:97
 msgid "Copyright © 2022 Vojtěch Perník"
 msgstr "Copyright © 2022 Vojtěch Perník"
 
-#: src/window.blp:64 src/help-page.vala:20
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Hlavní nabídka"
+
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Zobrazit klávesnici"
+
+#: src/window.blp:65 src/help-page.vala:20
 msgid "Help"
 msgstr "Nápověda"
 
-#: src/window.blp:65
+#: src/window.blp:66
 msgid "About Blurble"
 msgstr "O aplikaci"
 
@@ -127,25 +79,21 @@ msgstr "_Hrát"
 msgid "Current word: %s\n"
 msgstr "Aktuální slovo: %s\n"
 
-#: src/result-page.vala:31
+#: src/result-page.vala:33
 msgid "You won!"
 msgstr "Vyhráli jste!"
 
-#: src/result-page.vala:31
+#: src/result-page.vala:33
 msgid "You lost!"
 msgstr "Prohráli jste!"
 
-#: src/result-page.vala:64
+#: src/result-page.vala:69
 msgid "The word was:"
 msgstr "Hledané slovo bylo:"
 
-#: src/result-page.vala:75
+#: src/result-page.vala:81
 msgid "_Play Again"
 msgstr "_Hrát znovu"
-
-#: src/result-page.vala:81
-msgid "_Quit"
-msgstr "_Ukončit"
 
 #: src/help-page.vala:22
 msgid ""
@@ -3134,6 +3082,48 @@ msgstr ""
 "t/r/i/m/r\n"
 "z/e/n/i/t\n"
 "p/a/c/k/a"
+
+#~ msgid "The UI was redesigned:"
+#~ msgstr "Uživatelské rozhraní bylo přepracováno:"
+
+#~ msgid "Added welcome page"
+#~ msgstr "Přidána uvítací stránka"
+
+#~ msgid "Added help with information about how to play the game"
+#~ msgstr "Přidána nápověda s informacemi o tom, jak hru hrát"
+
+#~ msgid "After the game ends the window is not closed anymore"
+#~ msgstr "Po skončení hry se okno již nezavře"
+
+#~ msgid "Letters on the keyboard are now colored as well"
+#~ msgstr "Písmena na klávesnici jsou nyní také obarvována"
+
+#~ msgid "Keyboard navigation through the app was enhanced"
+#~ msgstr "Byla vylepšena navigace pomocí klávesnice v aplikaci"
+
+#~ msgid "A lot of translations were updated"
+#~ msgstr "Bylo aktualizováno mnoho překladů"
+
+#~ msgid "Add Brazilian Portuguese translation (Rafael Fontenelle)"
+#~ msgstr "Přidán překlad do brazilské portugalštiny (Rafael Fontenelle)"
+
+#~ msgid "Add German translation (Jürgen Benvenuti)"
+#~ msgstr "Přidán německý překlad (Jürgen Benvenuti)"
+
+#~ msgid "Add Italian translation (Michael Moroni)"
+#~ msgstr "Přidán italský překlad (Michael Moroni)"
+
+#~ msgid "Add Spanish translation (Santiago Cézar)"
+#~ msgstr "Přidán španělský překlad (Santiago Cézar)"
+
+#~ msgid "Correct letter is marked only once (Santiago Cézar)"
+#~ msgstr "Správná písmena jsou označena pouze jednou (Santiago Cézar)"
+
+#~ msgid "First release"
+#~ msgstr "První vydání"
+
+#~ msgid "_Quit"
+#~ msgstr "_Ukončit"
 
 #~ msgid "Word Game"
 #~ msgstr "Slovní hra"
