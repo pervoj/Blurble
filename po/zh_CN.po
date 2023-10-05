@@ -1,0 +1,202 @@
+# Chinese (China) translation for Blurble.
+# Copyright (C) 2023 Blurble's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Blurble package.
+# lumingzh <lumingzh@qq.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Blurble main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
+"POT-Creation-Date: 2023-09-21 11:04+0000\n"
+"PO-Revision-Date: 2023-10-05 21:41+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: Gtranslator 45.2\n"
+
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
+#: src/application.vala:90 src/welcome-page.blp:28
+msgid "Blurble"
+msgstr "Blurble"
+
+#: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+#: src/welcome-page.blp:29
+msgid "Word guessing game"
+msgstr "猜单词游戏"
+
+#: data/blurble.appdata.xml.in.in:12
+msgid "Solve the riddle until you run out of guesses!"
+msgstr "解决谜题直到耗尽猜想次数！"
+
+#: data/blurble.appdata.xml.in.in:13
+msgid "The game is a clone of Wordle and made with localization in mind."
+msgstr "该游戏是对 Wordle 的克隆且带有本地化设计制作。"
+
+#: data/blurble.appdata.xml.in.in:64
+msgid "Vojtěch Perník"
+msgstr "Vojtěch Perník"
+
+#: data/blurble.gschema.xml.in:6
+msgid "Show keyboard"
+msgstr "显示键盘"
+
+#. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
+#: src/application.vala:96
+msgid "translator-credits"
+msgstr "lumingzh <lumingzh@qq.com>, 2023"
+
+#: src/application.vala:97
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "版权所有 © 2022 Vojtěch Perník"
+
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "主菜单"
+
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "显示键盘"
+
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "帮助"
+
+#: src/window.blp:66
+msgid "About Blurble"
+msgstr "关于 Blurble"
+
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "开始游戏(_P)"
+
+#: src/game-controller.vala:31
+#, c-format
+msgid "Current word: %s\n"
+msgstr "当前单词：%s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "您赢了！"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "您输了！"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "该词语为："
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "再玩一次(_P)"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+"该游戏玩法为五个字符长度的 <b>单词猜想</b>。您尝试依次输入您的猜想，每次输入"
+"后按回车键。\n"
+"\n"
+"确认之后，单元格的 <b>颜色变化</b> 会提示您的猜想与真正寻找单词有多接近："
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "!w/e/a/r/y"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>W</b> 在单词中且在正确的点位。"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "p/!i/l/l/s"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>I</b> 在单词中但在错误的点位。"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "v/a/g/!u/e"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>U</b> 不在单词中的任何点位。"
+
+#.
+#. A key is represented by braces, which contain displayed string, slash
+#. the string to add to cell.
+#.
+#. {a/a}
+#.
+#. There are also two special keys:
+#.
+#. {enter}, {backspace}
+#.
+#. You can also specify the size of the key by adding the size
+#. information:
+#.
+#. {a/a/1}, {enter/2}, {backspace/3}
+#.
+#. Keys are divided by commas, lines by semicolons.
+#.
+#. {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+#. {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+#. {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#.
+#: src/data.vala:42
+msgctxt "Game keyboard"
+msgid "data-keyboard"
+msgstr "数据-键盘"
+
+#.
+#. Each replacement on its own line. Original and its replacement divide
+#. with slash.
+#.
+#. á/a
+#. č/c
+#. …
+#.
+#: src/data.vala:61
+msgctxt "Replaced letters"
+msgid "data-replacements"
+msgstr "数据-替换"
+
+#.
+#. Letters to be read from the keyboard.
+#.
+#. a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#.
+#: src/data.vala:72
+msgctxt "Available letters"
+msgid "data-letters"
+msgstr "数据-字母"
+
+#.
+#. All words have to be 5 letters long. Each word on its own line.
+#. Individual characters please divide with slash. The reason for this
+#. is that some letters are in unicode made of two characters.
+#.
+#. a/a/h/e/d
+#. a/a/l/i/i
+#. a/a/r/g/h
+#. …
+#.
+#: src/data.vala:88
+msgctxt "List of available words"
+msgid "data-dictionary"
+msgstr "数据-词典"
