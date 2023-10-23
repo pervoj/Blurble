@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-12-08 17:59+0000\n"
-"PO-Revision-Date: 2023-01-09 19:57+0100\n"
+"POT-Creation-Date: 2023-05-05 19:52+0000\n"
+"PO-Revision-Date: 2023-10-13 15:26+0200\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -19,11 +19,12 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
-#: src/application.vala:88 src/window.blp:5
+#: src/application.vala:90 src/welcome-page.blp:28
 msgid "Blurble"
 msgstr "Blurble"
 
 #: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+#: src/welcome-page.blp:29
 msgid "Word guessing game"
 msgstr "Gæt ord"
 
@@ -35,16 +36,16 @@ msgstr "Prøv at løse gåden, før du løber tør for gæt!"
 msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr "Spillet er en klon af Wordle og lavet med henblik på lokalisering."
 
-#: data/blurble.appdata.xml.in.in:42
+#: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:37
+#: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
 msgstr "Vis tastatur"
 
 #. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
-#: src/application.vala:93
+#: src/application.vala:96
 msgid "translator-credits"
 msgstr ""
 "Alan Mortensen\n"
@@ -52,27 +53,94 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: src/application.vala:94
+#: src/application.vala:97
 msgid "Copyright © 2022 Vojtěch Perník"
 msgstr "Ophavsret © 2022 Vojtěch Perník"
 
-#: src/window.vala:64
-msgid "You won!"
-msgstr "Du vandt!"
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Hovedmenu"
 
-#: src/window.vala:65
-#, c-format
-msgid "You lost! The word was: %s"
-msgstr "Du tabte! Ordet var: %s"
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Vis tastatur"
 
-#: src/window.blp:38
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "Hjælp"
+
+#: src/window.blp:66
 msgid "About Blurble"
 msgstr "Om Blurble"
 
-#: src/game-controller.vala:39
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Spil"
+
+#: src/game-controller.vala:31
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Nuværende ord: %s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "Du vandt!"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "Du tabte!"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "Ordet var:"
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "_Spil igen"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+"Spillet går ud på at <b>gætte ord</b> på fem bogstaver. Du forsøger at "
+"indtaste dine gæt et efter et, og trykker på Enter efter hvert.\n"
+"\n"
+"Efter bekræftelse ændres cellens <b>farve</b> for at angive, hvor tæt du er "
+"på det ord, du skal gætte:"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "!a/g/e/r/n"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>A</b> indgår i ordet på denne placering."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "p/!i/l/l/e"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>I</b> indgår i ordet men ikke på denne placering."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "g/r/ø/!n/t"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>N</b> indgår ikke i ordet."
 
 #.
 #. A key is represented by braces, which contain displayed string, slash
@@ -99,8 +167,10 @@ msgstr "Nuværende ord: %s\n"
 msgctxt "Game keyboard"
 msgid "data-keyboard"
 msgstr ""
-"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p}, {å/å};\n"
-"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {æ/æ}, {ø/ø};\n"
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p}, {å/"
+"å};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {æ/æ}, {ø/"
+"ø};\n"
 "{enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}"
 
 #.
