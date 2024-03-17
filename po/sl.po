@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-09-27 18:16+0000\n"
-"PO-Revision-Date: 2023-02-12 17:55+0100\n"
+"POT-Creation-Date: 2023-05-05 19:52+0000\n"
+"PO-Revision-Date: 2024-03-17 09:36+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
-"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups."
+"com>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,14 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
-#: src/application.vala:86 src/window.blp:5
+#: src/application.vala:90 src/welcome-page.blp:28
 msgid "Blurble"
 msgstr "Kratkica"
 
 #: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+#: src/welcome-page.blp:29
 msgid "Word guessing game"
 msgstr "Igra uganjevanja besed"
 
@@ -39,42 +41,109 @@ msgid "The game is a clone of Wordle and made with localization in mind."
 msgstr ""
 "Igra je klon igre Wordle, upoštevajoč jezikovne in krajevne prilagoditve."
 
-#: data/blurble.appdata.xml.in.in:42
+#: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:37
+#: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
 msgstr "Pokaži tipkovnico"
 
 #. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
-#: src/application.vala:91
+#: src/application.vala:96
 msgid "translator-credits"
 msgstr ""
 "Matej Urbančič <mateju@svn.gnome.org>\n"
 "Martin Srebotnjak <miles@filmsi.net>"
 
-#: src/application.vala:92
+#: src/application.vala:97
 msgid "Copyright © 2022 Vojtěch Perník"
 msgstr "Avtorske pravice © 2022 Vojtěch Perník"
 
-#: src/window.vala:64
-msgid "You won!"
-msgstr "Zmagali ste!"
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Glavni meni"
 
-#: src/window.vala:65
-#, c-format
-msgid "You lost! The word was: %s"
-msgstr "Izgubili ste! Iskana beseda je: %s"
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Pokaži tipkovnico"
 
-#: src/window.blp:38
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "Pomoč"
+
+#: src/window.blp:66
 msgid "About Blurble"
 msgstr "O programu"
 
-#: src/game-controller.vala:39
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Igraj"
+
+#: src/game-controller.vala:31
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Trenutna beseda: %s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "Zmagali ste!"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "Izgubili ste!"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "Iskana beseda je:"
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "_Igraj znova"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+"Igra je sestavljena iz <b>ugibanja besed</b> , dolgih pet znakov. Poskusite "
+"vnesti ugibanja eno za drugo in za vsakim pritisnite vnašalko.\n"
+"\n"
+"Po potrditvi se  <b>barva celice spremeni</b> , da pokaže, kako blizu ste "
+"besedi, ki jo iščete, z ugibanjem:"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "!w/e/a/r/y"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>W</b> je v besedi in na pravem mestu."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "p/!i/l/l/s"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>I</b> je v besedi, vendar na drugem mestu."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "v/a/g/!u/e"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>U</b> ni v besedi na nobenem mestu."
 
 #.
 #. A key is represented by braces, which contain displayed string, slash
@@ -100,7 +169,12 @@ msgstr "Trenutna beseda: %s\n"
 #: src/data.vala:42
 msgctxt "Game keyboard"
 msgid "data-keyboard"
-msgstr "podatki-tipkovnica"
+msgstr ""
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {z/z}, {u/u}, {i/i}, {o/o}, {p/p}, {š/"
+"š}, {đ/đ}, {backspace};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {č/č}, {ć/"
+"ć}, {ž/ž}, {enter};\n"
+"{enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}"
 
 #.
 #. Each replacement on its own line. Original and its replacement divide
@@ -113,7 +187,7 @@ msgstr "podatki-tipkovnica"
 #: src/data.vala:61
 msgctxt "Replaced letters"
 msgid "data-replacements"
-msgstr "podatki-zamenjave"
+msgstr " "
 
 #.
 #. Letters to be read from the keyboard.
@@ -138,7 +212,8 @@ msgstr "a/b/c/č/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/š/t/u/v/w/x/y/z/ž"
 #: src/data.vala:88
 msgctxt "List of available words"
 msgid "data-dictionary"
-msgstr "podatki-slovar"
-
-#~ msgid "Quit"
-#~ msgstr "Končaj"
+msgstr ""
+"o/b/i/s/k\n"
+"o/m/a/k/a\n"
+"p/e/t/j/e\n"
+"o/l/i/v/a"
