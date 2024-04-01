@@ -1,32 +1,33 @@
 # Brazilian Portuguese translations for blurble package
 # Traduções em português brasileiro para o pacote blurble.
-# Copyright (C) 2022 THE blurble'S COPYRIGHT HOLDER
+# Copyright (C) 2024 THE blurble'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the blurble package.
 # Enrico Nicoletto <hiko@duck.com>, 2022.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2022.
+# Nayson Jonata <monver.contato@gmail.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: blurble\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2022-09-16 14:30+0000\n"
-"PO-Revision-Date: 2022-09-20 23:27-0300\n"
-"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
+"POT-Creation-Date: 2024-03-17 08:37+0000\n"
+"PO-Revision-Date: 2024-04-01 14:56-0300\n"
+"Last-Translator: Nayson Jonata <monver.contato@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Gtranslator 40.0\n"
 
 #: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
-#: src/application.vala:88 src/window.blp:5
+#: src/application.vala:90 src/welcome-page.blp:28
 msgid "Blurble"
 msgstr "Blurble"
 
 #: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
-#: src/application.vala:89
+#: src/welcome-page.blp:29
 msgid "Word guessing game"
 msgstr "Jogo de adivinhação de palavras"
 
@@ -40,46 +41,109 @@ msgstr ""
 "O jogo é um clone do Wordle (jogo de palavras) e feito com a localização em "
 "mente."
 
-#: data/blurble.appdata.xml.in.in:42
+#: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
 msgstr "Vojtěch Perník"
 
-#: data/blurble.gschema.xml.in:6 src/window.blp:37
+#: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
 msgstr "Mostrar teclado"
 
-#: src/application.vala:91
-msgid "Copyright © 2022 Vojtěch Perník"
-msgstr "Copyright © 2022 Vojtěch Perník"
-
 #. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
-#: src/application.vala:94
+#: src/application.vala:96
 msgid "translator-credits"
 msgstr ""
 "Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Enrico Nicoletto <hiko@duck.com>"
 
-#: src/window.vala:64
-msgid "You won!"
-msgstr "Você conseguiu!"
+#: src/application.vala:97
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Copyright © 2022 Vojtěch Perník"
 
-#: src/window.vala:65
-#, c-format
-msgid "You lost! The word was: %s"
-msgstr "Você perdeu! A palavra era: %s"
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Menu principal"
 
-#: src/window.blp:38
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Mostrar teclado"
+
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "Ajuda"
+
+#: src/window.blp:66
 msgid "About Blurble"
 msgstr "Sobre o Blurble"
 
-#: src/window.blp:39
-msgid "Quit"
-msgstr "Sair"
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Jogar"
 
-#: src/game-controller.vala:39
+#: src/game-controller.vala:31
 #, c-format
 msgid "Current word: %s\n"
 msgstr "Palavra atual: %s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "Você conseguiu!"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "Você perdeu!"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "A palavra era:"
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "_Jogar novamente"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+"O jogo consiste em <b>adivinhar palavras</b> de cinco caracteres. Você tenta "
+"digitar suas suposições uma por uma, pressionando Enter após cada uma.\n"
+"\n"
+"Após a confirmação, a célula <b>muda de cor</b> para indicar o quão perto "
+"você está da palavra que está procurando com sua suposição:"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "!t/r/o/t/e"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>T</b> está na palavra e na posição correta."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "g/!u/r/i/a"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>U</b> está na palavra, mas no lugar errado."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "a/b/a/!l/o"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>L</b> não está na palavra em nenhuma posição."
 
 #.
 #. A key is represented by braces, which contain displayed string, slash
@@ -19259,5 +19323,5 @@ msgstr ""
 "ú/v/i/d/o\n"
 "ú/v/u/l/a"
 
-#~ msgid "You lost!"
-#~ msgstr "Você perdeu!"
+#~ msgid "Quit"
+#~ msgstr "Sair"
