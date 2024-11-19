@@ -6,17 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/issues\n"
-"POT-Creation-Date: 2023-03-24 09:52+0000\n"
-"PO-Revision-Date: 2023-04-13 23:25+0200\n"
-"Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/-/issues\n"
+"POT-Creation-Date: 2024-11-07 20:17+0000\n"
+"PO-Revision-Date: 2024-11-19 20:54+0100\n"
+"Last-Translator: Meskó Balázs <mesko.balazs@fsf.hu>\n"
 "Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
 #: src/application.vala:90 src/welcome-page.blp:28
@@ -45,11 +45,13 @@ msgid "Show keyboard"
 msgstr "Billentyűzet megjelenítése"
 
 #. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
-#: src/application.vala:95
-msgid "translator-credits"
-msgstr "Úr Balázs <ur dot balazs at fsf dot hu>, 2022, 2023."
-
 #: src/application.vala:96
+msgid "translator-credits"
+msgstr ""
+"Meskó Balázs <mesko dot balazs at fsf dot hu>, 2024.\n"
+"Úr Balázs <ur dot balazs at fsf dot hu>, 2022, 2023."
+
+#: src/application.vala:97
 msgid "Copyright © 2022 Vojtěch Perník"
 msgstr "Copyright © 2022 Vojtěch Perník"
 
@@ -58,7 +60,6 @@ msgid "Main Menu"
 msgstr "Főmenü"
 
 #: src/window.blp:62
-#| msgid "Show keyboard"
 msgid "Show Keyboard"
 msgstr "Billentyűzet megjelenítése"
 
@@ -79,25 +80,21 @@ msgstr "_Játék"
 msgid "Current word: %s\n"
 msgstr "Jelenlegi szó: %s\n"
 
-#: src/result-page.vala:31
+#: src/result-page.vala:33
 msgid "You won!"
 msgstr "Ön nyert!"
 
-#: src/result-page.vala:31
+#: src/result-page.vala:33
 msgid "You lost!"
 msgstr "Ön vesztett!"
 
-#: src/result-page.vala:64
+#: src/result-page.vala:69
 msgid "The word was:"
 msgstr "Ez volt a szó:"
 
-#: src/result-page.vala:75
+#: src/result-page.vala:81
 msgid "_Play Again"
 msgstr "Új_rajátszás"
-
-#: src/result-page.vala:81
-msgid "_Quit"
-msgstr "_Kilépés"
 
 #: src/help-page.vala:22
 msgid ""
@@ -168,14 +165,12 @@ msgstr "<b>Y</b> nincs a szóban, egyik helyen sem."
 msgctxt "Game keyboard"
 msgid "data-keyboard"
 msgstr ""
-"{0/0}, {1/1}, {2/2}, {3/3}, {4/4}, {5/5}, {6/6}, {7/7}, {8/8}, {9/9}, {ö/ö}, "
-"{ü/ü};\n"
 "{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {z/z}, {u/u}, {i/i}, {o/o}, {p/p}, {ő/ő}, "
 "{ú/ú};\n"
 "{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l}, {é/é}, {á/á}, "
 "{ű/ű};\n"
-"{í/í}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {ó/ó}, {backspace}, "
-"{enter/2}"
+"{enter}, {í/í}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {ö/ö}, {ü/"
+"ü}, {ó/ó}, {backspace}"
 
 #.
 #. Each replacement on its own line. Original and its replacement divide
@@ -189,15 +184,6 @@ msgstr ""
 msgctxt "Replaced letters"
 msgid "data-replacements"
 msgstr ""
-"á/a\n"
-"é/e\n"
-"í/i\n"
-"ó/o\n"
-"ö/o\n"
-"ő/o\n"
-"ú/u\n"
-"ü/u\n"
-"ű/u"
 
 #.
 #. Letters to be read from the keyboard.
@@ -3529,7 +3515,6 @@ msgstr ""
 "z/i/h/á/l\n"
 "z/i/l/á/l\n"
 "z/i/z/e/g\n"
-"z/ł/o/t/y\n"
 "z/o/k/n/i\n"
 "z/o/k/o/g\n"
 "z/o/m/b/i\n"
@@ -3565,3 +3550,6 @@ msgstr ""
 "z/s/o/n/g\n"
 "z/s/u/g/a\n"
 "z/s/ű/r/i"
+
+#~ msgid "_Quit"
+#~ msgstr "_Kilépés"
