@@ -1,0 +1,343 @@
+# Slovak translation for Blurble.
+# Copyright (C) 2025 Blurble's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Blurble package.
+# Peter Mráz <etkinator@gmail.com>,  2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Blurble main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/-/issues\n"
+"POT-Creation-Date: 2025-05-10 11:15+0000\n"
+"PO-Revision-Date: 2025-05-12 15:32+0200\n"
+"Last-Translator: Peter Mráz <etkinator@gmail.com>\n"
+"Language-Team: Slovak <sk@li.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Poedit 3.5\n"
+
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
+#: src/application.vala:90 src/welcome-page.blp:28
+msgid "Blurble"
+msgstr "Motanica"
+
+#: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+#: src/welcome-page.blp:29
+msgid "Word guessing game"
+msgstr "Hra s hádaním slov"
+
+#: data/blurble.appdata.xml.in.in:12
+msgid "Solve the riddle until you run out of guesses!"
+msgstr "Rieš hádanku, kým nevyčerpáš všetky pokusy!"
+
+#: data/blurble.appdata.xml.in.in:13
+msgid "The game is a clone of Wordle and made with localization in mind."
+msgstr "Hra je klonom hry Wordle, vytvorená s dôrazom na lokalizáciu."
+
+#: data/blurble.appdata.xml.in.in:64
+msgid "Vojtěch Perník"
+msgstr "Vojtěch Perník"
+
+#: data/blurble.gschema.xml.in:6
+msgid "Show keyboard"
+msgstr "Zobraziť klávesnicu"
+
+#. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
+#: src/application.vala:96
+msgid "translator-credits"
+msgstr "Peter Mráz <etkinator@gmail.com>"
+
+#: src/application.vala:97
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Autorské práva © 2022 Vojtěch Perník"
+
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Hlavná ponuka"
+
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Zobraziť klávesnicu"
+
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "Pomocník"
+
+#: src/window.blp:66
+msgid "About Blurble"
+msgstr "O programe Motanica"
+
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Hrať"
+
+#: src/game-controller.vala:31
+#, c-format
+msgid "Current word: %s\n"
+msgstr "Aktuálne slovo: %s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "Vyhrali ste!"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "Prehrali ste!"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "Slovo bolo:"
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "_Hrať znova"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+"Hra spočíva v <b>hľadaní päťpísmenových slov</b>.Tipy zadávate po jednom a "
+"potvrdzujete klávesom Enter.\n"
+"\n"
+"Po potvrdení sa <b>farba polí zmení</b>, podľa toho, ako blízko ste k "
+"správnemu slovu:"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "s/l/a/!m/a"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>M</b> je v slove a je na správnom mieste."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "r/á/d/!i/o"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>I</b> je v slove ale na nesprávnom mieste."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "a/l/b/!u/m"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>U</b> nie je v slove na žiadnom mieste."
+
+#.
+#. A key is represented by braces, which contain displayed string, slash
+#. the string to add to cell.
+#.
+#. {a/a}
+#.
+#. There are also two special keys:
+#.
+#. {enter}, {backspace}
+#.
+#. You can also specify the size of the key by adding the size
+#. information:
+#.
+#. {a/a/1}, {enter/2}, {backspace/3}
+#.
+#. Keys are divided by commas, lines by semicolons.
+#.
+#. {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+#. {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+#. {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#.
+#: src/data.vala:42
+msgctxt "Game keyboard"
+msgid "data-keyboard"
+msgstr ""
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {z/z}, {u/u}, {i/i}, {o/o}, {p/p};\n"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};\n"
+"{enter}, {y/y}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}"
+
+#.
+#. Each replacement on its own line. Original and its replacement divide
+#. with slash.
+#.
+#. á/a
+#. č/c
+#. …
+#.
+#: src/data.vala:61
+msgctxt "Replaced letters"
+msgid "data-replacements"
+msgstr ""
+"á/a\n"
+"ä/a\n"
+"č/c\n"
+"ď/d\n"
+"é/e\n"
+"í/i\n"
+"ĺ/l\n"
+"ľ/l\n"
+"ň/n\n"
+"ó/o\n"
+"ô/o\n"
+"ŕ/r\n"
+"š/s\n"
+"ť/t\n"
+"ú/u\n"
+"ý/y\n"
+"ž/z"
+
+#.
+#. Letters to be read from the keyboard.
+#.
+#. a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#.
+#: src/data.vala:72
+msgctxt "Available letters"
+msgid "data-letters"
+msgstr "a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z"
+
+#.
+#. All words have to be 5 letters long. Each word on its own line.
+#. Individual characters please divide with slash. The reason for this
+#. is that some letters are in unicode made of two characters.
+#.
+#. a/a/h/e/d
+#. a/a/l/i/i
+#. a/a/r/g/h
+#. …
+#.
+#: src/data.vala:88
+msgctxt "List of available words"
+msgid "data-dictionary"
+msgstr ""
+"P/e/t/e/r\n"
+"J/o/z/e/f\n"
+"M/á/r/i/a\n"
+"K/a/r/o/l\n"
+"J/u/r/a/j\n"
+"P/a/v/o/l\n"
+"P/e/t/r/a\n"
+"D/a/v/i/d\n"
+"M/i/l/a/n\n"
+"A/n/t/o/n\n"
+"T/o/m/á/š\n"
+"K/a/t/k/a\n"
+"m/e/s/t/o\n"
+"ž/i/v/o/t\n"
+"p/o/č/e/t\n"
+"v/ď/a/k/a\n"
+"d/o/m/o/v\n"
+"o/k/r/e/s\n"
+"n/i/e/č/o\n"
+"v/o/j/n/a\n"
+"ľ/u/d/i/a\n"
+"n/i/k/t/o\n"
+"p/o/t/o/k\n"
+"a/l/b/u/m\n"
+"š/k/o/l/a\n"
+"p/r/á/c/a\n"
+"č/í/s/l/o\n"
+"v/l/á/d/a\n"
+"m/a/r/e/c\n"
+"d/i/e/ť/a\n"
+"š/t/y/r/i\n"
+"v/e/č/e/r\n"
+"p/o/č/e/t\n"
+"c/e/s/t/a\n"
+"p/o/m/o/c\n"
+"m/a/t/k/a\n"
+"p/r/á/v/o\n"
+"d/i/e/l/o\n"
+"d/v/a/j/a\n"
+"s/l/o/v/o\n"
+"d/v/e/r/e\n"
+"j/a/z/y/k\n"
+"z/l/a/t/o\n"
+"v/l/á/d/a\n"
+"z/á/k/o/n\n"
+"n/á/p/a/d\n"
+"d/c/é/r/a\n"
+"s/e/v/e/r\n"
+"m/o/d/e/l\n"
+"p/o/c/i/t\n"
+"r/i/e/k/a\n"
+"z/á/p/a/s\n"
+"c/h/l/a/p\n"
+"v/z/ť/a/h\n"
+"m/o/t/o/r\n"
+"s/r/d/c/e\n"
+"d/ô/v/o/d\n"
+"n/á/z/o/v\n"
+"t/i/c/h/o\n"
+"o/b/r/a/z\n"
+"s/e/d/e/m\n"
+"d/e/s/a/ť\n"
+"z/á/p/a/d\n"
+"a/u/t/o/r\n"
+"l/á/s/k/a\n"
+"k/n/i/h/a\n"
+"v/ý/k/o/n\n"
+"u/l/i/c/a\n"
+"p/o/j/e/m\n"
+"c/h/y/b/a\n"
+"j/e/d/l/o\n"
+"h/u/d/b/a\n"
+"z/ľ/a/v/a\n"
+"s/í/d/l/o\n"
+"n/á/z/o/r\n"
+"s/ú/b/o/r\n"
+"n/á/v/r/h\n"
+"o/t/v/o/r\n"
+"p/o/h/á/r\n"
+"h/e/r/e/c\n"
+"c/i/s/á/r\n"
+"v/z/n/i/k\n"
+"c/h/r/á/m\n"
+"v/ý/b/e/r\n"
+"p/ô/v/o/d\n"
+"p/á/p/e/ž\n"
+"m/a/d/a/m\n"
+"p/a/l/á/c\n"
+"s/t/r/o/j\n"
+"p/á/r/t/y\n"
+"o/s/o/b/a\n"
+"f/o/r/m/a\n"
+"p/o/k/o/j\n"
+"l/e/k/á/r\n"
+"z/d/r/o/j\n"
+"f/i/r/m/a\n"
+"k/a/m/o/š\n"
+"d/i/e/l/o\n"
+"o/b/s/a/h\n"
+"k/a/m/e/ň\n"
+"h/l/a/v/a\n"
+"p/í/s/m/o\n"
+"v/l/a/s/y\n"
+"c/e/s/t/a\n"
+"d/ô/k/a/z\n"
+"j/a/d/r/o\n"
+"v/o/ľ/b/y\n"
+"h/o/v/o/r\n"
+"h/o/v/n/o\n"
+"d/ĺ/ž/k/a\n"
+"v/p/l/y/v\n"
+"z/b/r/a/ň\n"
+"a/p/r/í/l\n"
+"p/o/h/y/b\n"
+"s/ú/ť/a/ž\n"
+"v/z/n/i/k\n"
+"r/o/m/á/n\n"
+"p/o/k/u/s\n"
+"z/m/e/n/a\n"
+"a/u/t/o/r"
