@@ -1,0 +1,168 @@
+# Azerbaijani translation for Blurble.
+# Copyright (C) 2025 Blurble's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Blurble package.
+# Ramal Rəhimov <jhoaluman@gmail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Blurble main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/-/issues\n"
+"POT-Creation-Date: 2025-05-22 14:25+0000\n"
+"PO-Revision-Date: 2025-06-07 17:44+0400\n"
+"Last-Translator: Ramal Rəhimov <jhoaluman@gmail.com>\n"
+"Language-Team: Azerbaijani <contact@azlinux.org>\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 46.0\n"
+
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
+#: src/application.vala:90 src/welcome-page.blp:28
+msgid "Blurble"
+msgstr "Blurble"
+
+#: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+#: src/welcome-page.blp:29
+msgid "Word guessing game"
+msgstr "Söz təxmin oyunu"
+
+#: data/blurble.appdata.xml.in.in:12
+msgid "Solve the riddle until you run out of guesses!"
+msgstr "Təxminləriniz bitənə qədər tapmacanı həll edin!"
+
+#: data/blurble.appdata.xml.in.in:13
+msgid "The game is a clone of Wordle and made with localization in mind."
+msgstr "Oyun Wordle-ın klonudur və özəlləşdirməni nəzərə alınaraq hazırlanmışdır."
+
+#: data/blurble.appdata.xml.in.in:64
+msgid "Vojtěch Perník"
+msgstr "Vojtěch Perník"
+
+#: data/blurble.gschema.xml.in:6
+msgid "Show keyboard"
+msgstr "Klaviaturanı göstər"
+
+#: src/application.vala:96
+msgid "translator-credits"
+msgstr "Ramal Rəhimov <jhoaluman@gmail.com>"
+
+#: src/application.vala:97
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Müəllif hüququ © 2022 Vojtěch Perník"
+
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Əsas Menyu"
+
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Klaviaturanı Göstər"
+
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "Kömək"
+
+#: src/window.blp:66
+msgid "About Blurble"
+msgstr "Blurble Haqqında"
+
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Oyna"
+
+#: src/game-controller.vala:31
+#, c-format
+msgid "Current word: %s\n"
+msgstr "Cari söz: %s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "Sən qazandın!"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "Sən uduzdun!"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "Söz belə idi:"
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "_Yenidən Oyna"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+"Oyun beş hərfdən ibarət <b>sözləri təxmin etməkdən</b> ibarətdir. Təxminlərinizi bir-bir daxil etməyə çalışırsınız, hər birindən sonra Enter düyməsini basırsınız.\n"
+"\n"
+"Təsdiqdən sonra hüceyrənin <b>rəngi dəyişir</b> və bu, təxmininizlə axtardığınız sözə nə qədər yaxın olduğunuzu göstərir:"
+
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "!w/e/a/r/y"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>W</b> sözdə var və düzgün yerdədir."
+
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "p/!i/l/l/s"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>I</b> sözdə var, amma yanlış yerdədir."
+
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "v/a/g/!u/e"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>U</b> sözdə heç bir yerdə yoxdur."
+
+#: src/data.vala:42
+msgctxt "Game keyboard"
+msgid "data-keyboard"
+msgstr ""
+"{q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};"
+"{a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};"
+"{enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}"
+
+#: src/data.vala:61
+msgctxt "Replaced letters"
+msgid "data-replacements"
+msgstr ""
+"á/a\n"
+"ç/c\n"
+"ş/s\n"
+"ğ/g\n"
+"ı/i\n"
+"ö/o\n"
+"ü/u"
+
+#: src/data.vala:72
+msgctxt "Available letters"
+msgid "data-letters"
+msgstr "a/b/c/ç/d/e/ə/f/g/ğ/h/x/ı/i/j/k/q/l/m/n/o/ö/p/r/s/ş/t/u/ü/v/y/z"
+
+#: src/data.vala:88
+msgctxt "List of available words"
+msgid "data-dictionary"
+msgstr ""
+"a/l/m/a/n\n"
+"b/a/l/i/q\n"
+"c/i/c/ə/k\n"
+"d/ə/r/i/n\n"
+"e/l/m/i/r"
