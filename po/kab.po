@@ -2,14 +2,14 @@
 # Copyright (C) 2025 Blurble's COPYRIGHT HOLDER
 # This file is distributed under the same license as the Blurble package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# ButterflyOfFire <butterflyoffire@protonmail.com>, 2025.
+# ButterflyOfFire <butterflyoffire@protonmail.com>, 2025-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Blurble main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/-/issues\n"
-"POT-Creation-Date: 2025-03-10 11:18+0000\n"
-"PO-Revision-Date: 2025-03-27 17:15+0100\n"
+"POT-Creation-Date: 2025-12-10 11:19+0000\n"
+"PO-Revision-Date: 2026-01-05 11:26+0100\n"
 "Last-Translator: ButterflyOfFire <butterflyoffire@protonmail.com>\n"
 "Language-Team: Kabyle\n"
 "Language: kab\n"
@@ -22,17 +22,18 @@ msgstr ""
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Generator: Gtranslator 48.0\n"
+"X-Generator: Gtranslator 49.0\n"
+"X-DL-VCS-Web: https://gitlab.gnome.org/World/Blurble/\n"
 
-#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:9
+#: data/blurble.desktop.in.in:2 data/blurble.appdata.xml.in.in:9
 #: src/application.vala:90 src/welcome-page.blp:28
 msgid "Blurble"
-msgstr ""
+msgstr "Blurble"
 
-#: data/blurble.desktop.in.in:4 data/blurble.appdata.xml.in.in:10
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:10
 #: src/welcome-page.blp:29
 msgid "Word guessing game"
-msgstr ""
+msgstr "Urar n tifin n wawalen"
 
 #: data/blurble.appdata.xml.in.in:12
 msgid "Solve the riddle until you run out of guesses!"
@@ -44,61 +45,61 @@ msgstr ""
 
 #: data/blurble.appdata.xml.in.in:64
 msgid "Vojtěch Perník"
-msgstr ""
+msgstr "Vojtěch Perník"
 
 #: data/blurble.gschema.xml.in:6
 msgid "Show keyboard"
-msgstr ""
+msgstr "Sken-d anasiw-iw"
 
 #. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
 #: src/application.vala:96
 msgid "translator-credits"
-msgstr ""
+msgstr "Athmane MOKRAOUI"
 
 #: src/application.vala:97
 msgid "Copyright © 2022 Vojtěch Perník"
-msgstr ""
+msgstr "Copyright © 2022 Vojtěch Perník"
 
 #: src/window.blp:48
 msgid "Main Menu"
-msgstr ""
+msgstr "Umuɣ agejdan"
 
 #: src/window.blp:62
 msgid "Show Keyboard"
-msgstr ""
+msgstr "Sken-d unasiw"
 
 #: src/window.blp:65 src/help-page.vala:20
 msgid "Help"
-msgstr ""
+msgstr "Tallalt"
 
 #: src/window.blp:66
 msgid "About Blurble"
-msgstr ""
+msgstr "Ɣef Blurble"
 
 #: src/welcome-page.blp:34
 msgid "_Play"
-msgstr ""
+msgstr "_Urar"
 
 #: src/game-controller.vala:31
 #, c-format
 msgid "Current word: %s\n"
-msgstr ""
+msgstr "Awal amiran: %s\n"
 
 #: src/result-page.vala:33
 msgid "You won!"
-msgstr ""
+msgstr "Trebḥeḍ!"
 
 #: src/result-page.vala:33
 msgid "You lost!"
-msgstr ""
+msgstr "Txeṣreḍ!"
 
 #: src/result-page.vala:69
 msgid "The word was:"
-msgstr ""
+msgstr "Awal-nni d:"
 
 #: src/result-page.vala:81
 msgid "_Play Again"
-msgstr ""
+msgstr "Rnu _urar"
 
 #: src/help-page.vala:22
 msgid ""
@@ -117,7 +118,7 @@ msgstr ""
 
 #: src/help-page.vala:32
 msgid "<b>W</b> is in the word and in the correct spot."
-msgstr ""
+msgstr "<b>W</b> yella deg wawal-nni yerna deg umkan-is."
 
 #. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
 #: src/help-page.vala:36
@@ -127,7 +128,7 @@ msgstr ""
 
 #: src/help-page.vala:38
 msgid "<b>I</b> is in the word but in the wrong spot."
-msgstr ""
+msgstr "<b>I</b> yella deg wawal-nni, maca deg yir amkan."
 
 #. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
 #: src/help-page.vala:42
@@ -137,7 +138,7 @@ msgstr ""
 
 #: src/help-page.vala:44
 msgid "<b>U</b> is not in the word in any spot."
-msgstr ""
+msgstr "<b>U</b> ulac-it akk deg wawal-nni."
 
 #.
 #. A key is represented by braces, which contain displayed string, slash
