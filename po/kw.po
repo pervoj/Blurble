@@ -1,0 +1,210 @@
+# Cornish translation for Blurble.
+# Copyright (C) 2026 Blurble's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Blurble package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Flynn Peck <cirilla@tuta.io>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Blurble main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/-/issues\n"
+"POT-Creation-Date: 2023-05-16 14:25+0000\n"
+"PO-Revision-Date: 2026-02-21 15:56+0000\n"
+"Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
+"Language-Team: kw\n"
+"Language: kw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-DL-VCS-Web: https://gitlab.gnome.org/World/Blurble/\n"
+"X-DL-Lang: kw\n"
+"X-DL-Module: Blurble\n"
+"X-DL-Branch: main\n"
+"X-DL-Domain: po\n"
+"X-DL-State: Translating\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: data/blurble.desktop.in.in:2 data/blurble.appdata.xml.in.in:9
+#: src/application.vala:90 src/welcome-page.blp:28
+msgid "Blurble"
+msgstr "Blurble"
+
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:10
+#: src/welcome-page.blp:29
+msgid "Word guessing game"
+msgstr "Gwari a-dro ow dysmygi geryow"
+
+#: data/blurble.appdata.xml.in.in:12
+msgid "Solve the riddle until you run out of guesses!"
+msgstr "Digelmi an dysmyk bys dhe ty difygya dysmygyansow!"
+
+#: data/blurble.appdata.xml.in.in:13
+msgid "The game is a clone of Wordle and made with localization in mind."
+msgstr "An gwari yw egwal a Wordle ha gwrys gans treylyans yn brys."
+
+#: data/blurble.appdata.xml.in.in:64
+msgid "Vojtěch Perník"
+msgstr "Vojtěch Perník"
+
+#: data/blurble.gschema.xml.in:6
+msgid "Show keyboard"
+msgstr "Diskwedhes bysowek"
+
+#. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
+#: src/application.vala:96
+msgid "translator-credits"
+msgstr "Flynn"
+
+#: src/application.vala:97
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Gwirbryntyans © 2022 Vojtěch Perník"
+
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Rol Chif"
+
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Diskwedhes Bysowek"
+
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "Gweres"
+
+#: src/window.blp:66
+msgid "About Blurble"
+msgstr "A-dro Blurble"
+
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Gwari"
+
+#: src/game-controller.vala:31
+#, c-format
+msgid "Current word: %s\n"
+msgstr "Ger a-lemmyn: %s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "Ty a waynyas!"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "Ty kellys!"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "An ger o:"
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "_Gwari Arta"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+"An gwari synsi <b>ow dysmygi geryow</b> pymp lytherennow hir. Ty assaya "
+"ynworra dha dysmygyansow unn gans unn, ow tava Enter wosa pub.\n"
+"\n"
+"Wosa fastyans, an <b>kolor kell chanjya</b> rag sinya fatel ogas os ta dhe'n "
+"ger hwilas os ta gans dha dysmygyans:"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "!h/w/a/r/e"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>H</b> yw y'n ger hag y'n le ewn."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "m/!o/v/y/a"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>O</b> yw y'n ger mes y'n le kamm."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "k/y/n/!s/a"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>S</b> nyns yw y'n ger yn neb le."
+
+#.
+#. A key is represented by braces, which contain displayed string, slash
+#. the string to add to cell.
+#.
+#. {a/a}
+#.
+#. There are also two special keys:
+#.
+#. {enter}, {backspace}
+#.
+#. You can also specify the size of the key by adding the size
+#. information:
+#.
+#. {a/a/1}, {enter/2}, {backspace/3}
+#.
+#. Keys are divided by commas, lines by semicolons.
+#.
+#. {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+#. {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+#. {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#.
+#: src/data.vala:42
+msgctxt "Game keyboard"
+msgid "data-keyboard"
+msgstr ""
+
+#.
+#. Each replacement on its own line. Original and its replacement divide
+#. with slash.
+#.
+#. á/a
+#. č/c
+#. …
+#.
+#: src/data.vala:61
+msgctxt "Replaced letters"
+msgid "data-replacements"
+msgstr ""
+
+#.
+#. Letters to be read from the keyboard.
+#.
+#. a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#.
+#: src/data.vala:72
+msgctxt "Available letters"
+msgid "data-letters"
+msgstr ""
+
+#.
+#. All words have to be 5 letters long. Each word on its own line.
+#. Individual characters please divide with slash. The reason for this
+#. is that some letters are in unicode made of two characters.
+#.
+#. a/a/h/e/d
+#. a/a/l/i/i
+#. a/a/r/g/h
+#. …
+#.
+#: src/data.vala:88
+msgctxt "List of available words"
+msgid "data-dictionary"
+msgstr ""
