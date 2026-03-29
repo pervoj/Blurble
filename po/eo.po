@@ -1,0 +1,203 @@
+# Esperanto translation for Blurble.
+# Copyright (C) 2026 Blurble's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Blurble package.
+# Kristjan ESPERANTO <kristjan.schmidt@googlemail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Blurble main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/Blurble/-/issues\n"
+"POT-Creation-Date: 2023-05-16 14:25+0000\n"
+"PO-Revision-Date: 2026-03-29 17:33+0200\n"
+"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
+"Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 49.0\n"
+
+#: data/blurble.desktop.in.in:2 data/blurble.appdata.xml.in.in:9
+#: src/application.vala:90 src/welcome-page.blp:28
+msgid "Blurble"
+msgstr "Blurble"
+
+#: data/blurble.desktop.in.in:3 data/blurble.appdata.xml.in.in:10
+#: src/welcome-page.blp:29
+msgid "Word guessing game"
+msgstr "Vortodivena ludo"
+
+#: data/blurble.appdata.xml.in.in:12
+msgid "Solve the riddle until you run out of guesses!"
+msgstr "Solvu la enigmon ĝis viaj divenprovoj elĉerpiĝos!"
+
+#: data/blurble.appdata.xml.in.in:13
+msgid "The game is a clone of Wordle and made with localization in mind."
+msgstr "La ludo estas klono de Wordle, kreita kun atento al lokigo."
+
+#: data/blurble.appdata.xml.in.in:64
+msgid "Vojtěch Perník"
+msgstr "Vojtěch Perník"
+
+#: data/blurble.gschema.xml.in:6
+msgid "Show keyboard"
+msgstr "Montri klavaron"
+
+#. Translators: Here write your names, or leave it empty. Each name on new line. You can also add email (John Doe <j.doe@example.com>). Do not translate literally!
+#: src/application.vala:96
+msgid "translator-credits"
+msgstr "Kristjan SCHMIDT"
+
+#: src/application.vala:97
+msgid "Copyright © 2022 Vojtěch Perník"
+msgstr "Aŭtorrajto © 2022 Vojtěch Perník"
+
+#: src/window.blp:48
+msgid "Main Menu"
+msgstr "Ĉefa menuo"
+
+#: src/window.blp:62
+msgid "Show Keyboard"
+msgstr "Montri klavaron"
+
+#: src/window.blp:65 src/help-page.vala:20
+msgid "Help"
+msgstr "Helpo"
+
+#: src/window.blp:66
+msgid "About Blurble"
+msgstr "Pri Blurble"
+
+#: src/welcome-page.blp:34
+msgid "_Play"
+msgstr "_Ludi"
+
+#: src/game-controller.vala:31
+#, c-format
+msgid "Current word: %s\n"
+msgstr "Nuna vorto: %s\n"
+
+#: src/result-page.vala:33
+msgid "You won!"
+msgstr "Vi gajnis!"
+
+#: src/result-page.vala:33
+msgid "You lost!"
+msgstr "Vi perdis!"
+
+#: src/result-page.vala:69
+msgid "The word was:"
+msgstr "La vorto estis:"
+
+#: src/result-page.vala:81
+msgid "_Play Again"
+msgstr "_Ludi denove"
+
+#: src/help-page.vala:22
+msgid ""
+"The game consists of <b>guessing words</b> five characters long. You try to "
+"enter your guesses one by one, pressing Enter after each one.\n"
+"\n"
+"After confirmation, the cell <b>color changes</b> to indicate how close you "
+"are to the word you are looking for with your guess:"
+msgstr ""
+"La ludo konsistas el <b>divenado de vortoj</b> kun kvin signoj. Vi provas "
+"enigi viajn divenojn unu post alia, premante Enter post ĉiu.\n"
+"\n"
+"Post konfirmo, la <b>koloro de la ĉelo ŝanĝiĝas</b> por montri kiom proksima "
+"via diveno estas al la serĉata vorto:"
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:30
+msgctxt "Preview of the word cells"
+msgid "!w/e/a/r/y"
+msgstr "!w/e/a/r/y"
+
+#: src/help-page.vala:32
+msgid "<b>W</b> is in the word and in the correct spot."
+msgstr "<b>W</b> estas en la vorto kaj en la ĝusta loko."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:36
+msgctxt "Preview of the word cells"
+msgid "p/!i/l/l/s"
+msgstr "p/!i/l/l/s"
+
+#: src/help-page.vala:38
+msgid "<b>I</b> is in the word but in the wrong spot."
+msgstr "<b>I</b> estas en la vorto, sed en malĝusta loko."
+
+#. Word cells are separated by slashes, the cell with state preview starts with exclamation mark
+#: src/help-page.vala:42
+msgctxt "Preview of the word cells"
+msgid "v/a/g/!u/e"
+msgstr "v/a/g/!u/e"
+
+#: src/help-page.vala:44
+msgid "<b>U</b> is not in the word in any spot."
+msgstr "<b>U</b> ne aperas en la vorto en neniu loko."
+
+#.
+#. A key is represented by braces, which contain displayed string, slash
+#. the string to add to cell.
+#.
+#. {a/a}
+#.
+#. There are also two special keys:
+#.
+#. {enter}, {backspace}
+#.
+#. You can also specify the size of the key by adding the size
+#. information:
+#.
+#. {a/a/1}, {enter/2}, {backspace/3}
+#.
+#. Keys are divided by commas, lines by semicolons.
+#.
+#. {q/q}, {w/w}, {e/e}, {r/r}, {t/t}, {y/y}, {u/u}, {i/i}, {o/o}, {p/p};
+#. {a/a}, {s/s}, {d/d}, {f/f}, {g/g}, {h/h}, {j/j}, {k/k}, {l/l};
+#. {enter}, {z/z}, {x/x}, {c/c}, {v/v}, {b/b}, {n/n}, {m/m}, {backspace}
+#.
+#: src/data.vala:42
+msgctxt "Game keyboard"
+msgid "data-keyboard"
+msgstr "data-keyboard"
+
+#.
+#. Each replacement on its own line. Original and its replacement divide
+#. with slash.
+#.
+#. á/a
+#. č/c
+#. …
+#.
+#: src/data.vala:61
+msgctxt "Replaced letters"
+msgid "data-replacements"
+msgstr "data-replacements"
+
+#.
+#. Letters to be read from the keyboard.
+#.
+#. a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z
+#.
+#: src/data.vala:72
+msgctxt "Available letters"
+msgid "data-letters"
+msgstr "data-letters"
+
+#.
+#. All words have to be 5 letters long. Each word on its own line.
+#. Individual characters please divide with slash. The reason for this
+#. is that some letters are in unicode made of two characters.
+#.
+#. a/a/h/e/d
+#. a/a/l/i/i
+#. a/a/r/g/h
+#. …
+#.
+#: src/data.vala:88
+msgctxt "List of available words"
+msgid "data-dictionary"
+msgstr "data-dictionary"
